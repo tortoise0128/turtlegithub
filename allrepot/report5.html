@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>report5</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="fontawesome-free-5.13.0-web/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&family=Noto+Sans+TC&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        header .container {
+            background: aliceblue;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom-style: groove;
+
+        }
+
+        header .heaul,
+        header .heali {
+            margin: 10px;
+            padding: 0;
+        }
+
+        header .heali {
+            list-style: none;
+        }
+
+        header ul li a:hover {
+            color: peru;
+
+        }
+
+        .headerimg {
+            border: 10px solid transparent;
+            border-image: url("image/sakura4.svg") 10 stretch;
+        }
+
+        .logo {
+            align-items: center;
+        }
+
+        .logo a {
+            margin: 10px;
+            font-size: larger;
+
+        }
+
+        .logo1 {
+            width: 80px;
+            height: 80px;
+            object-fit: fill;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+
+        .report4 {
+            /* background: lavenderblush; */
+        }
+
+        /* ----------------------------------------- */
+
+        .hambuger {
+            display: none;
+        }
+
+        /* ------------------------------------------ */
+        main .container {
+            background: url("image/sakurabackgraund2.svg");
+            /* justify-content: center; */
+        }
+
+        .mainplay {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cryimg {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .mainli {
+            list-style: none;
+            padding: 10px;
+        }
+
+
+        .crytsalball {
+            position: relative;
+        }
+
+        .crystal {
+            background: lavender;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+
+            animation-name: colorchange;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            /* animation-delay: 1s; */
+            animation-fill-mode: both;
+            position: relative;
+            z-index: 10;
+
+        }
+
+        @keyframes colorchange {
+            0% {
+                background: rgba(124, 81, 173, 0.918);
+            }
+
+            50% {
+                background: rgba(55, 144, 179, 0.932);
+                width: 300px;
+            }
+
+            100% {
+                background: rgba(83, 184, 184, 0.945);
+            }
+        }
+
+        .crystal1 {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+            animation: crystalrotate 4s infinite linear;
+            box-shadow: 100px 100px 100px rgb(221, 163, 17), 10px 0 20px rgb(77, 77, 134) inset;
+
+
+        }
+
+        @keyframes crystalrotate {
+            from {
+                transform: rotate(0);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+
+        }
+
+        .crystal:hover {
+            cursor: pointer;
+            animation-play-state: paused;
+        }
+
+        .crystal1:hover {
+            animation-play-state: paused;
+        }
+
+        .crystalset {
+            width: 400px;
+            height: 100px;
+            border: 5px solid lightcoral;
+            position: absolute;
+            bottom: 5%;
+            left: -1%;
+            border-radius: 10px;
+        }
+
+        .mainplay .maincard {
+            /* opacity: 0; */
+        }
+
+        .mainplay.active .maincard {
+            /* opacity: 1; */
+        }
+
+
+
+
+
+        /* ----------------------------------- */
+
+        img.active {
+            filter: brightness(150%);
+        }
+
+
+        /* ------------------------------------------- */
+        aside .container {
+            justify-content: space-evenly;
+            background: lavenderblush;
+        }
+
+        @keyframes sakurarotate {
+            from {
+                transform: rotate(0);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+
+        }
+
+        .sakura {
+            width: 100px;
+            height: 100px;
+        }
+
+        .rotate:hover {
+            animation: sakurarotate 4s infinite linear;
+        }
+
+        /* ------------------------------------- */
+        .sakurachange {
+            height: 200px;
+            object-fit: contain;
+            overflow: hidden;
+            background: lightgoldenrodyellow;
+
+        }
+
+
+        @media screen and (max-width:1000px) and (min-width:800px) {
+            .sakurachange {
+                background: thistle;
+            }
+
+
+        }
+
+        @media screen and (max-width:800px) and (min-width:600px) {
+            .sakurachange {
+                background: lavender;
+            }
+
+
+        }
+
+        @media screen and (max-width:600px) {
+            .sakurachange {
+                background: skyblue;
+            }
+        }
+
+        /* ------------------------------------------- */
+
+        footer {
+            background: aliceblue;
+        }
+
+        /* --------------------------------- */
+
+        @media screen and (max-width: 768px) {
+            .flowerul {
+                /* flex-wrap: wrap; */
+            }
+        }
+
+        @media screen and (max-width: 420px) {
+
+            img {
+                filter: brightness(120%);
+            }
+
+            .headhiden {
+                display: none;
+            }
+
+            .hambuger {
+                display: block;
+            }
+
+            .hambuger {
+                /* display: flex; */
+                /* justify-content: flex-end; */
+                position: relative;
+
+
+            }
+
+            .heaul1 .report4 {
+                background: rgba(221, 160, 221, 0.219);
+
+
+            }
+
+            .heaul1 {
+                background: aliceblue;
+                padding: 0;
+                margin: 0px;
+                display: flex;
+                /* flex-direction: column; */
+                position: absolute;
+                left: -250%;
+                border-radius: 0 0 5px 5px;
+                max-height: 0;
+                overflow: hidden;
+            }
+
+            .heali1:hover {
+                color: peru;
+            }
+
+            .heaul1 .heali1 {
+                list-style: none;
+                text-align: center;
+                display: block;
+                margin: 5px;
+
+            }
+
+            .headbutton {
+                width: 40px;
+                height: 40px;
+                border: none;
+                background: inherit;
+                padding: 0;
+                margin-right: 10px;
+                position: relative;
+                /* display: block; */
+            }
+
+            .fas {
+
+                font-size: 30px;
+                color: plum;
+                padding: 0px;
+                text-align: center;
+                /* margin: 0 auto; */
+            }
+
+            .bar {
+                transition: .5s;
+            }
+
+            .bar .heaul1 {
+                opacity: 0;
+            }
+
+            .bar.active .heaul1 {
+                opacity: 1;
+                max-height: 400px;
+                z-index: 99;
+
+            }
+
+            /* ----------------------------------------- */
+
+            .crystalset {
+                width: 300px;
+                height: 100px;
+                border: 5px solid lightcoral;
+                position: absolute;
+                bottom: 5%;
+                left: 10%;
+                border-radius: 10px;
+            }
+
+            .mainul {
+                flex-wrap: wrap;
+            }
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container d-flex">
+            <div class="logo d-flex">
+                <div id="logo1" class="logo1">
+                    <img src="image/sakura 3.svg" alt="">
+                </div>
+                <a href="report5.html">櫻花介紹網站</a>
+            </div>
+            <!-- ----------------------------------- -->
+            <div class="headhiden">
+                <ul class="heaul d-flex">
+                    <li class="heali">
+                        <div class="headerimg"><a href="report.html">粉花遊戲</a></div>
+                    </li>
+                    <li class="heali ">
+                        <div class="headerimg"><a href="report2.html">粉花介紹</a></div>
+                    </li>
+                    <li class="heali">
+                        <div class="headerimg"><a href="report3.html">櫻花遊戲</a></div>
+                    </li>
+                    <li class="heali report4">
+                        <div class="headerimg"><a href="report4.html">櫻花介紹</a></div>
+                    </li>
+                </ul>
+            </div>
+            <!-- --------------------------------- -->
+            <div class="hambuger">
+                <div class="bar transition">
+                    <button class="headbutton "><i class="fas fa-bars"></i></button>
+                    <!-- <a href=""> </i></a> -->
+                    <ul class="heaul1 transition">
+                        <div class="headerimg"><a href="report.html">粉花遊戲</a></div>
+                        </li>
+                        <li class="heali1">
+                        <li class="heali1 ">
+                            <div class="headerimg "><a href="report2.html">粉花介紹</a></div>
+                        </li>
+                        <li class="heali1">
+                            <div class="headerimg "><a href="report3.html">櫻花遊戲</a></div>
+                        </li>
+                        <li class="heali1 ">
+                            <div class="headerimg"><a href="report4.html">櫻花介紹</a></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- --------------------------------- -->
+
+    <main>
+        <div class="container ">
+            <div class="mainplay d-flex">
+
+                <div class="hiden  ">
+                    <div class="crytsalball  p-5">
+                        <div class="crystal">
+                            <div class="crystal1">
+                                <img src="image/sakurabackgraund.svg" alt="">
+                            </div>
+                        </div>
+
+                        <div class="crystalset">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="maincard">
+                    <ul class="mainul d-flex">
+                        <li class="mainli"><img id="img1" class="cryimg" src="image/good1.png" alt=""></li>
+                        <li class="mainli"><img id="img2" class="cryimg" src="image/good 2.png" alt=""></li>
+                        <li class="mainli"><img id="img3" class="cryimg" src="image/bad 3.png" alt=""></li>
+                        <li class="mainli"><img id="img4" class="cryimg" src="image/bad 4.png" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <!-- ------------------------------ -->
+
+    <aside>
+        <div class="container d-flex">
+            <div class="sakura">
+                <img class="rotate" src="image/sakura 01.svg" alt="">
+            </div>
+            <div class="sakura">
+                <img class="rotate" src="image/sakura 01.svg" alt="">
+            </div>
+            <div class="sakura">
+                <img class="rotate" src="image/sakura 01.svg" alt="">
+            </div>
+            <div class="sakura">
+                <img class="rotate" src="image/sakura 01.svg" alt="">
+            </div>
+            <div class="sakura">
+                <img class="rotate" src="image/sakura 01.svg" alt="">
+            </div>
+        </div>
+    </aside>
+
+
+    <!-- ----------------------------- -->
+
+    <article>
+
+        <div class="sakurachange ">
+
+            <img src="image/sakurabackgraund.svg" alt="">
+        </div>
+        <!-- <div class="icon ">
+                <ul class="fa-ul">
+                    <li><span class="fa-li"> <i class="fab fa-android"></i></span>i am andriod</li>
+                    <li><span class="fa-li"><i class="fas fa-ankh"></i></span>i am ankh</li>
+                    <li><span class="fa-li"><i class="fab fa-apple"></i></span>i am apple</li>
+                    <li><span class="fa-li"> <i class="fas fa-archway"></i></span>i am archway</li>
+                </ul>
+            </div> -->
+
+    </article>
+
+    <!-- ------------------------ -->
+
+    <footer>
+        <p class="text-center"><a href="#logo1">Footer</a></p>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        $("img").mouseenter(function () {
+            $(this).addClass("active")
+
+        })
+        $("img").mouseleave(function () {
+            $(this).removeClass("active")
+
+        })
+        // ---------------------------------------
+        $(".bar").click(function () {
+            $(this).toggleClass('active');
+        });
+        // -----------------------------------------
+        $(".mainplay").click(function () {
+            // let picture = $(this).find("img").attr("src")
+            // console.log(picture)
+            $("#img1").hide()
+            $("#img2").hide()
+            $("#img3").hide()
+            $("#img4").hide()
+            //-----------------------------------------------
+            let ImagesList = ["#img1", "#img2", "#img3", "#img4"];
+            let random = Math.floor(Math.random() * 4)
+            $(ImagesList[random]).show()
+            // $(this).toggleClass("active")
+
+        })
+
+
+
+
+
+    </script>
+</body>
+
+</html>
