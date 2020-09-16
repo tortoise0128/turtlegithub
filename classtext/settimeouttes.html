@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Animate.css v3.5.2 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        #overlay {
+            position: fixed;
+            /* Sit on top of the page content */
+            display: block;
+            /* Hidden by default */
+            width: 100%;
+            /* Full width (cover the whole page) */
+            height: 100%;
+            /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Black background with opacity */
+            z-index: 2;
+            /* Specify a stack order in case you're using a different order for other elements */
+            /* cursor: pointer; */
+            /* Add a pointer on hover */
+            /* background: url('https://i.imgur.com/UMnw0tW.jpg'); */
+            font-family: 'Ubuntu', sans-serif;
+            background-position: center center;
+            background-size: cover;
+            color: #121212;
+        }
+
+        .loader {
+            position: absolute;
+            top: 50%;
+            margin: -240px;
+            left: 50%;
+            width: 480px;
+            height: 480px;
+        }
+
+        .loader h1 {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            text-align: center;
+            width: 100%;
+            top: 0px;
+            line-height: 420px;
+            font-size: 24px;
+            color: rgba(0, 0, 0, 0.24);
+            font-weight: 100;
+        }
+
+        /* -------------------------------------------------- */
+
+        .animate__animated.animate__fadeOutRight {
+            --animate-duration: 10s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="overlay" class="animate__animated animate__fadeOutRight">
+        <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300' rel='stylesheet' type='text/css'>
+        <div class="loader">
+            <canvas width="480px" height="480px" id="loader"></canvas>
+            <h1>Loading</h1>
+        </div>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+        <!-- Textillate.js v0.4.0 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+        <script>
+            AOS.init();
+            // -----呼叫AOS.js-------
+
+            Loadr = new (function Loadr(id) {
+                // # Defines
+                const max_size = 24;
+                const max_particles = 1500;
+                const min_vel = 20;
+                const max_generation_per_frame = 10;
+
+                // #Variables
+                // sometimes i wrote code horrible enouhg to make eyes bleed 
+                var canvas = document.getElementById(id);
+                var ctx = canvas.getContext('2d');
+                var height = canvas.height;
+                var center_y = height / 2;
+                var width = canvas.width;
+                var center_x = width / 2;
+                var animate = true;
+                var particles = [];
+                var last = Date.now(),
+                    now = 0;
+                var died = 0,
+                    len = 0,
+                    dt;
+
+                function isInsideHeart(x, y) {
+                    x = ((x - center_x) / (center_x)) * 3;
+                    y = ((y - center_y) / (center_y)) * -3;
+                    // Simplest Equation of lurve
+                    var x2 = x * x;
+                    var y2 = y * y;
+                    // Simplest Equation of lurve
+
+                    return (Math.pow((x2 + y2 - 1), 3) - (x2 * (y2 * y)) < 0);
+
+                }
+
+                function random(size, freq) {
+                    var val = 0;
+                    var iter = freq;
+
+                    do {
+                        size /= iter;
+                        iter += freq;
+                        val += size * Math.random();
+                    } while (size >= 1);
+
+                    return val;
+                }
+
+                function Particle() {
+                    var x = center_x;
+                    var y = center_y;
+                    var size = ~~random(max_size, 2.4);
+                    var x_vel = ((max_size + min_vel) - size) / 2 - (Math.random() * ((max_size + min_vel) - size));
+                    var y_vel = ((max_size + min_vel) - size) / 2 - (Math.random() * ((max_size + min_vel) - size));
+                    var nx = x;
+                    var ny = y;
+                    var r, g, b, a = 0.05 * size;
+
+                    this.draw = function () {
+                        r = ~~(255 * (x / width));
+                        g = ~~(255 * (1 - (y / height)));
+                        b = ~~(255 - r);
+                        ctx.fillStyle = 'rgba(' + r + ',' + g + ',' + b + ',' + a + ')';
+                        ctx.beginPath();
+                        ctx.arc(x, y, size, 0, Math.PI * 2, true);
+                        ctx.closePath();
+                        ctx.fill();
+                    }
+
+                    this.move = function (dt) {
+
+                        nx += x_vel * dt;
+                        ny += y_vel * dt;
+                        if (!isInsideHeart(nx, ny)) {
+                            if (!isInsideHeart(nx, y)) {
+                                x_vel *= -1;
+                                return;
+                            }
+
+                            if (!isInsideHeart(x, ny)) {
+                                y_vel *= -1;
+                                return;
+                            }
+                            // Lets do the crazy furbidden
+                            x_vel = -1 * y_vel;
+                            y_vel = -1 * x_vel;
+                            return;
+                        }
+
+                        x = nx;
+                        y = ny;
+                    }
+
+                }
+
+                function movementTick() {
+                    var len = particles.length;
+                    var dead = max_particles - len;
+                    for (var i = 0; i < dead && i < max_generation_per_frame; i++) {
+                        particles.push(new Particle());
+                    }
+
+                    // Update the date
+                    now = Date.now();
+                    dt = last - now;
+                    dt /= 300;
+                    last = now;
+                    particles.forEach(function (p) {
+                        p.move(dt);
+                    });
+                }
+
+                function tick() {
+
+                    ctx.clearRect(0, 0, width, height);
+                    particles.forEach(function (p) {
+                        p.draw();
+                    });
+
+                    requestAnimationFrame(tick);
+                }
+
+                this.start = function () {
+
+                }
+
+                this.done = function () {
+
+                }
+
+                setInterval(movementTick, 16);
+                tick();
+
+            })("loader");
+        // function on() {
+        //     document.getElementById("overlay").style.display = "block";
+        // }
+        </script>
+        <script type="text/javascript">
+            setTimeout(function off() {
+                document.getElementById("overlay").style.display = "none";
+                // document.getElementsByClassName("overlay").addclass("animate__animated animate__fadeOutRight");
+            }, 5000);
+
+        </script>
+</body>
+
+</html>

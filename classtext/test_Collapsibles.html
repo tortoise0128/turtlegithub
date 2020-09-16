@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="fontawesome-free-5.13.0-web/css/all.min.css">
+    <style>
+        /* Style the button that is used to open and close the collapsible content */
+        /* .collapsible {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+        } */
+
+        /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+        /* .active,
+        .collapsible:hover {
+            background-color: #ccc;
+        } */
+
+        /* Style the collapsible content. Note: hidden by default */
+        /* .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+        } */
+        .collapsible {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+
+        }
+
+        .fas {
+            width: 50px;
+            height: 50px;
+            color: brown;
+            text-align: center;
+        }
+
+        .fa-minus {
+            display: none;
+        }
+
+        .fa-minus.active {
+            display: block;
+        }
+
+        .fa-plus {
+            display: block;
+        }
+
+        .fa-plus.active {
+            display: none;
+        }
+
+        .content {
+            display: none;
+        }
+
+        .content.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <button type="button" class="collapsible"><i class="fas fa-plus"></i><i class="fas fa-minus"></i> </button>
+        <div class="content">
+            <p>Lorem ipsum...</p>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+
+        // var coll = document.getElementsByClassName("collapsible");
+        // var i;
+
+        // for (i = 0; i < coll.length; i++) {
+        //     coll[i].addEventListener("click", function () {
+        //         this.classList.toggle("active");
+        //         var content = this.nextElementSibling;
+        //         if (content.style.display === "block") {
+        //             content.style.display = "none";
+        //         } else {
+        //             content.style.display = "block";
+        //         }
+        //     });
+        // }
+
+        $(document).ready(function () {
+            $(".collapsible").click(function () {
+                $(".content").toggleClass("active")
+                $(".fa-minus").toggleClass("active")
+                $(".fa-plus").toggleClass("active")
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>

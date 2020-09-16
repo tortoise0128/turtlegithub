@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>index</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        /* ------------------------------------------ */
+
+        header .container {
+            justify-content: space-between;
+            align-self: center;
+            position: absolute;
+            z-index: 99;
+
+        }
+
+        header .logo {
+            width: 150px;
+            height: 50px;
+            /* object-fit: fill; */
+            overflow: hidden;
+        }
+
+        header .logoimg {
+            width: 150px;
+            height: 50px;
+            object-fit: fill;
+        }
+
+
+
+        header ul {
+            justify-content: space-between;
+        }
+
+        header li {
+            padding: 20px;
+            list-style: none;
+        }
+
+        header li a {
+            color: white;
+            font-weight: bold;
+        }
+
+        header .svgimgul {
+            padding-right: 20px;
+        }
+
+
+        header .svgimg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* -------------------------------------------- */
+
+        nav .container {
+            position: relative;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        nav img {
+            width: 100%;
+        }
+
+        /* --------------------------------------------- */
+        article ul {
+            justify-content: center;
+            padding-top: 10px;
+        }
+
+        article li {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        article h6 {
+            position: relative;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        article h6::after {
+            position: absolute;
+            content: "";
+            height: 4px;
+            width: 70px;
+            /* 熱門主題的線條 */
+            background: #333;
+            bottom: -16px;
+            left: 50%;
+            /* margin: 0 0 0 -20px; */
+            transform: translateX(-50%);
+        }
+
+        article .h21 {
+            color: orange;
+        }
+
+        article .h21::after {
+            background: orange;
+        }
+
+        article p {
+            font-size: 15px;
+            padding-right: 230px;
+        }
+
+        article .arrow {
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 20px;
+        }
+
+        article .svgimg2 {
+            width: 20px;
+            height: 20px;
+        }
+
+        article .artflower {
+            justify-content: space-between;
+        }
+
+        article .flower {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            overflow: hidden;
+        }
+
+        article .flowerimg {
+
+            width: 200px;
+            height: 200px;
+        }
+
+        article .flowerli1 {
+            font-weight: bold;
+        }
+
+        /* --------------------------------------------- */
+        main .shop {
+            text-align: center;
+            width: 900px;
+            height: 50px;
+        }
+
+        main h6 {
+            position: relative;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        main h6::after {
+            position: absolute;
+            content: "";
+            height: 4px;
+            width: 70px;
+            /* 熱門主題的線條 */
+            background: #333;
+            bottom: -16px;
+            left: 50%;
+            /* margin: 0 0 0 -20px; */
+            transform: translateX(-50%);
+        }
+
+        main .mainflower {
+            width: 500px;
+        }
+        main .mainflowerimg{
+            width: 500px;
+        }
+
+        main .divmainflower {
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        main .mainflower2 {
+            width: 200px;
+            height: 150px;
+            object-fit: fill;
+            overflow: hidden;
+            margin: 10px;
+        }
+
+        main .mainflower2img {
+            width: 200px;
+            height: 150px;
+        }
+
+        main .mainflower2div {
+            justify-content: space-evenly;
+
+        }
+
+        main li {
+            list-style: none;
+        }
+
+        main .banli {
+            list-style: none;
+            font-size: 30px;
+        }
+
+        main .Simplyflower {
+            font-weight: bold;
+        }
+
+        /* -------------------------------------- */
+        section .container {
+            margin-top: 50px;
+        }
+
+        section .sneakers {
+            justify-content: space-evenly;
+        }
+
+        section ul {
+            padding-left: 0;
+        }
+
+        section li {
+            list-style: none;
+        }
+
+        section .banli {
+            font-size: 30px;
+            padding-bottom: 10px;
+        }
+
+        section .banli2 {
+            width: 350px;
+
+        }
+
+        section .timeless {
+            margin-top: 15px;
+        }
+
+        section p {
+            text-align: center;
+        }
+
+        /* ---------------------------------------- */
+        aside .container {
+            margin-top: 20px;
+        }
+
+        aside .shop {
+            text-align: center;
+        }
+
+        aside h6 {
+            position: relative;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        aside h6::after {
+            position: absolute;
+            content: "";
+            height: 4px;
+            width: 70px;
+            /* 熱門主題的線條 */
+            background: #333;
+            bottom: -16px;
+            left: 50%;
+            /* margin: 0 0 0 -20px; */
+            transform: translateX(-50%);
+        }
+
+        aside .scroll {
+            margin-top: 50px;
+            /* overflow: scroll; */
+            overflow-x: scroll;
+            justify-content: space-between;
+        }
+
+        aside .asideimg {
+            padding-right: 15px;
+        }
+
+        aside ul {
+            padding-left: 0;
+        }
+
+        aside li {
+            list-style: none;
+        }
+
+        aside .Lin {
+            font-weight: bold;
+        }
+
+        .scroll::-webkit-scrollbar {
+            /* width: 500px; */
+        }
+
+        .scroll::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            background-color: #F5F5F5;
+        }
+
+        .scroll::-webkit-scrollbar-track-piece {}
+
+        .scroll::-webkit-scrollbar {
+            height: 10px;
+            /* width: 12px; */
+            background-color: #F5F5F5;
+        }
+
+        .scroll::-webkit-scrollbar-thumb {
+            /* width: 50px; */
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+            background-color: rgb(39, 37, 37);
+        }
+
+
+        /* -------------------------------------- */
+        footer .container {
+            margin-top: 50px;
+        }
+
+        footer ul {
+            justify-content: space-between;
+            padding-left: 0;
+        }
+
+        footer li {
+            list-style: none;
+            padding-right: 5px;
+        }
+
+        footer img {
+            width: 20px;
+            height: 20px;
+        }
+
+        footer .ban {
+            width: 750px;
+            padding-left: 15px;
+        }
+
+        footer .ban1 {
+            margin-top: 10px;
+            width: 720px;
+            height: 2px;
+            background: black;
+            border-radius: 5px;
+        }
+
+        footer .banLan {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container d-flex">
+            <div class="logo">
+                <img class="logoimg" src="img/logo.png" alt="">
+            </div>
+            <div>
+                <ul class="d-flex">
+                    <li>
+                        <a href="">Menu</a>
+                    </li>
+                    <li>
+                        <a href="">Products</a>
+                    </li>
+                    <li>
+                        <a href="">Workshop</a>
+                    </li>
+                    <li>
+                        <a href="">About</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul class="svgimgul d-flex">
+                    <li><a href=""><img class="svgimg" src="img/shopping-cart-solid.svg" alt=""></a></li>
+                    <li><a href=""><img class="svgimg" src="img/bars-solid.svg" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- ------------------------------------------------------ -->
+    <nav>
+        <div class="container">
+            <img src="img/headerbig.png" alt="">
+        </div>
+    </nav>
+    <!-- ------------------------------------------------------ -->
+    <article>
+        <div class="container">
+
+            <div>
+                <ul class="d-flex">
+                    <li>
+                        <h6 class="h21">精選商品</h6>
+                    </li>
+                    <li>
+                        <h6 class="h22">節慶花禮</h6>
+                    </li>
+                </ul>
+            </div>
+            <div class="arrow d-flex">
+                <p>Check out our best sellers.</p>
+                <ul class="d-flex">
+                    <li><a href=""><img class="svgimg2" src="img/arrow-circle-left-solid.svg" alt=""></a></li>
+                    <li><a href=""><img class="svgimg2" src="img/arrow-circle-right-solid.svg" alt=""></a></li>
+                </ul>
+            </div>
+            <!-- --------------------------------------- -->
+            <div class="artflower d-flex">
+
+                <div>
+                    <div class="flower">
+                        <img class="flowerimg" src="img/flower.png" alt="">
+                    </div>
+                    <ui>
+                        <li class="flowerli1">Simply Cafe Latte</li>
+                        <li>NT 2,450</li>
+                    </ui>
+                </div>
+                <div>
+                    <div class="flower">
+                        <img class="flowerimg" src="img/flower.png" alt="">
+                    </div>
+                    <ui>
+                        <li class="flowerli1">Simply Cafe Latte</li>
+                        <li>NT 2,450</li>
+                    </ui>
+                </div>
+                <div>
+                    <div class="flower">
+                        <img class="flowerimg" src="img/flower.png" alt="">
+                    </div>
+                    <ui>
+                        <li class="flowerli1">Simply Cafe Latte</li>
+                        <li>NT 2,450</li>
+                    </ui>
+                </div>
+                <div>
+                    <div class="flower">
+                        <img class="flowerimg" src="img/flower.png" alt="">
+                    </div>
+                    <ui>
+                        <li class="flowerli1">Simply Cafe Latte</li>
+                        <li>NT 2,450</li>
+                    </ui>
+                </div>
+
+            </div>
+        </div>
+    </article>
+    <!-- -------------------------------------------------- -->
+    <main>
+        <div class="container">
+            <div class="shop">
+                <h6 class="">Shop Now</h6>
+            </div>
+            <div class="divmainflower d-flex">
+                <div class="mainflower">
+                    <img class="mainflowerimg" src="img/flower.png" alt="">
+                </div>
+                <div>
+                    <div>
+                        <ul>
+                            <li class="banli">2020 夏日實驗 /[ban` Lan] </li>
+                            <li class="banli">Summer East Asia Style </li>
+                        </ul>
+                    </div>
+                    <div class="mainflower2div d-flex">
+                        <div>
+                            <div class="mainflower2">
+                                <img class="mainflower2img" src="img/flower.png" alt="">
+                            </div>
+                            <ul>
+                                <li class="Simplyflower">Simply Cafe Latte</li>
+                                <li>NT 2,450</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="mainflower2">
+                                <img class="mainflower2img" src="img/flower.png" alt="">
+                            </div>
+                            <ul>
+                                <li class="Simplyflower">Simply Cafe Latte</li>
+                                <li>NT 2,450</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- --------------------------------------- --->
+    <section>
+        <div class="container">
+            <div class="sneakers d-flex">
+                <div>
+
+                    <div><img src="img/flower.png" alt=""></div>
+                    <ul>
+                        <li class="banli">捧花主題課程｜《無垢之白》</li>
+                        <li class="banli2">/
+                            一針一線反覆編織終成圖，一浸一染堆疊漸進終成色，
+                            紅衣白裳，都交織著新嫁娘對未來的期盼和許諾。
+                            以東方嫁衣為主題，擷取中式濃烈的鮮明色彩與日式清雅的純潔意象，
+                            將對婚姻的殷殷期許，濃縮成一件嫁衣，一捧花束，獻給無與倫比的那一天。
+                            －</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li class="banli">捧花主題課程｜《霞帔之紅》</li>
+                        <li class="banli2">/
+                            一針一線反覆編織終成圖，一浸一染堆疊漸進終成色，
+                            紅衣白裳，都交織著新嫁娘對未來的期盼和許諾。
+                            以東方嫁衣為主題，擷取中式濃烈的鮮明色彩與日式清雅的純潔意象，將對婚姻的殷殷期許，
+                            濃縮成一件嫁衣，一捧花束，獻給無與倫比的那一天。
+                            －</li>
+                    </ul>
+                    <div><img src="img/flower.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+        <div class="timeless">
+            <p>We make timeless, responsibly-made<br>
+                that are designed to be great, and made to be worn.
+            </p>
+        </div>
+    </section>
+    <!-- -------------------------------------- -->
+    <aside>
+        <div class="container">
+            <div class="shop">
+                <h6 class="">Learn More</h6>
+            </div>
+            <div class="scroll d-flex">
+                <div>
+                    <div class="asideimg"><img src="img/flower.png" alt=""></div>
+                    <ul>
+                        <li>2020/02/05</li>
+                        <li class="Lin">設計師:Lin Wang</li>
+                        <li> 以強烈的堅持和熱情，投入花藝世界；獨到且大膽的配色眼光，巧妙地結合各種花葉間的不同質感
+                            自由遊走在自然清新和都會時髦的風格間，跳脫傳統花藝設計的框架，以獨樹一格的美學著稱。</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="asideimg"><img src="img/flower.png" alt=""></div>
+                    <ul>
+                        <li>2020/02/05</li>
+                        <li class="Lin">設計師:Lin Wang</li>
+                        <li> 以強烈的堅持和熱情，投入花藝世界；獨到且大膽的配色眼光，巧妙地結合各種花葉間的不同質感
+                            自由遊走在自然清新和都會時髦的風格間，跳脫傳統花藝設計的框架，以獨樹一格的美學著稱。</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="asideimg"><img src="img/flower.png" alt=""></div>
+                    <ul>
+                        <li>2020/02/05</li>
+                        <li class="Lin">設計師:Lin Wang</li>
+                        <li> 以強烈的堅持和熱情，投入花藝世界；獨到且大膽的配色眼光，巧妙地結合各種花葉間的不同質感
+                            自由遊走在自然清新和都會時髦的風格間，跳脫傳統花藝設計的框架，以獨樹一格的美學著稱。</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="asideimg"><img src="img/flower.png" alt=""></div>
+                    <ul>
+                        <li>2020/02/05</li>
+                        <li class="Lin">設計師:Lin Wang</li>
+                        <li> 以強烈的堅持和熱情，投入花藝世界；獨到且大膽的配色眼光，巧妙地結合各種花葉間的不同質感
+                            自由遊走在自然清新和都會時髦的風格間，跳脫傳統花藝設計的框架，以獨樹一格的美學著稱。</li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </aside>
+    <!-- ------------------------------------------ -->
+    <footer>
+        <div class="container">
+            <ul class="d-flex">
+                <li class="banLan">[ban` Lan] </li>
+                <li class="ban">
+                    <div class="ban1"></div>
+                </li>
+                <li><a href=""><img src="img/facebook-f-brands.svg" alt=""></a></li>
+                <li><a href=""><img src="img/instagram-brands.svg" alt=""></a></li>
+                <li><a href=""><img src="img/pinterest-p-brands.svg" alt=""></a></li>
+                <li><a href=""></a><img src="img/twitter-brands.svg" alt=""></li>
+                <li><a href=""><img src="img/behance-brands.svg" alt=""></a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

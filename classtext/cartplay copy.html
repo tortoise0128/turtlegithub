@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .wrapper {
+            max-width: 640px;
+            margin: 40px auto;
+        }
+
+        .box1 {
+            width: 90px;
+            height: 54px;
+            background: aliceblue;
+            border-radius: 30px;
+            margin-bottom: 15px;
+            border: 2px solid aquamarine;
+        }
+
+        .box2 {
+            width: 50px;
+            height: 50px;
+            background: aqua;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="box1">
+            <div class="box2"></div>
+        </div>
+
+        <!-- -------------------------------------------- -->
+
+        <button id="btn1" onclick="minCount()">-</button>
+        <input type="text" value="0" pattern="[0-9]" id="txt" name="">
+        <button id="btn2" onclick="maxCount()">+</button>
+
+    </div>
+    <div>
+        
+    </div>
+    <!-- container -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <script>
+        $(".box1").click(function () {
+            let left = parseInt($(".box2").css("left"))
+            console.log(left)
+            if (left === 40) { return false; }
+            $(".box2").css("left", "+=50")
+        })
+
+
+        // -------------------------------------
+        let count = 0;
+        function maxCount() {
+            document.getElementById('txt').value = count;
+
+            if (count >= 10) {
+                return false
+            } else {
+                count = count + 1;
+            }
+        }
+
+        function minCount() {
+            document.getElementById('txt').value = count;
+
+            if (count <= 0) {
+                return false
+            } else {
+                count = count - 1;
+            }
+        }
+        // ---------------------------------------------------
+        $("#txt").focus(function () {
+            $("#txt").css("background-color", "#FFFFCC");
+        });
+        $("#txt").blur(function () {
+            $("#txt").css("background-color", "#D6D6FF");
+        });
+        // ---------------------------------------------
+        const txt = $('#txt');
+        const txt_re = /\d$/;
+        if (!txt_re.test(txt.val())) {
+            // isPass = false;
+            console.log(txt)
+            txt.css('border-color', 'red');
+            txt.next().text('請填寫正確的 email 格式');
+        }
+
+
+
+
+        $("input:text").on("change", function (event) {
+            $("#txt").val(count);
+            const regex = /[0]/;
+            const txt =  $("#txt");
+            if (regex.test(txt.val(count))) {
+                return true;
+            } else {
+                alert("請勿超過10個")
+            }
+
+
+        })
+
+
+        $("input:text").on("change", function (event) {
+            $("#txt").val(count);
+            const regex = /[0-9]/;
+            const txt =  $("#txt");
+            if (regex.test(txt.val(count))) {
+                return true;
+            } else {
+                alert("請勿超過10個")
+            }
+
+
+        })
+
+
+        // $("input:text").on("change", function (event) {
+        //     $("#txt").val(count);
+        //     if (count >= 10) {
+        //         alert("請勿超過10個")
+        //     } else {
+        //         count = count + 1;
+        //     }
+        //     console.log(count);
+        //     console.log(keyup);
+        //     console.log(krydown);
+        //     console.log(keypress);
+
+
+        // })
+
+
+    </script>
+</body>
+
+</html>

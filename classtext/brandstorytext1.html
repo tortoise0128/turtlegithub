@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>brandstory</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        /* 用Alt看XD長寬 */
+        body {
+            box-sizing: border-box;
+        }
+
+        .brand {
+            height: 100vh;
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        /* ---------------------------- */
+        .ban {
+            margin-bottom: 40px;
+            position: absolute;
+            height: 300px;
+            width: 500px;
+            top: 15%;
+            left: 70px;
+        }
+
+        .ban1 {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .ban2 {
+            font-size: 24px;
+            line-height: 38px;
+        }
+
+        /* ------------------------------- */
+        .tit {
+            z-index: 99;
+            position: absolute;
+            height: 200px;
+            width: 200px;
+            top: 40%;
+            right: 5%;
+        }
+
+        .pa {
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 31px;
+            color: black;
+            cursor: pointer;
+        }
+
+        .pa.active {
+            text-decoration: none;
+            color: orange;
+        }
+
+        /* ------------------------------------ */
+        .d-flex {
+            display: flex;
+        }
+
+        .slider {
+            height: 100vh;
+            position: absolute;
+            top: 0vh;
+            transition: all 0.3s ease-in-out 0.3s
+        }
+
+        /* --------------------------------- */
+        .title {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .title1 {
+            font-size: 16px;
+            line-height: 36px;
+        }
+
+        .hoho {
+            margin-top: 38px;
+        }
+
+        /* --------------------------------------- */
+        .slider1,
+        .slider2,
+        .slider3 {
+            height: 100vh;
+        }
+
+        .slider1 {
+
+            position: relative;
+            right: 430px;
+            top: 8%;
+
+        }
+
+        .slider1 .img {
+            position: absolute;
+            top: 15%;
+            left: 1000px;
+            /* 不要數字這麼大的left用right */
+            height: 800px;
+            width: 800px;
+        }
+
+        .slider1 .ha2 {
+            position: absolute;
+            left: 500px;
+            top: 400px;
+            height: 200px;
+            width: 400px;
+            flex: auto;
+        }
+
+        .mewimg {
+            align-items: flex-end;
+        }
+
+        .mew {
+            height: 264.5px;
+            width: 398px;
+            overflow: hidden;
+            margin-right: 32px;
+        }
+
+        .mewi {
+            height: 264.5px;
+            width: 398px;
+            object-fit: fill;
+        }
+
+        .dog {
+            height: 514px;
+            width: 434px;
+            overflow: hidden;
+        }
+
+        .dogi {
+            height: 514px;
+            width: 434px;
+            object-fit: fill;
+        }
+
+        /* ------------------------------ */
+        .slider2 {
+
+            position: relative;
+            right: 430px;
+            top: 8%;
+
+        }
+
+        .slider2 .img {
+            position: absolute;
+            top: 15%;
+            left: 1000px;
+            height: 800px;
+            width: 800px;
+        }
+
+        .slider2 .ha2 {
+            position: absolute;
+            left: 500px;
+            top: 400px;
+            height: 200px;
+            width: 400px;
+            flex: auto;
+        }
+
+        .mewimg1 {
+            position: relative;
+        }
+
+        .mew1 {
+            position: absolute;
+            top: 70%;
+            left: 5%;
+            height: 266px;
+            width: 398px;
+            overflow: hidden;
+        }
+
+        .mew1i {
+            height: 266px;
+            width: 398px;
+            object-fit: fill;
+        }
+
+        .dog1 {
+            margin-left: 300px;
+            height: 390.15px;
+            width: 520.53px;
+            overflow: hidden;
+        }
+
+        .dog1i {
+            height: 390.15px;
+            width: 520.53px;
+            object-fit: fill;
+        }
+
+        /* ---------------------------- */
+        .slider3 {
+
+            position: relative;
+            right: 430px;
+            top: 8%;
+
+        }
+
+        .slider3 .img {
+            position: absolute;
+            top: 15%;
+            left: 1000px;
+            height: 800px;
+            width: 800px;
+        }
+
+        .slider3 .ha2 {
+            position: absolute;
+            left: 500px;
+            top: 400px;
+            height: 200px;
+            width: 400px;
+            flex: auto;
+        }
+
+        .mewimg2 {
+            position: relative;
+        }
+
+        .mew2 {
+            z-index: 10;
+            height: 298.5px;
+            width: 466px;
+            overflow: hidden;
+
+        }
+
+        .mew2i {
+            height: 298.5px;
+            width: 466px;
+            object-fit: fill;
+
+        }
+
+        .dog2 {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            height: 250.5px;
+            width: 374px;
+            overflow: hidden;
+
+        }
+
+        .dog2i {
+            height: 250.5px;
+            width: 374px;
+            object-fit: fill;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="brand">
+        <div class="ban">
+            <p class="ban1">斑斕<i>[ban` Lan]</i> ____門市資訊
+            </p>
+            <p class="ban2">門市地址/<br>
+                台北市大安區敦化南路一段187巷40號<br>
+                營業時間/<br>
+                14:00~22:30<br>
+                連絡電話/<br>
+                (02)2254-6783
+            </p>
+        </div>
+        <!-- ----------------------- -->
+        <div class="tit">
+            <p id="p1" class="pa active">品牌故事</p>
+            <p id="p2" class="pa">課程介紹 </p>
+            <p id="p3" class="pa">婚宴設計 </p>
+        </div>
+        <!--  -->
+        <div class="slider">
+            <div class="slider1 ">
+                <div class="ha2">
+                    <p class="title">品牌故事</p>
+                    <hr class="hoho">
+                    <p class="title1">由六位愛花的聞腋青年們於西元1990年所成立的品牌。<br>當初在大學的時候六位聞腋青年分別都是讀不同的科<br>系，就因為一個共同點「愛花」</p>
+                </div>
+                <div class="img">
+                    <div class="d-flex mewimg">
+                        <div class="mew"><img class="mewi"
+                                src="https://cdn.pixabay.com/photo/2015/09/22/14/34/african-lion-951778_960_720.jpg"
+                                alt="">
+                        </div>
+                        <div class="dog"><img class="dogi"
+                                src="https://cdn.pixabay.com/photo/2017/09/25/13/12/dog-2785074_960_720.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider2 ">
+                <div class="ha2">
+                    <p class="title">課程介紹</p>
+                    <hr class="hoho">
+                    <p class="title1">由六位愛花的聞腋青年們於西元1990年所成立的品牌。<br>當初在大學的時候六位聞腋青年分別都是讀不同的科<br>系，就因為一個共同點「愛花」</p>
+                </div>
+                <div class="img">
+                    <div class="d-flex mewimg1">
+                        <div class="mew1"><img class="mew1i"
+                                src="https://cdn.pixabay.com/photo/2020/07/17/16/58/cat-5414737_960_720.jpg" alt="">
+                        </div>
+                        <div class="dog1"><img class="dog1i"
+                                src="https://cdn.pixabay.com/photo/2016/01/19/17/41/friends-1149841_960_720.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider3 ">
+                <div class="ha2">
+                    <p class="title">婚宴設計</p>
+                    <hr class="hoho">
+                    <p class="title1">由六位愛花的聞腋青年們於西元1990年所成立的品牌。<br>當初在大學的時候六位聞腋青年分別都是讀不同的科<br>系，就因為一個共同點「愛花」</p>
+                </div>
+                <div class="img">
+                    <div class="d-flex mewimg2">
+                        <div class="mew2"><img class="mew2i"
+                                src="https://cdn.pixabay.com/photo/2020/07/22/12/08/cats-eyes-5428855_960_720.jpg"
+                                alt="">
+                        </div>
+                        <div class="dog2"><img class="dog2i"
+                                src="https://cdn.pixabay.com/photo/2013/10/02/23/03/dog-190056_960_720.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- 以為是沒裝jq -->
+    <!-- <script src="../jquery-3.5.1.js"></script> -->
+    <script>
+        var pIndex = 0;
+        // 初始值
+        $(document).ready(function () {
+            $("#p1").click(function () {
+                $(".pa").eq(0).addClass("active").siblings().removeClass("active")
+                // ---------------------------
+                $(".slider").css("top", "0vh")//.css("transition", "all 0.3s ease-in-out 0.3s")
+                pIndex = 0;
+            })
+
+            $("#p2").click(function () {
+                $(".pa").eq(1).addClass("active").siblings().removeClass("active")
+                // --------------------------
+                $(".slider").css("top", "-100vh")//.css("transition", "all 0.3s ease-in-out 0.3s")
+                pIndex = 1;
+            })
+            $("#p3").click(function () {
+                $(".pa").eq(2).addClass("active").siblings().removeClass("active")
+                // ---------------------------
+                $(".slider").css("top", "-200vh")//.css("transition", "all 0.3s ease-in-out 0.3s")
+                pIndex = 2;
+            })
+
+        })
+        // -------------JS和JQ可以混用---------------------
+        // ------------往上滾是-100往下滾是+100
+       
+        window.addEventListener('wheel', function(event){
+            if(event.deltaY > 0){
+                switch(pIndex){
+                    // 呼叫初始值
+                    case 0:
+                        $("#p2").click();
+                        break;
+                    case 1:
+                        $("#p3").click();
+                        break;
+                    case 2:
+                        break;
+                }
+            } else {
+                switch(pIndex){
+                    case 0:
+                        break;
+                    case 1:
+                        $("#p1").click();
+                        break;
+                    case 2:
+                        $("#p2").click();
+                        break;
+                }
+
+            }
+            console.log(event);
+        })
+
+    </script>
+</body>
+
+</html>

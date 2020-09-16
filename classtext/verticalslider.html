@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .left {
+            float: left;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #slider {
+            box-sizing: border-box;
+            min-width: 768px;
+            max-width: 1920px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            /* 圖片的 */
+            overflow: hidden;
+            -webkit-transition: ease-in-out .3s;
+            transition: ease-in-out .3s;
+        }
+
+        #slider * {
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 300;
+        }
+
+        #slide {
+            width: 100%;
+            height: 400px;
+            -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+        }
+
+        #slide ul {
+            -webkit-transition: ease-in-out .3s;
+            transition: ease-in-out .3s;
+        }
+
+        #slide ul li {
+            position: relative;
+            /*  */
+            -webkit-transition: ease-in-out .3s;
+            transition: ease-in-out .3s;
+        }
+
+        #slide ul li .img {
+            width: 100%;
+            height: 400px;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            display: block;
+            background-size: cover;
+            padding-left: 100%;
+            pointer-events: none;
+        }
+
+        #slide ul li a:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 33.35%;
+            height: 400px;
+        }
+
+        #thumbnail {
+            width: 33.35%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+        }
+
+        #thumbnail .thumbnail-list {
+            box-shadow: inset 0px 0px 50px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        #thumbnail .thumbnail-list li {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            cursor: pointer;
+            padding: 42px 15px 0 36px;
+            line-height: 1.3;
+            height: 133.5px;
+            position: relative;
+            /* 文字的 */
+            z-index: 1;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+            border-left: 1px solid rgba(0, 0, 0, 0.5);
+        }
+
+        #thumbnail .thumbnail-list li:last-child {
+            border-bottom: none;
+        }
+
+        #thumbnail .thumbnail-list li.marker {
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            width: 100%;
+            -webkit-transition: ease-in-out .3s;
+            transition: ease-in-out .3s;
+            z-index: 0;
+            /* 這來幹嘛的??? */
+        }
+
+        #thumbnail .thumbnail-list li.active span {
+            font-size: 24px;
+            line-height: 1;
+        }
+
+        #thumbnail .thumbnail-list li p {
+            color: rgba(255, 255, 255, 0.5);
+            margin: 0;
+            font-size: 14px;
+        }
+
+        #thumbnail .thumbnail-list li span {
+            font-size: 16px;
+            letter-spacing: -.1px;
+            -webkit-transition: ease-in-out .3s;
+            transition: ease-in-out .3s;
+        }
+
+        .blur-img {
+            width: 300%;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: block;
+            background-position: 100% 0;
+            background-size: cover;
+            -webkit-filter: blur(10px);
+            filter: blur(10px);
+        }
+
+        .blur-content {
+            height: 400px;
+            overflow: hidden;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 33.3%;
+        }
+    </style>
+</head>
+
+<body>
+    <article id="slider">
+        <div id="slide" class="slide left">
+            <ul>
+                <li class="active">
+                    <div class="img"
+                        style="background-image:url(http://www.riverstone-beteiligung.com/wordpress/wp-content/uploads/2014/02/philosophie-1280x400.jpg)">
+                    </div>
+                    <div class="blur-content">
+                        <div class="blur-img"></div>
+                    </div>
+                </li>
+                <li class="">
+                    <div class="img"
+                        style="background-image:url(http://www.home.corepassion.com/wp-content/uploads/2016/01/fusion-for-the-generational-gap-1280x400.png)">
+                    </div>
+                    <div class="blur-content">
+                        <div class="blur-img"></div>
+                    </div>
+                </li>
+                <li class="">
+                    <div class="img"
+                        style="background-image:url(http://www.docurated.com/wp-content/uploads/2013/10/Dante_demo_image_banner-1280x400.jpg)">
+                    </div>
+                    <div class="blur-content">
+                        <div class="blur-img"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="thumbnail" class="thumbnail left">
+            <ul class="thumbnail-list">
+                <li class="active">
+                    <p>10 September 2016</p>
+                    <span>Slider title #1</span>
+                </li>
+                <li class="">
+                    <p>20 September 2016</p>
+                    <span>Slider title #2</span>
+                </li>
+                <li class="">
+                    <p>30 September 2016</p>
+                    <span>Slider title #3</span>
+                </li>
+                <li class="marker"></li>
+                <!-- /這來幹嘛的???  -->
+            </ul>
+        </div>
+    </article>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        $.noConflict();
+        jQuery('#thumbnail li').click(function () {
+            jQuery(this).addClass('active').siblings().removeClass('active');
+            var slide = jQuery('#slide li'),
+                slideTop = 0,
+                slideBlock = jQuery('#slide ul'),
+                thum = jQuery('#thumbnail .thumbnail-list li'),
+                thumTop = jQuery('#thumbnail .thumbnail-list  .active').position().top - jQuery('#thumbnail .thumbnail-list').position().top + 'px';
+
+            for (var i = 0; i < thum.length; i++) {
+                if (jQuery(thum[i]).hasClass('active')) {
+                    jQuery(jQuery(slide)[i]).addClass('active').siblings().removeClass('active');
+                }
+            }
+
+            for (var i = 0; i < slide.length; i++) {
+                jQuery(jQuery('#slide li .blur-img')[i]).attr('style', jQuery(jQuery('#slide li .img')[i]).attr('style'));
+                if (jQuery(jQuery(slide)[i]).hasClass('active')) {
+                    slideTop += -(400 * i);
+                    jQuery(slideBlock).css('transform', 'translateY(' + slideTop + 'px)');
+                }
+            }
+
+            jQuery('#thumbnail .marker').css('top', (thumTop));
+        });
+        jQuery(jQuery('#thumbnail li')[0]).trigger('click');
+    </script>
+</body>
+
+</html>

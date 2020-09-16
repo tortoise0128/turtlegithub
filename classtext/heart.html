@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .toggle1 {
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        .heart {
+            /* margin: 0 auto; */
+            margin-top: 20px;
+            /* text-align: center; */
+            /* list-style: none; */
+        }
+
+        .whiteheart {
+            /* position: relative; */
+            display: block;
+            height: 26px;
+            width: 26px;
+            cursor: pointer;
+        }
+
+        .blackheart {
+            /* position: absolute; */
+            /* top: 0; */
+
+            display: none;
+            height: 26px;
+            width: 26px;
+            transition: .5s;
+        }
+        .blackheart:hover{
+            transform: translate(10px);
+        }
+
+        .blackheart.active {
+            display: block;
+            cursor: pointer;
+        }
+
+        .whiteheart.active {
+            display: none;
+        }
+
+        /* +--------------- */
+
+        button {
+            margin-top: 20px;
+        }
+
+        .main {
+            font-size: 120%;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="toggle1">
+        <div class="heart">
+
+            <div class="whiteheart">
+                <img src="https://img.icons8.com/metro/26/000000/like.png" />
+            </div>
+            <div class="blackheart">
+                <img src="https://img.icons8.com/ios-filled/26/000000/like.png" />
+            </div>
+
+        </div>
+        
+        <button>Toggle class "main" for p elements</button>
+
+        <p>This is a paragraph.</p>
+        <p>This is another paragraph.</p>
+        <p><b>Note:</b> Click the button more than once to see the toggle effect.</p>
+        <a href="https://www.w3schools.com/jquery/html_toggleclass.asp">w3schools</a>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $(".heart").click(function () {
+                $(".whiteheart").toggleClass("active")
+                $(".blackheart").toggleClass("active")
+            });
+        });
+        // ------------------------
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("p").toggleClass("main");
+            });
+        });
+    </script>
+</body>
+
+</html>

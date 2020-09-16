@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="../jquery-custom-scrollbar-0.5.5/jquery.custom-scrollbar.css" />
+    <style>
+        /*Vertical scrollbar - set width and height of a div you want to add a scrollbar to*/
+        #vertical-scrollbar-demo {
+            height: 100px;
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JQuery Custom Scrollbar - basic usage</h1>
+
+
+    <h2>Vertical scrollbar</h2>
+
+    <!-- Add a skin class to the scrolled div: gray-skin in this case -->
+    <div id="vertical-scrollbar-demo" class="modern-skin demo">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Proin nibh augue, suscipit a, scelerisque sed,
+        lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque
+        semper justo at risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed
+        posuere libero dui id orci. Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus
+        metus leo non est. Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque.
+        Phasellus ornare, ante vitae consectetuer consequat, purus sapien ultricies dolor, et mollis pede metus eget
+        nisi. Praesent sodales velit quis augue. Cras suscipit, urna at aliquam rhoncus, urna quam viverra nisi, in
+        interdum massa nibh nec erat.
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="../jquery-custom-scrollbar-0.5.5/jquery.custom-scrollbar.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".demo").customScrollbar();
+            $("#vertical-horizontal-scrollbar-demo").customScrollbar({ fixedThumbHeight: 50, fixedThumbWidth: 60,
+         });
+        });
+    </script>
+</body>
+
+</html>

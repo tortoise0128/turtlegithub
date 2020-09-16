@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .quantity {
+            padding-right: 54px;
+            padding-left: 47px;
+        }
+
+        .input-number {
+            font-size: 20px;
+            width: 50px;
+            text-align: center;
+            outline: none;
+            border: transparent;
+            line-height: 150px;
+        }
+
+        .input-number,
+        .input-number-decrement,
+        .input-number-increment {
+            height: 40px;
+            user-select: none;
+        }
+
+        .input-number-decrement,
+        .input-number-increment {
+            display: inline-block;
+            font-size: 18px;
+            width: 10px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .input-number-decrement:active,
+        .input-number-increment:active {
+            color: #f2b46d;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="quantity npd-form-counter">
+        <span class="input-number-decrement npd-form-counter-btn" data-type="reduce"> - </span>
+        <input class="input-number npd-form-counter-quantity" type="text" value="1" name="npd-activity-Quantity">
+        <span class="input-number-increment npd-form-counter-btn" data-type="plus"> + </span>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        $(".npd-form-counter-btn").on("click", function () {
+            let row = $(this).closest(".npd-form-counter");
+            let qty = parseInt(row.find(".npd-form-counter-quantity").val());
+            //   console.log(qty)
+            if ($(this).data("type") == "plus") {
+                qty++
+                if (qty > 10) qty = 10;
+            } else {
+                qty--;
+                if (qty < 1) qty = 1;
+            }
+            row.find(".npd-form-counter-quantity").val(qty)
+            // let price=parseInt(row.find(".npd-form-price").text());
+            // let subtotal=qty*price;
+            // console.log(subtotal);
+
+            let total = 0;
+            $(".npd-form-group").each(function () {
+
+                let price = $(this).find(".npd-form-price").text();
+                let amt = $(this).find(".npd-form-counter-quantity").text();
+                let subtotal = amt * price;
+                total += subtotal;
+                $(".npd-form-subprice").text(total)
+            })
+
+
+        });
+    </script>
+</body>
+
+</html>

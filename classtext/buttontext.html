@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            height: 200vh;
+            /* 高度隨意 */
+            /* 會因為window下方有東西(下載檔暫存)找不到底部 */
+        }
+
+        .fa-chevron-circle-left {
+            color: rgba(255, 255, 255, 0.808);
+            /* margin-right: 57px; */
+            margin-top: 7px;
+        }
+
+        .fa-chevron-circle-right {
+            color: rgba(255, 255, 255, 0.808);
+            /* margin-left: 57px; */
+            margin-top: 7px;
+        }
+
+        .bttn {
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+            height: 51px;
+            width: 188px;
+            border: none;
+            outline: none !important;
+            /* 不想要邊框要加 !important*/
+            background: #B9B4B4;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .bttn.active {
+            background: orange;
+        }
+
+        .bttn1 {
+            position: fixed;
+            width: 375px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="bttn1 d-flex">
+            <button class="bttn bttn3 d-flex" disabled><i class="fas fa-chevron-circle-left"></i>回首頁</button>
+            <button class="bttn d-flex" disabled>回會員<i class="fas fa-chevron-circle-right"></i></button>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        $(".bttn").click(function () {
+            $(this).addClass("active").siblings().removeClass("active");
+        })
+
+        // ---------------------------------
+        // $(window).scroll(function () {
+        //     // console.log("scroll")
+        //     let scrollTop = $(this).scrollTop()
+        //     console.log(scrollTop)
+        //     if (scrollTop <= 500 && scrollTop >= 100) {
+        //         $(".bttn3").addClass("active")
+        //     } else {
+        //         $(".bttn3").removeClass("active")
+        //     }
+        // })
+
+        // ---------------------------------------------
+
+        $(window).scroll(function () {
+            last = $("body").height() - $(window).height()
+            if ($(window).scrollTop() >= last) {
+                $(".bttn3").addClass("active");
+                $(".bttn").attr("disabled", false);
+            } else {
+                $(".bttn3").removeClass("active");
+                $(".bttn").attr("disabled", true);
+            }
+        });
+    </script>
+
+</body>
+
+</html>

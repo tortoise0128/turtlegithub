@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            height: 130vh;
+        }
+
+        .cat {
+            position: fixed;
+            margin-top: 15px;
+        }
+
+        /* ------------------------------------------ */
+        .cat3 {
+            /* position: fixed; */
+        }
+
+        .tit .p {
+            position: relative;
+            text-align: center;
+            left: 30%;
+        }
+
+        .p.active {
+            font-size: large;
+            font-weight: bold;
+            color: brown;
+        }
+
+        /* ---------------------------------------------------- */
+        .cat2 {
+            /* position: fixed; */
+        }
+
+        .picture {
+            position: relative;
+            left: 150%;
+        }
+
+        .img {
+            position: absolute;
+            /* opacity: 0; */
+            transform: translateY(-600px);
+            transition: .5s;
+            width: 600px;
+            height: 600px;
+            overflow: hidden;
+
+        }
+
+        .img img {
+            width: 200px;
+            height: 200px;
+            object-fit: fill;
+        }
+
+        .img.active {
+            /* opacity: 1; */
+            transform: translateY(0);
+        }
+
+        .mew {
+
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .dog {
+            position: absolute;
+            top: 30%;
+            left: 30%;
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .mew1 {
+            position: absolute;
+            left: 30%;
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .dog1 {
+            position: absolute;
+            top: 30%;
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+
+        }
+
+        .mew2 {
+            position: absolute;
+            /* top: -50%; */
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .dog2 {
+            position: absolute;
+            left: 10%;
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        /* ------------------------------------------------ */
+        .cat1 {
+            /* position: fixed; */
+        }
+
+        .h2p {
+            position: relative;
+            left: 800%;
+        }
+
+        .h2 {
+
+            position: absolute;
+            /* opacity: 0; */
+            transform: translateY(-600px);
+            transition: .5s;
+
+        }
+
+        .h2.active {
+            /* opacity: 1; */
+            transform: translateY(0);
+        }
+
+        .h2 p {
+            font-size: 25px;
+        }
+
+        /* ---------------------------------------------------- */
+        .cat4 {
+            /* position: fixed; */
+        }
+
+        .pun1 {
+            position: relative;
+            top: 150%;
+            left: 1000%;
+        }
+
+        .pun {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .pun img {
+            width: 200px;
+            height: 200px;
+            object-fit: fill;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cat">
+        <div class="cat1">
+            <div class="h2p">
+                <div class="h2 active">
+                    <h2>品牌故事</h2>
+                    <hr>
+                    <p>怎麼設定版面大小長寬?</p>
+                </div>
+                <div class="h2">
+                    <h2>課程介紹</h2>
+                    <hr>
+                    <p>object-fit怎麼用?</p>
+                </div>
+                <div class="h2">
+                    <h2>婚宴設計</h2>
+                    <hr>
+                    <p>position怎麼用?</p>
+                </div>
+            </div>
+        </div>
+        <!-- ---------------------------------------------- -->
+        <div class="cat2">
+            <div class="picture">
+                <div class="img active">
+                    <div class="mew"><img
+                            src="https://cdn.pixabay.com/photo/2015/09/22/14/34/african-lion-951778_960_720.jpg" alt="">
+                    </div>
+                    <div class="dog"><img src="https://cdn.pixabay.com/photo/2017/09/25/13/12/dog-2785074_960_720.jpg"
+                            alt=""></div>
+                </div>
+                <div class="img">
+                    <div class="mew1"><img src="https://cdn.pixabay.com/photo/2020/07/17/16/58/cat-5414737_960_720.jpg"
+                            alt=""></div>
+                    <div class="dog1"><img
+                            src="https://cdn.pixabay.com/photo/2016/01/19/17/41/friends-1149841_960_720.jpg" alt="">
+                    </div>
+                </div>
+                <div class="img">
+                    <div class="mew3"><img
+                            src="https://cdn.pixabay.com/photo/2020/07/22/12/08/cats-eyes-5428855_960_720.jpg" alt="">
+                    </div>
+                    <div class="dog2"><img src="https://cdn.pixabay.com/photo/2013/10/02/23/03/dog-190056_960_720.jpg"
+                            alt=""></div>
+                </div>
+            </div>
+        </div>
+        <!-- ------------------------------------------------------- -->
+        <div class="cat3">
+            <div class="tit">
+                <p class="p active">品牌故事</p>
+                <p class="p">課程介紹</p>
+                <p class="p">婚宴設計</p>
+            </div>
+        </div>
+        <!-- ------------------------------------------------------- -->
+        <div class="cat4">
+            <div class="pun1">
+                <div class="pun"><img src="https://cdn.pixabay.com/photo/2020/07/17/15/29/penguins-5414467_960_720.jpg"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        $(window).scroll(function () {
+            // console.log("scroll")
+            let scrollTop = $(this).scrollTop()
+            console.log(scrollTop)
+            if (scrollTop < 100 && scrollTop >= 0) {
+                $(".p").eq(0).addClass("active")
+                $(".img").eq(0).addClass("active")
+                $(".h2").eq(0).addClass("active")
+            }
+            else {
+                $(".p").eq(0).removeClass("active")
+                $(".img").eq(0).removeClass("active")
+                $(".h2").eq(0).removeClass("active")
+
+            }
+        })
+        $(window).scroll(function () {
+            // console.log("scroll")
+            let scrollTop = $(this).scrollTop()
+            console.log(scrollTop)
+            if (scrollTop < 200 && scrollTop >= 100) {
+                $(".p").eq(1).addClass("active")
+                $(".img").eq(1).addClass("active")
+                $(".h2").eq(1).addClass("active")
+            } else {
+                $(".p").eq(1).removeClass("active")
+                $(".img").eq(1).removeClass("active")
+                $(".h2").eq(1).removeClass("active")
+            }
+        })
+        $(window).scroll(function () {
+            // console.log("scroll")
+            let scrollTop = $(this).scrollTop()
+            console.log(scrollTop)
+            if (scrollTop <= 300 && scrollTop >= 200) {
+                $(".p").eq(2).addClass("active")
+                $(".img").eq(2).addClass("active")
+                $(".h2").eq(2).addClass("active")
+            } else {
+                $(".p").eq(2).removeClass("active")
+                $(".img").eq(2).removeClass("active")
+                $(".h2").eq(2).removeClass("active")
+            }
+        })
+    </script>
+</body>
+
+</html>

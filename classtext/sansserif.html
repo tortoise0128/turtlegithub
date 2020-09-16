@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        /* * {
+            margin: 0;
+            padding: 0;
+        } */
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            font: normal 14px/1.4 sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        /* header,
+        footer {
+            background: #369;
+            color: #fff;
+            padding: 10px;
+        } */
+
+        main {
+            align-items: stretch;
+            display: flex;
+            flex: auto;
+            flex-direction: row;
+        }
+
+        main>* {
+            flex: 1;
+        }
+
+        .pages {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .pages .pages1 {
+            align-items: center;
+            display: flex;
+            height: 100%;
+            flex-shrink: 0;
+            /* font-size: 60px; */
+            justify-content: center;
+            transition: transform 0.5s;
+        }
+
+        /* .pages div:nth-child(1) {
+            background: red;
+        }
+
+        .pages div:nth-child(2) {
+            background: green;
+        }
+
+        .pages div:nth-child(3) {
+            background: blue;
+        }
+
+        .pages div:nth-child(4) {
+            background: yellow;
+        }
+
+        .pages div:nth-child(5) {
+            background: pink;
+        } */
+
+        .pager {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .pager p {
+            background: #999;
+            /* border-radius: 30px; */
+            cursor: pointer;
+            height: 30px;
+            width: 100px;
+        }
+
+        .pager p.active {
+            background: #369;
+            cursor: default;
+        }
+
+        /* ------------------------------------- */
+        .d-flex {
+            display: flex;
+        }
+
+        /* ------------------------------ */
+        .mewimg {
+            align-items: flex-end;
+        }
+
+        .mew {
+            height: 264.5px;
+            width: 398px;
+            overflow: hidden;
+            margin-right: 32px;
+        }
+
+        .mewi {
+            height: 264.5px;
+            width: 398px;
+            object-fit: fill;
+        }
+
+        .dog {
+            height: 514px;
+            width: 434px;
+            overflow: hidden;
+        }
+
+        .dogi {
+            height: 514px;
+            width: 434px;
+            object-fit: fill;
+        }
+
+        /* --------------------------------------------- */
+        .mewimg1 {
+            position: relative;
+        }
+
+        .mew1 {
+            position: absolute;
+            top: 70%;
+            left: 5%;
+            height: 266px;
+            width: 398px;
+            overflow: hidden;
+        }
+
+        .mew1i {
+            height: 266px;
+            width: 398px;
+            object-fit: fill;
+        }
+
+        .dog1 {
+            margin-left: 300px;
+            height: 390.15px;
+            width: 520.53px;
+            overflow: hidden;
+        }
+
+        .dog1i {
+            height: 390.15px;
+            width: 520.53px;
+            object-fit: fill;
+        }
+
+        /* --------------------------------------- */
+        .mewimg2 {
+            position: relative;
+        }
+
+        .mew2 {
+            z-index: 99;
+            height: 298.5px;
+            width: 466px;
+            overflow: hidden;
+
+        }
+
+        .mew2i {
+            height: 298.5px;
+            width: 466px;
+            object-fit: fill;
+
+        }
+
+        .dog2 {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            height: 250.5px;
+            width: 374px;
+            overflow: hidden;
+
+        }
+
+        .dog2i {
+            height: 250.5px;
+            width: 374px;
+            object-fit: fill;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <main>
+            <div class="pages">
+                <div class="pages1 d-flex mewimg">
+                    <div class="mew"><img class="mewi"
+                            src="https://cdn.pixabay.com/photo/2015/09/22/14/34/african-lion-951778_960_720.jpg" alt="">
+                    </div>
+                    <div class="dog"><img class="dogi"
+                            src="https://cdn.pixabay.com/photo/2017/09/25/13/12/dog-2785074_960_720.jpg" alt="">
+                    </div>
+                </div>
+                <div class="pages1 d-flex mewimg1">
+                    <div class="mew1"><img class="mew1i"
+                            src="https://cdn.pixabay.com/photo/2020/07/17/16/58/cat-5414737_960_720.jpg" alt="">
+                    </div>
+                    <div class="dog1"><img class="dog1i"
+                            src="https://cdn.pixabay.com/photo/2016/01/19/17/41/friends-1149841_960_720.jpg" alt="">
+                    </div>
+                </div>
+                <div class="pages1 d-flex mewimg2">
+                    <div class="mew2"><img class="mew2i"
+                            src="https://cdn.pixabay.com/photo/2020/07/22/12/08/cats-eyes-5428855_960_720.jpg" alt="">
+                    </div>
+                    <div class="dog2"><img class="dog2i"
+                            src="https://cdn.pixabay.com/photo/2013/10/02/23/03/dog-190056_960_720.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class=" pager">
+                <p class="active">品牌故事</p>
+                <p>課程介紹</p>
+                <p>婚宴設計</p>
+            </div>
+        </main>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        const pages = document.querySelectorAll('.pages .pages1');
+        const pagers = document.querySelectorAll('.pager p');
+
+        pagers.forEach((pager, i) => {
+            pager.addEventListener('click', () => {
+                pages.forEach(page => {
+                    page.style.transform = `translateY(-${100 * i}%)`;
+                });
+
+                pagers.forEach((pager, j) => {
+                    if (i === j) {
+                        pager.classList.add('active');
+                    } else {
+                        pager.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
