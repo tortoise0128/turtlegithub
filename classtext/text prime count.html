@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text prime count</title>
+</head>
+
+<body>
+    <button onclick="startCount()" id="btn_start">開始累加</button>
+    <input type="text" id="txt" value="">
+    <button onclick="stopCount()" id="btn_end">結束累加</button>
+
+    <script>
+        //-----------Prime array
+        let flag = false;
+        let array = [];
+        for (let i = 2; i <= 100; i++) {
+            for (let j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    flag = true;
+                    // document.write("非質數" + i);
+                }
+
+            }
+            if (flag == false) {
+                console.log(i);
+                array.push(i)
+                // 複製進去
+                // console.log(array)
+                document.write("<hr\>");
+                document.write("<br\>");
+                document.write("質數" + i);
+
+            } else { flag = false }
+        }
+        array.push('The End')
+        //-------------------------------------------------
+        console.log(array)
+        var countNum = 0;
+
+        var t;
+        function count() {
+            document.getElementById('txt').value = array[countNum % array.length];
+            // array給value然後countNum就當array的key用
+            // 避免超過array.length用餘數將key從零開始
+            if (countNum < array.length-1) {
+                countNum = countNum + 1;
+                console.log('countNum: ' + countNum)
+            }else{}
+
+
+
+        }
+
+        function startCount() {
+            t = setInterval(function () {
+                count()
+            }, 500);
+
+            document.getElementById("btn_start").setAttribute('disabled', true);
+            document.getElementById("btn_end").removeAttribute('disabled');
+        }
+
+        function stopCount() {
+            clearInterval(t);
+            document.getElementById("btn_start").removeAttribute("disabled")
+            document.getElementById("btn_end").setAttribute("disabled", true)
+        }
+    </script>
+</body>
+
+</html>

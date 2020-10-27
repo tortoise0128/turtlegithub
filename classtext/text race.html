@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>total race</title>
+
+</head>
+
+<body>
+
+
+    <script>
+        let personA = {
+            name: 'Alex',
+            age: 18,
+            eng_score: 87,
+            math_score: 90
+
+        }
+        let personB = {
+            name: 'Bill',
+            age: 19,
+            eng_score: 95,
+            math_score: 98
+
+        }
+
+        let personC = {
+            name: 'Cook',
+            age: 17,
+            eng_score: 100,
+            math_score: 73
+
+        }
+        console.log(personA)
+
+        let arr = []
+        arr.push(personA)
+        arr.push(personB)
+        arr.push(personC)
+        console.log(arr)
+
+        for (let key in arr[0]) {
+            console.log('for: ' + key)
+            console.log('for value: ' + arr[0][key])
+            // arr[0][key]同等personA.[key]
+        }
+        for (let name of arr) {
+            console.log('for: ' + name)
+        }
+
+        let topenglsh = 0, topmath = 0, nameeng = 0, namemath = 0;
+        //^^^^^ score board
+
+        for (let i = 0; i < arr.length; i++) {
+            arr[i].name;
+            arr[i].eng_score;
+            arr[i].math_score;
+            console.log('for: ' + arr[i].name + ", " + arr[i].eng_score + ", " + arr[i].math_score)
+            if (arr[i].eng_score > topenglsh) {
+                nameeng = arr[i].name;
+                topenglsh = arr[i].eng_score;
+            } else { }
+            if (arr[i].math_score > topmath) {
+                namemath = arr[i].name;
+                topmath = arr[i].math_score;
+            } else { }
+        }
+        console.log('nameeng: ' + nameeng + ' engscore: ' + topenglsh)
+        document.write('英文成績最高的人: ' + nameeng + '-' + ' engscore: ' + topenglsh + '<br/>')
+        console.log('namemath: ' + namemath + ' mathscore: ' + topmath)
+        document.write('數學成績最高的人: ' + namemath + '-' + ' mathscore: ' + topmath + '<br/>')
+
+
+        //********** test func**************
+        function test(a, b) {
+            let x = a * b;
+            return x
+        }
+        console.log(test(3, 4))
+        //**********************************
+
+        // english
+        let total = 0;
+        for (let i = 0; i < arr.length; i++) {
+            console.log('i: ' + i)
+            total += arr[i].eng_score;
+            console.log('total: ' + total)
+        }
+        let eng_result = total / arr.length;
+        console.log('eng_result: ' + eng_result)
+        document.write('英文平均: ' + eng_result + '<br />')
+
+        // math
+        let total2 = 0;
+        for (let i = 0; i < arr.length; i++) {
+            console.log('i: ' + i)
+            total2 += arr[i].math_score;
+            console.log('total2: ' + total2)
+        }
+        let math_result = total2 / arr.length;
+        console.log('math_result: ' + math_result)
+        document.write('數學平均: ' + math_result)
+
+
+
+
+
+    </script>
+</body>
+
+</html>

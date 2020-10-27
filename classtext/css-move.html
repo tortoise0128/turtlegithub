@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS move</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <style>
+        .wrapper {
+            /* display: flex; */
+            /* justify-content: center; */
+            /* align-items: center; */
+            width: 800px;
+            height: 400px;
+            background: #eee;
+        }
+
+        .box {
+            width: 120px;
+            height: 120px;
+            background: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper position-relative mx-auto">
+        <div class="box position-absolute"></div>
+    </div>
+
+    <div class="py-3 text-center">
+        <div class="py-1">
+            <button class="btn btn-info" id="up">
+                <i class="fas fa-caret-up"></i>
+            </button>
+        </div>
+        <div>
+            <button class="btn btn-info mx-1" id="left">
+                <i class="fas fa-caret-left"></i>
+            </button>
+            <button class="btn btn-info mx-1" id="right">
+                <i class="fas fa-caret-right"></i>
+            </button>
+        </div>
+        <div class="py-1">
+            <button class="btn btn-info" id="down">
+                <i class="fas fa-caret-down"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script>
+        $("#up").click(function () {
+            console.log("up")
+            // $(".box").css("top", "-=10")
+            // console.log($(".box").css("top"))
+            let top = parseInt($(".box").css("top"))
+            console.log(top);
+
+            if (top === 0) { return false; }
+            $(".box").css("top", "-=10")
+            
+
+        })
+        $("#left").click(function () {
+            console.log("left")
+            // $(".box").css("left", "-=10")
+            let left=parseInt($(".box").css("left"))
+            console.log(left)
+
+            if (left > 0) {
+                $(".box").css("left", "-=10")
+            } else {
+
+            }
+
+
+        })
+        $("#right").click(function () {
+            console.log("right")
+            // $(".box").css("left", "+=10")
+            let left=parseInt($(".box").css("right"))
+            console.log(left)
+
+            if (left > 0) {
+                $(".box").css("left", "+=10")
+            } else {
+
+            }
+
+        })
+        $("#down").click(function () {
+            console.log("down")
+            // $(".box").css("top", "+=10")
+            let top=parseInt($(".box").css("top"))
+            console.log(top)
+
+            // if (top > 0) {
+            //     $(".box").css("top", "+=10")
+            // } else {
+
+            // }
+            if(top === 280) { return false; }
+            $(".box").css("top", "+=10")
+
+
+
+        })
+    </script>
+</body>
+
+</html>

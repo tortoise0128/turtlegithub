@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prime fnc</title>
+    <style>
+        .con {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con">
+        <input type="text" id="txt" placeholder="請輸入數字">
+        <!-- ShowStr(this.id) onchange="ShowStr()"-->
+        <button id="btn" onclick="ShowStr()">開始</button>
+        <!-- ************ -->
+        <ul id="output"></ul>
+    </div>
+
+    <script>
+        let arrayPrime = [];
+        // 本體是getPrime()
+        function getPrime(maxA) {
+            console.log(maxA)
+            let flag = false;
+            //let arrayPrime = [];
+            // 空array
+            for (let i = 2; i <= maxA; i++) {
+                for (let j = 2; j < i; j++) {
+                    if (i % j == 0) {
+                        flag = true;
+                    }
+
+                }
+                if (flag == false) {
+                    console.log(i);
+                    arrayPrime.push(i);
+                    // document.getElementById('output').innerHTML = ('<br\>');
+                    // document.getElementById('output').innerHTML = ('<br\>' + '質數: ' + i + '<br\>')
+                } else { flag = false }
+            }
+            console.log(arrayPrime)
+            // document.getElementById('output').innerHTML = ('<br\>');
+            // innerHTML可以指定複寫範圍範圍是output多次複寫只會留最新的操作
+            // write會複寫整個範圍
+            document.getElementById('output').innerHTML = ('<li>' + '質數: ' + arrayPrime)
+            // let newrow = `<li>質數:${arrayPrime}</li>`;
+            // document.getElementById('output').append(newrow);
+            return arrayPrime;
+
+
+
+
+        }
+        // console.log(getPrime(50));
+        function ShowStr() {
+            let max1 = document.getElementById('txt').value;
+            console.log("數字" + max1);
+
+            document.getElementById('output').value = getPrime(max1);
+            // alert(getPrime(max1));
+            //document.write(Str);
+            // let total=0;
+            // for (let k = 0; k <= arrayPrime.length; k++) {
+            //     console.log(arrayPrime[k]);
+            //     if (max1 == arrayPrime[k]) {
+            //         alert(`${max1}是質數`);
+            //     } else {
+            //         alert(`${max1}不是質數`);
+            //     }
+
+            // }
+            // console.log("質數"+arrayPrime);
+            // if (arrayPrime[max1]) {
+            //     alert(`${max1}是質數`);
+            // } else {
+            //     alert(`${max1}不是質數`);
+            // }
+
+            // if (max1 == getPrime(max1)) {
+            //     alert(`${max1}是質數`);
+            // } else {
+            //     alert(`${max1}不是質數`);
+            // }
+        }
+
+
+    </script>
+</body>
+
+</html>

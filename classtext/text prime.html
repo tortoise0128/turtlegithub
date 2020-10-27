@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prime 2357</title>
+    <style>
+        div {
+            color: lavender;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        let flag = false;
+        let array = [];
+        for (let i = 2; i <= 100; i++) {
+            for (let j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    flag = true;
+                    // document.write("非質數" + i);
+                }
+
+            }
+            if (flag == false) {
+                console.log(i);
+                array.push(i)
+                // 複製進去
+                // console.log(array)
+
+                console.log("質數" + i);
+
+            } else { flag = false }
+        }
+
+        console.log(array)
+        let idRandom = Math.floor(Math.random() * array.length);
+        document.write(`今天中餐，我選擇- ${array[idRandom]}-質數套餐`);
+
+        var div = document.createElement('div')
+        div.setAttribute('id', 'box')
+
+        var txt = document.createTextNode(`今天中餐，我選擇- ${array[idRandom]}-質數套餐`)
+        div.appendChild(txt);
+        // <button>click me</button>
+        document.body.appendChild(div)
+
+    </script>
+</body>
+
+</html>
