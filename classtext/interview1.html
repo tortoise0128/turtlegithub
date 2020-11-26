@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>面試考題1</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            background: whitesmoke;
+        }
+
+        .Introduce {
+            background: rgb(240, 237, 237);
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header-ul {
+            width: 35%;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* -------------------------------------------- */
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            background: white;
+        }
+
+        strong {
+            margin: 10% 0 10% 0;
+            /* 不要直接在元素上下css */
+        }
+
+        /* 第一題 */
+        .box1 {
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            border: 1px solid #000;
+            background: #ccc;
+        }
+
+        .box1-1 {
+            box-sizing: content-box;
+        }
+
+        .box1-2 {
+            box-sizing: border-box;
+        }
+
+        /* -------------------------------- */
+        /* 第二題 */
+        .box2 {
+            border: 1px solid #000;
+            max-width: 600px;
+            /* height: 302px; */
+
+        }
+
+        .clearfix {
+            zoom: 1;
+            /* bootstrap內建功能 */
+        }
+
+        .img2 {
+            float: right;
+            width: 300px;
+            height: 300px;
+            background: #ccc;
+        }
+
+        /* ------------------------------------- */
+        /* 第三題 */
+        .item-list {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid red;
+        }
+
+        .item {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            font-weight: bold;
+            font-size: xx-large;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 768px) {
+
+            /* iPad */
+            .item-list {
+                width: 250px;
+                height: 250px;
+
+                flex-wrap: wrap-reverse;
+                flex-direction: row-reverse;
+            }
+        }
+
+        @media screen and (max-width: 360px) {
+
+            /* 手機 */
+            .item-list {
+                width: 100px;
+                flex-wrap: nowrap;
+                flex-direction: column;
+            }
+
+            .item-1 {
+                order: 1;
+            }
+
+            .item-2 {
+                order: 3;
+            }
+
+            .item-3 {
+                order: 4;
+            }
+
+            .item-4 {
+                order: 2;
+            }
+        }
+
+        /* -------------------------------- */
+        /* 第四題 */
+        * {
+            box-sizing: border-box;
+        }
+
+        .box4 {
+            position: relative;
+            padding: 50px;
+            border: 1px solid #333;
+            width: 300px;
+            height: 300px;
+        }
+
+        .box4-1 {
+            border: 1px solid #ccc;
+            width: 200px;
+            height: 200px;
+        }
+
+        .box4-2 {
+            position: absolute;
+            top: 0;
+            left: 50px;
+            right: 50px;
+            border: 1px solid #f00;
+        }
+
+        /* ------------------------------------- */
+        /* 第五題 */
+        .box5 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ccc;
+        }
+
+        .box5-1 {
+            z-index: 10;
+            background-color: #f00;
+        }
+
+        .box5-2 {
+            z-index: 50;
+            background-color: #ff0;
+            margin-left: 50px;
+            margin-top: 50px;
+        }
+
+        .box5-3 {
+            z-index: 20;
+            background-color: #f0f;
+            margin-top: -100px;
+            margin-left: 100px;
+        }
+    </style>
+</head>
+<header class="d-flex Introduce pt-3">
+    <p style="font-weight: bold;">您好，只是面試紀錄，無正確答案，請多多指教</p>
+    <ul class="header-ul d-flex">
+        <!-- <li>
+            <a href="#q1">第一題</a>
+        </li> -->
+        <li>
+            <a href="#q2">第二題</a>
+        </li>
+        <li>
+            <a href="#q3">第三題</a>
+        </li>
+        <li>
+            <a href="#q4">第四題</a>
+        </li>
+        <li>
+            <a href="#q5">第五題</a>
+        </li>
+    </ul>
+</header>
+<main class="container">
+    <!-- -----------------第一題------------------------- -->
+    <div class="pb-2 pt-1">
+        <!-- 第一題 -->
+        <strong id="q1">+ 第一題 +</strong>
+        <p style="font-weight: bold;">box1的實際尺寸?</p>
+        <p>width: 222px;&nbsp;height: 222px;<br>理由: 200px外圈加padding的10px和border的1px。</p>
+        <p style="font-weight: bold;">box2的實際尺寸?</p>
+        <p>width:200px;&nbsp;height: 200px;<br>理由:
+            內距padding的10px和外圈border的1px會乖乖待在box2裡面，老師說border-box有時候會放在css裡*清除樣式預設值。</p>
+        <div class="box1 box1-1">box1</div>
+        <div class="box1 box1-2">box2</div>
+    </div>
+    <!-- --------------------第二題------------------------- -->
+    <div class="pb-2">
+        <!-- 第二題 -->
+        <strong id="q2">+ 第二題 +</strong>
+        <div class="box2 clearfix">
+            <!-- clearfix -->
+            <img class="img2" src="" alt="300x300圖片">
+            <p style="font-weight: bold;">如果本div母層裡只有img圖片，如何使圖片不要超出div母層?答案是C</p>
+            <!-- 請自行將文字註解掉 嘗試看看 -->
+            <ol type="A">
+                <li>母層height:300px;<br>錯誤理由: 這個可能要加上border的2px?</li>
+                <li>多按Enter<br>錯誤理由: 我覺得按F5可能比較有效。</li>
+                <li>使用clearfix<br>清除浮動，其實我沒用過這個，超好用阿這個。</li>
+                <li>使用clear:both;<br>錯誤理由: 不讓使用float的區塊重疊。</li>
+            </ol>
+        </div>
+    </div>
+    <!-- --------------------第三題--------------------------- -->
+    <div>
+        <!-- 第三題 -->
+        <strong id="q3">+ 第三題 +</strong>
+        <p style="font-weight: bold;">方塊水平1234貼齊左右等距，手機(360px)垂直一列1423，平板(768px)水平一列兩個方塊，第一列43第二列21。
+        </p>
+        <div class="item-list">
+            <div class="item item-1">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item item-4">4</div>
+        </div>
+        <p class="mt-2">(Ctrl + Shift + I檢查Ctrl + Shift + M切換)使用了:</p>
+        <ol>
+            <li>display: flex;</li>
+            <li>order: ;</li>
+            <li>justify-content: ;</li>
+            <li>align-items: ;</li>
+        </ol>
+
+    </div>
+    <!-- -------------------------第四題---------------------- -->
+    <div class="pb-2">
+        <!-- 第四題 -->
+        <strong id="q4">+ 第四題 +</strong>
+        <ol type="A">
+            <p style="font-weight: bold;">關於box2的敘述，何者正確?答案是C</p>
+            <li>box2在box1內 <br>錯誤理由: box是relative，box2是absolute，所以box2是跟著box跑，box2設定是top:0;沒有設定寬高就只會是字體高度不會在box1內。</li>
+            <li>box2跟box1的左邊border切齊 <br>錯誤理由: 如果box2要和box1左邊border切齊，可能要調整成left: 49px;
+                right: 49px;?</li>
+            <li>box2是在box內，正確</li>
+            <li>box2的寬度為200px <br>錯誤理由: 因為本體還是在box1內，box2的寬是198px。</li>
+        </ol>
+        <div class="box4">
+            box
+            <!-- box的字把box1擠下去了 -->
+            <div class="box4-1">
+                box1
+                <div class="box4-2">
+                    box2
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ---------------------第五題------------------- -->
+    <div class="pb-2">
+        <!-- 第五題 -->
+        <strong id="q5">+ 第五題 +</strong>
+        <p style="font-weight: bold;">哪一個box不會被蓋住?答案box3</p>
+        <p>但是我不懂，以為是沒加position，加了一樣沒照z-index數字大小排列，如果有機會，請教我這題，謝謝。</p>
+        <div class="box5 box5-1">
+            box1
+            <div class="box5 box5-2">
+                box2
+            </div>
+        </div>
+        <div class="box5 box5-3">
+            box3
+        </div>
+    </div>
+</main>
+<footer class="d-flex Introduce">
+    <ul class="header-ul d-flex">
+        <li>
+            <a href="#q1">第一題</a>
+        </li>
+        <li>
+            <a href="#q2">第二題</a>
+        </li>
+        <li>
+            <a href="#q3">第三題</a>
+        </li>
+        <li>
+            <a href="#q4">第四題</a>
+        </li>
+        <!-- <li>
+            <a href="#q5">第五題</a>
+        </li> -->
+    </ul>
+    <p class="ml-2" style="font-weight: bold;">"您好，感謝閱卷完畢"</p>
+</footer>
+
+<body>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>
