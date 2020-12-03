@@ -1,0 +1,826 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>report3</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="fontawesome-free-5.13.0-web/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&family=Noto+Sans+TC&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        header .container {
+            background: aliceblue;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom-style: groove;
+
+        }
+
+        header .heaul,
+        header .heali {
+            margin: 10px;
+            padding: 0;
+        }
+
+        header .heali {
+            list-style: none;
+        }
+
+        header ul li a:hover {
+            color: peru;
+
+        }
+
+        .headerimg {
+            border: 10px solid transparent;
+            border-image: url("image/sakura4.svg") 10 stretch;
+        }
+
+        .logo {
+            align-items: center;
+        }
+
+        .logo a {
+            margin: 10px;
+            font-size: larger;
+
+        }
+
+        .logo1 {
+            width: 80px;
+            height: 80px;
+            object-fit: fill;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+
+        .report3 {
+            background: lavenderblush;
+        }
+
+        /* ----------------------------------------- */
+
+        .hambuger {
+            display: none;
+        }
+
+        /* ------------------------------------------ */
+
+        main .container {
+            justify-content: center;
+
+            background: url("image/sakurabackgraund2.svg");
+        }
+
+        .phychoh1box {
+            border: 5px solid rgba(221, 160, 221, 0.445);
+            width: 100px;
+            height: 200px;
+            text-align: center;
+            border-right: none;
+            border-radius: 10px 0 0 10px;
+            background: rgba(255, 255, 255, 0.253);
+        }
+
+        .phychoh1 {
+            margin-top: 10px;
+            writing-mode: vertical-rl;
+            color: rgb(201, 119, 160);
+            font-weight: bold;
+        }
+
+        .phychoh2 {
+            display: none;
+        }
+
+
+        .label {
+            font-weight: bold;
+            font-size: larger;
+        }
+
+        .talk {
+            font-weight: bold;
+            font-size: larger;
+        }
+
+        #tbody p {
+            font-size: larger;
+            color: hotpink;
+            /* font-family: Arial, Helvetica, sans-serif; */
+            font-weight: bold;
+
+        }
+
+        i .far {
+            width: 10px;
+            height: 10px;
+            color: tomato;
+        }
+
+        .phycho {
+            border: 5px solid rgba(221, 160, 221, 0.445);
+            width: 500px;
+            height: 500px;
+            overflow: auto;
+            border-radius: 0 0 0 10px;
+            border-right: none;
+            background: rgba(255, 255, 255, 0.253);
+        }
+
+        .picturebox {
+            border: 5px solid rgba(221, 160, 221, 0.445);
+            width: 800px;
+            height: 600px;
+            object-fit: contain;
+
+            overflow: auto;
+            /* border-radius:0 10px 10px 10px; */
+        }
+
+        .picturebox img {
+            width: 900px;
+            height: 700px;
+        }
+
+        img.active{
+            filter: brightness(120%);
+        }
+
+        .pictureboximg.active{
+            filter: brightness(120%);
+        }
+
+        /* ------------------------------------------- */
+
+        aside .container {
+            justify-content: space-evenly;
+            background: lavenderblush;
+        }
+
+        @keyframes sakurarotate {
+            from {
+                transform: rotate(0);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+
+        }
+
+        .sakura {
+            width: 100px;
+            height: 100px;
+        }
+
+        .rotate:hover {
+            animation: sakurarotate 4s infinite linear;
+        }
+
+        /* ------------------------------------- */
+
+        .sakurachange {
+            height: 200px;
+            object-fit: contain;
+            overflow: hidden;
+            background: lightgoldenrodyellow;
+
+        }
+
+        @media screen and (max-width:1000px) and (min-width:800px) {
+            .sakurachange {
+                background: thistle;
+            }
+
+
+        }
+
+        @media screen and (max-width:800px) and (min-width:600px) {
+            .sakurachange {
+                background: lavender;
+            }
+
+
+        }
+
+        @media screen and (max-width:600px) {
+            .sakurachange {
+                background: skyblue;
+            }
+        }
+
+
+        /* ------------------------------------------------- */
+
+        footer {
+            background: aliceblue;
+        }
+
+        @media screen and (max-width: 768px) {
+
+            .phycho {
+                border: 5px solid rgba(221, 160, 221, 0.445);
+                width: 300px;
+                height: 500px;
+                overflow: auto;
+                border-right: none;
+                /* border-radius: 5px; */
+            }
+
+            .picturebox {
+                border: 5px solid rgba(221, 160, 221, 0.445);
+                width: 500px;
+                height: 500px;
+                object-fit: contain;
+
+                overflow: auto;
+                /* border-radius: 5px; */
+            }
+
+            .picturebox img {
+                width: 800px;
+                height: 600px;
+            }
+
+        }
+
+        @media screen and (max-width: 420px) {
+
+            .headhiden {
+                display: none;
+            }
+
+            .hambuger {
+                display: block;
+            }
+
+            .hambuger {
+                /* display: flex; */
+                /* justify-content: flex-end; */
+                position: relative;
+
+
+            }
+
+            .heaul1 .report3 {
+                background: rgba(221, 160, 221, 0.219);
+
+
+            }
+
+            .heaul1 {
+                background: aliceblue;
+                padding: 0;
+                margin: 0px;
+                display: flex;
+                /* flex-direction: column; */
+                position: absolute;
+                left: -250%;
+                border-radius: 0 0 5px 5px;
+                max-height: 0;
+                overflow: hidden;
+            }
+
+            .heali1:hover {
+                color: peru;
+            }
+
+            .heaul1 .heali1 {
+                list-style: none;
+                text-align: center;
+                display: block;
+                margin: 5px;
+
+            }
+
+            .headbutton {
+                width: 40px;
+                height: 40px;
+                border: none;
+                background: inherit;
+                padding: 0;
+                margin-right: 10px;
+                position: relative;
+                /* display: block; */
+            }
+
+            .fas {
+
+                font-size: 30px;
+                color: plum;
+                padding: 0px;
+                text-align: center;
+                /* margin: 0 auto; */
+            }
+
+            .bar {
+                transition: .5s;
+            }
+
+            .bar .heaul1 {
+                opacity: 0;
+            }
+
+            .bar.active .heaul1 {
+                opacity: 1;
+                max-height: 400px;
+                z-index: 99;
+
+            }
+
+            /* -------------------------------------------- */
+
+
+            main .container {
+                flex-direction: column;
+            }
+
+            img{
+            filter: brightness(120%);
+        }
+
+
+            .phychoh1box {
+                border: 5px solid rgba(221, 160, 221, 0.445);
+                width: 300px;
+                height: 100px;
+                text-align: center;
+                /* border-right: none; */
+                border-bottom: none;
+                border-radius: 10px 10px 0 0;
+            }
+
+            .phychoh1 {
+                display: none;
+                /* margin-top: 10px; */
+                /* writing-mode: vertical-rl; */
+                /* color: rgb(201, 119, 160); */
+                /* font-weight: bold; */
+            }
+
+            .phychoh2 {
+                display: block;
+                margin-top: 10px;
+                color: rgb(201, 119, 160);
+                font-weight: bold;
+            }
+
+            .phycho {
+                border: 5px solid rgba(221, 160, 221, 0.445);
+                width: 300px;
+                height: 500px;
+                overflow: auto;
+                border-radius: 0;
+                border-bottom: none;
+            }
+
+            .picturebox {
+                border: 5px solid rgba(221, 160, 221, 0.445);
+                width: 300px;
+                height: 300px;
+                object-fit: contain;
+
+                overflow: auto;
+                /* border-radius: 5px; */
+            }
+
+            .picturebox img {
+                width: 400px;
+                height: 300px;
+            }
+
+        }
+
+        @media screen and (max-width: 320px) {
+
+
+
+            main .container {
+                flex-direction: column;
+            }
+
+            .phychoh1box {
+                border: 5px solid rgba(221, 160, 221, 0.445);
+                width: 250px;
+                height: 100px;
+                text-align: center;
+                /* border-right: none; */
+                border-bottom: none;
+                border-radius: 10px 10px 0 0;
+            }
+
+            .phychoh1 {
+                display: none;
+                /* margin-top: 10px; */
+                /* writing-mode: vertical-rl; */
+                /* color: rgb(201, 119, 160); */
+                /* font-weight: bold; */
+            }
+
+            .phychoh2 {
+                display: block;
+                margin-top: 10px;
+                color: rgb(201, 119, 160);
+                font-weight: bold;
+            }
+
+
+            .phycho {
+                border: 5px solid rgba(221, 160, 221, 0.445);
+                width: 250px;
+                height: 400px;
+                overflow: auto;
+                border-radius: 0;
+                border-bottom: none;
+            }
+
+            .picturebox {
+                border: 5px solid rgba(221, 160, 221, 0.445);
+                width: 250px;
+                height: 250px;
+                object-fit: contain;
+
+                overflow: auto;
+                /* border-radius: 5px; */
+            }
+
+            .picturebox img {
+                width: 350px;
+                height: 250px;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container d-flex">
+            <div class="logo d-flex">
+                <div id="logo1" class="logo1">
+                    <img src="image/sakura 3.svg" alt="">
+                </div>
+                <a href="report5.html">櫻花介紹網站</a>
+            </div>
+            <!-- -------------------------------- -->
+            <div class="headhiden">
+                <ul class="heaul d-flex">
+                    <li class="heali">
+                        <div class="headerimg"><a href="report.html">粉花遊戲</a></div class="headerimg">
+                    </li>
+                    <li class="heali">
+                        <div class="headerimg"><a href="report2.html">粉花介紹</a></div>
+                    </li>
+                    <li class="heali report3">
+                        <div class="headerimg"><a href="report3.html">櫻花遊戲</a></div>
+                    </li>
+                    <li class="heali">
+                        <div class="headerimg"><a href="report4.html">櫻花介紹</a></div>
+                    </li>
+                </ul>
+            </div>
+            <!-- ------------------------------------------ -->
+            <div class="hambuger">
+                <div class="bar transition">
+                    <button class="headbutton "><i class="fas fa-bars"></i></button>
+                    <!-- <a href=""> </i></a> -->
+                    <ul class="heaul1 transition">
+                        <div class="headerimg"><a href="report.html">粉花遊戲</a></div>
+                        </li>
+                        <li class="heali1">
+                        <li class="heali1 ">
+                            <div class="headerimg "><a href="report2.html">粉花介紹</a></div>
+                        </li>
+                        <li class="heali1 report3">
+                            <div class="headerimg "><a href="report3.html">櫻花遊戲</a></div>
+                        </li>
+                        <li class="heali1">
+                            <div class="headerimg"><a href="report4.html">櫻花介紹</a></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- --------------------------------- -->
+
+    <main>
+
+        <div class="container d-flex p-5">
+
+            <div class="phychoh1box">
+                <h1 class="phychoh1">陪我聊聊</h1>
+                <h1 class="phychoh2">陪我聊聊</h1>
+            </div>
+            <div class="phycho p-5">
+
+
+                <div>
+
+                    <div class="form-group mr-2">
+
+
+                        <label for="" class="label mr-2">請輸入稱謂(必填):</label>
+                        <input type="text" name="" id="name" class="form-control" placeholder=""
+                            aria-describedby="helpId">
+                    </div>
+                    <div class="form-group">
+                        <a class="btn btn-primary text-white" id="add">送出</a>
+                    </div>
+                    <div>
+                        <div id="tbody">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="phycho2" class=" p-2 ">
+                    <div class="talk pt-2 m-2 ">
+                        <p>Q&A.<br>1.你喜歡粉紅色嗎?</p>
+
+                    </div>
+                    <button type="button" id="btn" class="btn btn-primary">Yes</button>
+                    <button type="button" id="btn1" class="btn btn-info">No</button>
+
+                </div>
+
+            </div>
+
+            <div class="picturebox">
+                <img src="image/riversakura3.JPG" alt="">
+            </div>
+        </div>
+
+
+
+    </main>
+    <!-- ------------------------------ -->
+
+    <aside>
+        <div class="container d-flex">
+            <div class="sakura">
+                <img class="rotate" src="image/sakura 01.svg" alt="">
+            </div>
+            <div class="sakura">
+                <img class="rotate" src="image/sakura 01.svg" alt="">
+            </div>
+            <div class="sakura">
+                <img class="rotate" src="image/sakura 01.svg" alt="">
+            </div>
+            <div class="sakura">
+                <img class="rotate" src="image/sakura 01.svg" alt="">
+            </div>
+            <div class="sakura">
+                <img class="rotate" src="image/sakura 01.svg" alt="">
+            </div>
+        </div>
+    </aside>
+
+    <!-- ----------------------------- -->
+
+    <article>
+        <div class="sakurachange">
+            <img src="image/sakurabackgraund.svg" alt="">
+        </div>
+    </article>
+
+    <!-- ------------------------ -->
+
+    <footer>
+        <p class="text-center"><a href="#logo1">Footer</a></p>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        $("img").mouseenter(function(){
+            $(this).addClass("active")
+           
+        })
+        $("img").mouseleave(function(){
+            $(this).removeClass("active")
+           
+        })
+        $(".pictureboximg").mouseenter(function(){
+            $(this).addClass("active")
+           
+        })
+        $(".pictureboximg").mouseleave(function(){
+            $(this).removeClass("active")
+           
+        })
+        
+
+        // -----------------------------------------------------
+        $(".bar").click(function () {
+            $(this).toggleClass('active');
+        });
+        // ----------------------------------------
+        $("#add").click(function () {
+            let name = $("#name").val();
+            let newRow = `<p>Hello ~ ${name} ~先生/小姐 <i class="far fa-smile"></i> 我們一起來玩吧!!! </p>`;
+            $("#tbody").append(newRow);
+
+            $("#btn").click(function () {
+                // 第一題的Y
+                $("#phycho2").append(`<div class="talk pt-2 m-2">
+                <p>第1題Yes->第2題<br>2.${name}先生/小姐，你喜歡櫻花嗎?</p>
+
+            </div>
+            <button type="button" id="btn2" class="btn btn-primary">Yes</button>
+            <button type="button" id="btn3" class="btn btn-info">No</button>
+
+        </div>`);
+                $(".picturebox").prepend(`<div class="picture pt-2">
+                
+                <img id="img1" class="pictureboximg" src="image/coldsakura.JPG" alt="">
+                </div>
+    
+                
+    
+            </div>`);
+
+            })
+
+            $("#btn1").click(function () {
+                // 第一題的N 結束
+                $("#phycho2").append(`<div class="talk pt-2 m-2">
+                <p class="text-secondary">第1題No結束<br>"${name}先生/小姐，我也不喜歡粉紅色，<br>但喜歡櫻花 <i class="far fa-smile-wink"></i>"</i></p>
+
+            </div>
+
+            
+
+        </div>`);
+                $(".picturebox").prepend(`<div class="picture pt-2">
+                
+            <img id="img2" class="pictureboximg" src="image/fishsakura.JPG" alt="">
+            </div>
+
+            
+
+        </div>`);
+
+            })
+            $("#phycho2").on("click", "#btn2", function () {
+                // 第一題的Y 接第二題
+
+                $("#phycho2").append(`<div class="talk pt-2 m-2">
+                <p>第2題Yes->第3題<br>3.${name}先生/小姐，你認識櫻花嗎?</p>
+
+            </div>
+            <button type="button" id="btn4" class="btn btn-primary">Yes</button>
+            <button type="button" id="btn5" class="btn btn-info">No</button>
+
+        </div>`);
+
+                $(".picturebox").prepend(`<div class="picture pt-2">
+                
+                <img id="img3" class="pictureboximg" src="image/yamasakura.JPG" alt="">
+                </div>
+    
+                
+    
+            </div>`);
+            });
+
+            $("#phycho2").on("click", "#btn3", function () {
+
+                $("#phycho2").append(`<div class="talk pt-2 m-2">
+                <p class="text-danger">第2題No結束<br>"那${name}先生/小姐，我們有緣再見面吧 <i class="far fa-sad-tear"></i>"</p>
+
+            </div>
+            
+
+        </div>`);
+                $(".picturebox").prepend(`<div class="picture pt-2">
+                
+                <img id="img4" class="pictureboximg" src="image/yamasakura3.JPG" alt="">
+                </div>
+    
+                
+    
+            </div>`);
+
+            });
+
+            $("#phycho2").on("click", "#btn4", function () {
+                // 第二題的Y 接第三題
+
+                $("#phycho2").append(`<div class="talk pt-2 m-2">
+                <p>第3題Yes->第4題<br>4.${name}先生/小姐，你認識幾種櫻花?</p>
+
+            </div>
+            <button type="button" id="btn6" class="btn btn-primary">3種</button>
+            <button type="button" id="btn7" class="btn btn-info">10種</button>
+
+        </div>`);
+
+                $(".picturebox").prepend(`<div class="picture pt-2">
+                
+                <img id="img5" class="pictureboximg" src="image/fishsakura2.JPG" alt="">
+                </div>
+    
+                
+    
+            </div>`);
+            });
+
+            $("#phycho2").on("click", "#btn5", function () {
+
+                $("#phycho2").append(`<div class="talk pt-2 m-2">
+            <p class="text-secondary">第3題No結束<br>"那${name}先生/小姐，我們來認識櫻花吧 <i class="far fa-grin-alt"></i>"</p>
+
+            </div>
+
+
+            </div>`);
+
+                $(".picturebox").prepend(`<div class="picture pt-2">
+                
+                <img id="img6" class="pictureboximg" src="image/riversakura.JPG" alt="">
+                </div>
+    
+                
+    
+            </div>`);
+            });
+
+            $("#phycho2").on("click", "#btn6", function () {
+                // 第三題的Y 接第四題
+
+                $("#phycho2").append(`<div class="talk pt-2 m-2">
+                <p class="text-danger font-weight-bold">第4題Yes結束<br>"認識3種 <i class="far fa-grin-squint"></i> 那${name}先生/小姐，我們一起認識更多櫻花!!!"</p>
+
+            </div>
+            
+
+        </div>`);
+
+                $(".picturebox").prepend(`<div class="picture pt-2">
+                
+                <img id="img7" class="pictureboximg" src="image/yamasakura2.JPG" alt="">
+                </div>
+    
+                
+    
+            </div>`);
+            });
+
+            $("#phycho2").on("click", "#btn7", function () {
+                // 第三題的Y 接第四題
+
+                $("#phycho2").append(`<div class="talk pt-2 m-2">
+                <p class="text-danger font-weight-bold">第4題No結束<br>"認識10種 <i class="fas fa-chess-queen"></i> 櫻花達人 <i class="far fa-grin-stars"></i> 我可以拜你${name}先生/小姐，為師嗎!!!"</p>
+
+            </div>
+            
+
+        </div>`);
+
+                $(".picturebox").prepend(`<div class="picture pt-2">
+                
+                <img id="img8" class="pictureboximg" src="image/fishsakura4.JPG" alt="">
+                </div>
+    
+                
+    
+            </div>`);
+            });
+        });
+
+    </script>
+</body>
+
+</html>
