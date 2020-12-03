@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" />  
+    <style>
+        body{
+            font-family: 'Lusitana', 'Noto Sans TC', serif;
+        }
+        .container{
+            max-width: 1166px;
+            margin-top: 100px;
+        }
+      
+        header{
+            /* width: 1620px; */
+            height: 600px;
+            background:url(img/180748.jpg);
+            display: flex;
+            justify-content: space-between;
+            padding: 32px;
+        }
+        .header-link{
+            color:#fff;
+            text-decoration: none;
+            font-size: 32px;
+            margin: 48px;
+        }
+        .header-link:hover{
+            text-decoration: none;
+            color:#fff;
+        }
+        .header-right-link{
+            margin: 18px;
+        }
+        /* header結束 */
+        .section{
+            display: flex;
+            flex-direction: column;
+            
+            margin-top: 100px;
+        }
+        .section1{
+            font-size: 18px;
+            font-weight: bold;
+            
+            display: flex;
+            justify-content: center;
+        }
+        .word1{
+            color: #F2B46D;
+            /* margin: 0 auto; */
+            border-bottom: 6px solid #F2B46D;
+            margin: 12px;
+
+
+        }
+        .word2{
+            color: #707070;
+            /* margin: 0 auto; */
+            border-bottom: 6px solid #707070;
+            margin: 12px;
+
+        }
+       
+        .content1{
+            display: flex;
+            justify-content: center;
+            font-weight: 16px;
+            color: #707070;
+            font-weight: bold;
+            padding: 10px;
+        }
+        @media screen and (max-width:375px){
+            .word1{
+                border-bottom: 3px solid #F2B46D;
+            }
+            .word2{
+                border-bottom: 3px solid #707070;
+            }
+            .content1{
+                display: none;
+            }
+        }
+    /*    放四張圖片*/
+     
+    
+        img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .slider {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+           
+        }
+        .img-word{
+            color:#6B6B6B;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        .img-price{
+            color: #C4C5C5;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        .slick-prev:before, .slick-next:before{
+            color: #000000;
+        }
+        @media screen and (max-width:375px){
+            .img{
+                width: 100px;
+                height: 100px;
+            }
+            .img-word{
+                font-size: 16px;
+            }
+            .img-price{
+                font-size: 16px;
+                color: #F2B46D;
+            }
+            .slide-1{
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+   
+    
+    /* 換shop now */
+    .container2{
+        display: flex;
+        justify-content: center;
+        margin-top: 100px;
+    }
+    .shopnow{
+        font-size: 36px;
+        font-weight: bold;
+        border-bottom: 2px solid #000;
+        margin: 60px;
+        display: flex;
+        
+    }
+
+    /* 換夏日實驗 */
+    .container3{
+        /* margin: 0 !important;
+        width: 100vw; */
+        display: flex;
+        flex-direction: row;
+        margin-top: 100px;
+    }
+    .aside-left{
+        width: 900px;
+        height: 600px;
+        
+    }
+    .img-lesson{
+        width:100%;
+        height: 600px;
+    }
+    .aside-right{
+        width: 800px;
+        height: 600px;
+        /* background: #59cff3; */
+    }
+    .aside-right-top p{
+        font-size: 36px;
+        font-weight: bold;
+        color: #707070;
+    }
+    .left-img{
+        width: 200px;
+        height: 200px;
+        margin: 48px;
+    }
+    .left-img p ,.right-img p{ 
+        margin: 0;
+    }
+    .right-img{
+        width: 200px;
+        height: 200px;
+        margin: 48px;
+    }
+    .asideImg img{
+        width: 100%;
+        height: auto;
+        margin-top: 100px;
+        
+        
+    }
+    .aside-right-bottom{
+        display: flex;
+        flex-direction: row;
+        height: 400px;
+        /* padding: 10px; */
+        /* margin-top: 60px; */
+    }
+    
+    /* 換主題課程 */
+    .main{
+        margin-top:100px;
+        display: flex;
+        flex-direction: row;
+    }
+    .title{
+        font-size: 34px;
+        font-weight: bold;
+        color: #707070;
+        margin-left: 20px;
+    }
+    .title-2{
+        font-size: 34px;
+        font-weight: bold;
+        color: #707070;
+        margin-left: -50px;
+    }
+    .smallword{
+        font-size: 12px;
+        color:#707070;
+        margin-left: 80px;
+    }
+    .smallword-2{
+        font-size: 12px;
+        color:#707070;
+        margin-left: 10px;
+    }
+    .left-sec{
+        width: 800px;
+        margin-left: 300px;
+    }
+    .right-sec{
+        width: 800px;
+    }
+    .left-sec-img img{
+        width: 400px;
+        margin-bottom: 48px;
+    }
+    .right-sec-img{
+        margin-left: 50px;
+        margin-top: 48px;
+    }
+    .right-sec-img img{
+        width: 400px;
+    }
+
+    /* 換廢話 */
+    .middle-text{
+        font-size: 32px;
+        color: #707070;
+       display: flex;
+       justify-content: center;
+    }
+
+    /* 換場地設計  同shopnow的css 故不用再寫了 */
+
+    /* 換三張圖片 */
+ 
+.progress {
+  display: block;
+  width: 100%;
+  height: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  background-image: linear-gradient(to right, black, black);
+  background-repeat: no-repeat;
+  background-size: 0 100%;
+  transition: background-size .4s ease-in-out;
+}
+
+/**
+ *  Demo Styles from the Slick Slider
+ *  website
+ */
+
+.content {
+  margin: auto;
+  padding: 20px;
+  width: 1620px;
+}
+
+/* .slider {
+  margin: 30px auto 50px;
+} */
+
+.image {
+  padding: 10px;
+}
+
+img {
+  border: 5px solid #FFF;
+  display: block;
+  width: 100%;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.p-24-bold{
+    font-size: 16px;
+    font-weight: bold;
+    color: #707070;
+}
+.p-14-bold{
+    font-size: 10px;
+    font-weight: bold;
+    color: #707070;
+}
+
+ 
+      
+
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+
+        <header>
+            <a class="logo" href="">斑斕</a>
+            <div class="header-bar">
+    
+                <a class="header-link" href="">Menu</a>
+                <a class="header-link" href="">Products</a>
+                <a class="header-link" href="">Workshop</a>
+                <a class="header-link" href="">About</a>
+                <a class="header-link" href="">Layout</a>
+            </div>
+            <div class="header-right-bar">
+                <a class="header-right-link" href=""><i class="fas fa-user"></i></a>
+                <a class="header-right-link" href=""><i class="fas fa-shopping-cart"></i></a>
+            </div>
+    
+        </header>
+        <!-- header結束 -->
+        <div class="section">
+            <div class="section1">
+                <div class="word1">精選商品</div>
+                <div class="word2">節慶花禮</div>
+            </div>
+           
+            <div class="content1">Check out our best sellers.</div>
+        </div>
+
+    <!--    擺四張圖片-->
+    
+    <div class="container">
+        <div class="slider">
+            <div class="slide-1"><img src="img/180748 (1).jpg" alt="">
+                <p class="img-word">Simply Cafe Latte</p>
+                <p class="img-price">NT 2,450</p></div>
+            <div class="slide-1"><img src="img/180748 (2).jpg" alt="">
+                <p class="img-word">Simply Cafe Latte</p>
+                <p  class="img-price">NT 2,450</p></div>
+            <div class="slide-1"><img src="img/180748 (3).jpg" alt="">
+                <p class="img-word">Simply Cafe Latte</p>
+                <p  class="img-price">NT 2,450</p></div>
+            <div class="slide-1"><img src="img/180748 (4).jpg" alt="">
+                <p class="img-word">Simply Cafe Latte</p>
+                <p  class="img-price">NT 2,450</p></div>
+            <div class="slide-1"><img src="img/180748 (5).jpg" alt="">
+                <p class="img-word">Simply Cafe Latte</p>
+                <p  class="img-price">NT 2,450</p></div>
+            <div class="slide-1"><img src="img/180748 (6).jpg" alt="">
+                <p class="img-word">Simply Cafe Latte</p>
+                <p  class="img-price">NT 2,450</p></div>
+
+
+        </div>
+        
+        
+        
+        <!-- 四張圖片結束 -->
+
+    <!-- 換shop now -->
+    <div class="container2">
+        <div class="shopnow">Shop Now</div>
+    </div>
+
+    <!-- 這是wrapper的div結尾 -->
+    </div>
+
+
+    <!-- 換夏日實驗 -->
+    <div class="container3">
+        <div class="aside-left"><img class="img-lesson" src="img/180748.jpg" alt=""></div>
+        <div class="aside-right">
+            <div class="aside-right-top">
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020 夏日實驗 / <span style="color: #F2B46D;">[ban` Lan] </span></p>
+            <p >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Summer East Asia Style</p>
+            </div>
+            <div class="aside-right-bottom">
+                <div class="left-img ">
+                    <div class="asideImg">
+                        <img src="img/180748 (7).jpg" alt="">
+                    </div>
+                <p class="img-word">Simply Cafe Latte</p>
+                <p>
+                    <span style="color: #F2B46D;">NT 2,450</span>
+                </p>
+            </div>
+                <div class="right-img asideImg"> 
+                    <div class="asideImg">
+                         <img src="img/180748 (8).jpg" alt="">
+                    </div>
+                <p class="img-word"> Simply Cafe Latte<p>
+                <p><span style="color: #F2B46D;">NT 2,450</span></p></div>
+            </div>
+        </div>
+    </div>
+    <!-- 換主題課程 -->
+    <!-- <div class="container"> -->
+        <div class="main">
+            <div class="left-sec">
+                <div class="left-sec-img"><img src="img/180748 (1).jpg" alt=""></div>
+                <p class="title">捧花主題課程｜《無垢之白》</p>
+                <p class="smallword">/<br></p>
+                    <p class="smallword"> 一針一線反覆編織終成圖，一浸一染堆疊漸進終成色，<br>
+                    紅衣白裳，都交織著新嫁娘對未來的期盼和許諾。<br>
+                    以東方嫁衣為主題，擷取中式濃烈的鮮明色彩與日式清雅的純潔意象，<br>
+                    將對婚姻的殷殷期許，濃縮成一件嫁衣，一捧花束，獻給無與倫比的那一天。<br>
+                    －<br></p>
+            </div>
+
+            <div class="right-sec">
+                <p class="title-2">捧花主題課程｜《霞帔之紅》</p>
+                <p class="smallword-2"> / <br>
+                    &nbsp;&nbsp;人生的路途上，有幸與你相遇，執起你的手，畫出一個圓<br>
+                    &nbsp;&nbsp;牽起你的指，舞出一個圈<br>
+                    &nbsp;&nbsp;將圓滿美好的意象，灌注在這得來不易的緣中<br>
+                    &nbsp;&nbsp;讓我們擁有彼此，擁有這份圓滿的愛情－－<br></p>
+                    <div class="right-sec-img"> <img src="img/180748 (5).jpg" alt=""></div>
+            </div>
+        </div>
+    <!-- </div> -->
+
+    <!-- 換廢話 -->
+    <div class="container">
+        <p class="middle-text"> We make timeless, responsibly-made sneakers <br>
+            that are designed to be great, and made to be worn.
+            </p>
+    </div>
+
+    <!-- 換場地設計 -->
+    <div class="container2">
+        <div class="shopnow">場地設計</div>
+    </div>
+
+    <!-- 換三張圖片 -->
+  
+   <div class="content">
+    <div class="slider2">
+      <div>
+        <div class="image">
+          <img src="img/180748 (1).jpg" alt="">
+          <p class="p-24-bold">2019/02/05</p>
+          <p class="p-24-bold">設計師:Alex Wang</p>
+          <p class="p-14-bold">以強烈的堅持和熱情，投入花藝世界；獨到且大膽的配色眼光，巧妙地結合各種花葉間的不同質感 
+            自由遊走在自然清新和都會時髦的風格間，跳脫傳統花藝設計的框架，以獨樹一格的美學著稱。</p>
+        </div> <!-- end image -->
+      </div>
+      <div>
+        <div class="image">
+          <img src="img/180748 (2).jpg" alt="">
+          <p class="p-24-bold">2019/06/08</p>
+          <p class="p-24-bold">設計師:Rita Lin</p>
+          <p class="p-14-bold">真心的投入就會非常有感覺；用心聆聽客戶需求，從中捕捉我想要找的感動，
+            對我來說是啟動創意重要的來源。天馬行空的想像力，恣意發揮，為每位客戶的需求，
+            塑造獨有的特色。</p>
+
+        </div> <!-- end image -->
+      </div>
+      <div>
+        <div class="image">
+          <img src="img/180748 (1).jpg" alt="">
+          <p class="p-24-bold">20219/12/15</p>
+          <p class="p-24-bold">設計師:Peter Wu</p>
+          <p class="p-14-bold">從小就有強烈的美感，對於美這件事情非常的堅持。長大後投入花藝世界，以自己獨特的美感發展了一套自己的美學。遊走在各大時尚圈，常常幫政商名流設計，以氣派豪華而著名。</p>
+
+        </div> <!-- end image -->
+      </div>
+      <div>
+        <div class="image">
+          <img src="img/180748 (3).jpg" alt="">
+          <p class="p-24-bold">2020/02/14</p>
+          <p class="p-24-bold">設計師:Jenny Chen</p>
+          <p class="p-14-bold">心思細膩的Jenny，擅長傾聽別人說話，並適時地給予意見及幫助。由於Jenny的善解人意，所以她的設計都是以人為出發點去思考。以人為本的設計理念，配合每位客戶的性格與喜好，創造適合每位客戶的客製化藝術。</p>
+
+        </div> <!-- end image -->
+      </div>
+      <div>
+        <div class="image">
+          <img src="img/180748 (4).jpg" alt="">
+          <p class="p-24-bold">2020/04/09</p>
+          <p class="p-24-bold">設計師:Lin Wang</p>
+          <p class="p-14-bold">最好的創意是思想激盪和理念交流下的產物。我致力培養良好的溝通環境，並與客戶緊密合作，在每個項目協同工作。夥伴關係和合作的精神，使我學習與成長，不斷審視過去的經驗，並持續提升我的工作水平。</p>
+
+        </div> <!-- end image -->
+      </div>
+      <div>
+        <div class="image">
+          <img src="img/180748 (9).jpg" alt="">
+          <p class="p-24-bold">2020/07/31</p>
+          <p class="p-24-bold">設計師:Anna Wang</p>
+          <p class="p-14-bold">傾聽最細膩的聲音，讓整個充滿愛與溫馨；用最簡約的花朵畫出幸福的輪廓，兼具美學與機能的量身設計，不單止是設計一個空間，而是營造出獨特專屬的個人品味。</p>
+
+        </div> <!-- end image --> 
+      </div>
+    </div> <!-- end slider -->
+    <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+      <span class="slider__label sr-only">
+    </div>
+    </span>
+  </div> <!-- end content -->
+     
+    
+
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+    <script>
+        // 四張圖片的輪播
+       
+      $('.slider').slick({
+        centerMode:false,
+        centerPadding: '48px',
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplaySpeed: 2000,  
+        dots: false,
+        arrows: true,
+        responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows:true,
+                        centerMode:false,
+                        centerPadding: '20px',
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 375,
+                    settings: {
+                        dots: false,
+                        arrows: true,
+                        centerMode: false,
+                        centerPadding: '10px',
+                        slidesToScroll: 1,
+                        slidesToShow: 1
+
+                    }
+                }
+            ]
+    });
+
+   
+
+    //四張圖片的輪播結束
+
+    // 三張圖片==
+    $(document).ready(function() {
+        let $slider = $('.slider2');
+        let $progressBar = $('.progress');
+        const $progressBarLabel = $( '.slider__label' );
+        
+        $slider.on('beforeChange', function(event, slick, currentSlide, nextSlide) {   
+            const calc = ( (nextSlide) / (slick.slideCount-1) ) * 100;
+            
+            $progressBar
+            .css('background-size', calc + '% 100%')
+            .attr('aria-valuenow', calc );
+            
+            $progressBarLabel.text( calc + '% completed' );
+        });
+        
+        $slider.slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            speed: 400
+        });  
+    });
+    </script>
+    
+  </body>
+</html>
