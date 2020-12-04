@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        .row {
+            padding-top: 30px;
+        }
+
+        .product {
+            display: flex;
+            flex-wrap: wrap;
+            width: 60%;
+            margin-right: 15px;
+            padding-right: 20px;
+            border-right: 1px solid #ccc;
+        }
+
+        .product-items {
+            margin-right: 10px;
+            margin-bottom: 30px;
+            width: 45%;
+        }
+
+        .product-info {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .product-info p {
+            margin: 10px;
+        }
+
+        .product-price::before {
+            content: '$';
+            /* 錢字號在這裡 */
+        }
+
+        .info-right select {
+            margin-top: 80%;
+        }
+
+        .buy-button {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="product">
+                <div class="product-items">
+                    <img src="https://cdn.pixabay.com/photo/2020/07/21/22/29/stork-5427509_960_720.jpg" alt=""
+                        style="width:100%">
+                    <div class="product-info">
+                        <div class="info-left">
+                            <p class="product-title">熱氣球之旅1</p>
+                            <p class="product-price">1800</p>
+                        </div>
+                        <div class="info-right">
+                            <select name="number">
+                                　<option value="1">1</option>
+                                　<option value="2">2</option>
+                                　<option value="3">3</option>
+                                　<option value="4">4</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <button type="button" class="btn btn-danger buy-button">BUY</button>
+                </div>
+                <div class="product-items">
+                    <img src="https://cdn.pixabay.com/photo/2020/07/05/05/12/sunset-5371719_960_720.jpg" alt=""
+                        style="width:100%">
+                    <div class="product-info">
+                        <div class="info-left">
+                            <p class="product-title">熱氣球之旅2</p>
+                            <p class="product-price">1900</p>
+                        </div>
+                        <div class="info-right">
+                            <select name="number">
+                                　<option value="1">1</option>
+                                　<option value="2">2</option>
+                                　<option value="3">3</option>
+                                　<option value="4">4</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <button type="button" class="btn btn-danger buy-button">BUY</button>
+                </div>
+                <div class="product-items">
+                    <img src="https://cdn.pixabay.com/photo/2020/07/15/19/50/parachute-5408876_960_720.jpg" alt=""
+                        style="width:100%">
+                    <div class="product-info">
+                        <div class="info-left">
+                            <p class="product-title">熱氣球之旅3</p>
+                            <p class="product-price">2000</p>
+                        </div>
+                        <div class="info-right">
+                            <select name="number">
+                                　<option value="1">1</option>
+                                　<option value="2">2</option>
+                                　<option value="3">3</option>
+                                　<option value="4">4</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <button type="button" class="btn btn-danger buy-button">BUY</button>
+                </div>
+
+                <div class="product-items">
+                    <img src="https://cdn.pixabay.com/photo/2020/07/15/19/50/parachute-5408876_960_720.jpg" alt=""
+                        style="width:100%">
+                    <div class="product-info">
+                        <div class="info-left">
+                            <p class="product-title">熱氣球之旅4</p>
+                            <p class="product-price">2100</p>
+                        </div>
+                        <div class="info-right">
+                            <select name="number">
+                                　<option value="1">1</option>
+                                　<option value="2">2</option>
+                                　<option value="3">3</option>
+                                　<option value="4">4</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <button type="button" class="btn btn-danger buy-button">BUY</button>
+                </div>
+
+            </div>
+
+
+            <div id="shopping-list">
+                <h3>你購買的選項：</h3>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script>
+
+        $('.buy-button').on('click', function () {
+            //取得product-title
+            let title = $(this).siblings().eq(1).find('.product-title').html();
+
+            //取得product-price
+            let price = $(this).siblings().eq(1).find('.product-price').html();
+
+            //取得下拉式選單的數字
+            let quantity = $(this).siblings().eq(1).find('select').val();
+
+
+            let html = `<div>
+                <div style="display:flex">
+                    <h6>${title}</h6>
+                    <h6 style="margin-left:20px">x${quantity}</h6>
+                    <h6 style="margin-left:auto">$${parseInt(price) * parseInt(quantity)}</h6>
+                </div>
+                <div style="width:40px;margin-left:auto"><a onClick="del_product_item() " href="#">刪除</a></div>
+            </div>`;
+
+            $('#shopping-list').append(html);
+
+        });
+
+        function del_product_item() {
+            $(event.target).parent().parent().remove();
+        }
+
+
+    </script>
+</body>
+
+</html>
