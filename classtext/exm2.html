@@ -1,0 +1,1275 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>新嘗試rwd</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="fontawesome-free-5.13.0-web/css/all.min.css"> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    /* header */
+    .header1-1 {
+      width: 100%;
+      background: #262626;
+    }
+
+    .header1 {
+      width: 80%;
+      margin: 0 auto;
+      background: inherit;
+      justify-content: space-between;
+      align-items: center;
+      overflow: auto;
+    }
+
+    @media screen and (max-width: 360px) {
+      .header1 {
+        width: 90%;
+
+      }
+    }
+
+
+    .header1 .logo {}
+
+    .header1 .logo img {
+      object-fit: fill;
+    }
+
+    .header1 p {
+      /* height: 50px; */
+      border-left: 2px solid rgba(128, 128, 128, 0.521);
+      border-right: 2px solid rgba(128, 128, 128, 0.521);
+      margin-bottom: 0;
+      padding: 10px;
+    }
+
+    .header1 a {
+      display: block;
+      color: rgb(153, 153, 147);
+      text-decoration: none;
+      text-align: center;
+
+    }
+
+    /* search */
+    .header1 input {
+      background-color: inherit;
+      color: rgb(153, 153, 147);
+    }
+
+    .transformm {
+      overflow: hidden;
+    }
+
+    .tex {
+      overflow: hidden;
+      transform: translateX(200px);
+      opacity: 0;
+      max-width: 0;
+    }
+
+    .tex.active {
+      transition: .5s ease-in-out;
+      transform: translateX(0px);
+      opacity: 1;
+      max-width: 200px;
+    }
+
+    .header1 .searchout {
+      width: 40px;
+      height: 40px;
+      font-size: 25px;
+      color: rgb(153, 153, 147);
+      text-align: center;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+
+
+    .search {
+      cursor: pointer;
+      /* margin-left: 5px; */
+      object-fit: fill;
+    }
+
+    /* ---------------- */
+
+    .header1-2 {
+      width: 100%;
+      height: 50px;
+      background: #F2F2F2;
+      position: relative;
+    }
+
+    .header2 {
+      width: 80%;
+      margin: 0 auto;
+      justify-content: space-between;
+      align-items: center;
+      background: #F2F2F2;
+      overflow: auto;
+    }
+
+    @media screen and (max-width: 540px) {
+      .header2 {
+        width: 90%;
+
+      }
+    }
+
+    .header2 ul {
+      padding-left: 0;
+    }
+
+
+    .header2 li {
+      list-style: none;
+      height: 50px;
+      padding: 5px;
+      font-size: 25px;
+      border-left: 2px solid rgba(128, 128, 128, 0.521);
+      /* border-right: 2px solid rgba(128, 128, 128, 0.521); */
+    }
+
+    .header2 li:hover {
+      background: #d1cfcf;
+    }
+
+    .header2 a {
+      display: block;
+      color: black;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .header2 .Contact {
+      border-right: 2px solid rgba(128, 128, 128, 0.521);
+    }
+
+    .header2 p {
+      margin-left: 5px;
+    }
+
+    .header2 .cart {
+      /* position: relative; */
+      border-right: 2px solid rgba(128, 128, 128, 0.521);
+      cursor: pointer;
+    }
+
+    .starcar p {
+      margin-bottom: 0;
+      /* font-size: 15px; */
+      text-align: center;
+      width: 40px;
+      height: 40px;
+
+      border-radius: 5px;
+    }
+
+    .header2 .star {
+      cursor: pointer;
+    }
+
+    .star p {
+      background: rgb(153, 153, 147);
+    }
+
+    .cart p {
+      background: #56BF99;
+    }
+
+    .fa-star {
+      /* font-size: 15px; */
+    }
+
+    /*submenu*/
+    .header1-2 .submenu {
+      z-index: 10 !important;
+      /* 沒加!important會被bootstrap內建卡肉鬆吃掉 */
+      position: absolute;
+      top: 100%;
+      right: 10%;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .header1-2 .submenu li {
+      background: #F2F2F2;
+      padding: 0;
+      margin: 0;
+
+    }
+
+    .header1-2 .submenu li a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .header1-2 .submenu.active {
+      z-index: 1;
+      opacity: 1;
+      max-height: 400px;
+    }
+
+    /* -------------------------------------- */
+    /* articlecarousel */
+    .articlecarousel {
+      height: 600px;
+      background: #2E2E2E;
+    }
+
+    .carousel {
+      /* position: static; */
+      /* 最外層re */
+    }
+
+    .carousel-inner {
+      /* position: static; */
+      /* 外層re */
+    }
+
+    .carousel-indicators {
+      position: static;
+      width: 80%;
+      margin: 0 auto;
+      overflow: auto;
+      /* justify-content: space-between; */
+      /* 這段很重要 */
+      /* list-style: none; */
+      /* padding: 0; */
+      /* margin-top: 0; */
+      /* margin-bottom: 0; */
+
+    }
+
+    .carousel-indicators .active {
+      width: 200px;
+      height: 80px;
+      text-indent: 0;
+      text-align: center;
+      font-size: 25px;
+      border-top: 5px solid #56BF99;
+      color: #F2F2F2;
+      box-sizing: border-box;
+    }
+
+    .carousel-indicators li {
+      width: 200px;
+      height: 80px;
+      margin: 0;
+      opacity: 1;
+      background: #2E2E2E;
+      text-indent: 0;
+      text-align: center;
+      font-size: 25px;
+      color: #717171;
+      box-sizing: border-box;
+      border-top: 5px solid black;
+    }
+
+    .carousel-indicators li p {
+      /* display: block; */
+      text-align: center;
+      font-size: 25px;
+      /* color: brown; */
+      margin-bottom: 0;
+      padding-top: 10px;
+      /* letter-spacing: 0em; */
+      line-height: 1em;
+    }
+
+    .carousel-indicators li small {
+      font-size: 15px;
+      line-height: 0em;
+    }
+
+    .divdivimg {
+      width: 100%;
+      height: 500px;
+    }
+
+    .divdivimg ol {
+      /* margin-top: 50px; */
+      /* position: absolute; */
+      /* bottom: 300px; */
+
+    }
+
+    .divimg {
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .imgd {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+
+    .imgp {
+      position: absolute;
+      top: 50%;
+      right: 0;
+    }
+
+    @media screen and (max-width: 540px) {
+      .articlecarousel {
+        height: 560px;
+      }
+
+      .carousel-indicators {
+        position: static;
+        width: 90%;
+
+        /* justify-content: space-between; */
+        /* 這段很重要 */
+        /* list-style: none; */
+        /* padding: 0; */
+        /* margin-top: 0; */
+        /* margin-bottom: 0; */
+
+      }
+
+      .carousel-indicators li p {
+
+        font-size: 20px;
+        margin-bottom: 0;
+        /* letter-spacing: 0em; */
+        line-height: 1em;
+      }
+
+      .carousel-indicators li small {
+        display: none;
+      }
+
+      .imgp {
+        position: absolute;
+        top: auto;
+        /* 要解除 */
+        bottom: 0;
+      }
+    }
+
+    /* ---------------------------------------- */
+    /* articleonsell */
+    .onsell1 {
+      width: 100%;
+      background: #242424;
+      padding: 2% 0 2% 0;
+    }
+
+    .onsell1-1 {
+      width: 80%;
+      /* height: 30%; */
+      /*  height用@media screen 會變形 */
+      margin: 0 auto;
+      justify-content: space-between;
+      align-items: center;
+      /* position: relative; */
+    }
+
+    /* @media screen and (max-height: 500px) and (max-width: 1920px) {
+      .onsell1 {
+        width: 100%;
+        background: #242424;
+      }
+
+      .onsell1-1 {
+        width: 80%;
+        height: 400px;
+      }
+     
+
+    } */
+
+    /* @media screen  and (max-height: 300px) and (max-width: 1024px) {
+      .onsell1 {
+        width: 100%;
+        background: #242424;
+      }
+
+      .onsell1-1 {
+        width: 80%;
+        height: 250px;
+      }
+
+
+    } */
+    @media screen and (max-width: 768px) {}
+
+    @media screen and (max-width: 540px) {
+
+      .onsell1-1 {
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .ontemout {
+        margin-bottom: 5%;
+      }
+    }
+
+    .onsell1-1 .ontemout {
+      position: relative;
+    }
+
+    .onsell1-1 .ontem {
+      /* position: relative; */
+      flex: 1;
+      width: 95%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .onsell1-1 .ontem img {
+      /* position: relative; */
+      width: 100%;
+      /* height: 300px; */
+      object-fit: contain;
+    }
+
+    .onsell1-1 .ontem2 {
+      position: absolute;
+      top: 35%;
+      left: 25%;
+      max-height: 50%;
+      width: 50%;
+      background: #242424c7;
+    }
+
+    .onsell1-1 .ontem2 a {
+      display: block;
+      text-decoration: none;
+      color: #F2F2F2;
+      text-align: center;
+    }
+
+    /* ---------------------------------- */
+    /* bestmonth */
+    .wordb {
+      width: 100%;
+      background: #EBE7DF;
+    }
+
+    .wordb1 {
+      width: 80%;
+      height: 50px;
+      margin: 0 auto;
+      justify-content: space-between;
+      align-items: center;
+      background: inherit;
+    }
+
+    .wordb1 p {
+      margin-bottom: 0;
+      font-weight: bold;
+    }
+
+    .wordb1 button {
+      background: inherit;
+      border: 1px solid #e6c99a;
+      color: #e6c99a;
+    }
+
+    .monthh {
+      width: 100%;
+      background: #EBE7DF;
+      padding: 1% 0 1% 0;
+    }
+
+    .monthh1 {
+      width: 80%;
+      /* height: 400px; */
+      /* height: 300px; */
+      margin: 0 auto;
+      justify-content: space-between;
+      align-items: center;
+      background: inherit;
+      border-bottom: 2px solid #DFDBD4;
+      padding-bottom: 3%;
+    }
+
+    .monthh1 .monthh1-1 {
+      /* position: relative; */
+      flex: 1;
+      width: 95%;
+      height: 100%;
+    }
+
+    .monthh1 .monthh1-1 img {
+      /* position: relative; */
+      width: 100%;
+      /* height: 300px; */
+      object-fit: contain;
+    }
+
+    .monthh1 .monthh1-2 {
+      justify-content: space-around;
+      align-items: center;
+      width: 95%;
+      background: #ffffff;
+      border-top: 1px solid #717171;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      position: relative;
+    }
+
+    .monthh1 .monthh1-2 p {
+      margin-bottom: 0;
+
+    }
+
+    .monthh1-2 .monthh1-3 {
+      color: hsl(0, 0%, 100%);
+      /* font-size: 15px; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      bottom: 0;
+      background: #56BF99;
+      /* width: 80px; */
+      /* height: 80px; */
+      text-align: center;
+
+    }
+
+    .monthh1-2 .monthh1-4 {}
+
+    .monthh1-4 .monthh1-41 {
+      display: block;
+    }
+
+    .monthh1-4 .monthh1-41.active {
+      display: none;
+    }
+
+    .monthh1-4 .monthh1-42 {
+      display: none;
+    }
+
+    .monthh1-4 .monthh1-42.active {
+      display: block;
+    }
+
+    .monthh1-out {
+      position: relative;
+    }
+
+    .monthh1-5 {
+      color: #ffffff;
+      font-size: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      right: 5%;
+      background: #F27B50;
+      width: 55px;
+      height: 55px;
+      text-align: center;
+    }
+
+    .monthh1-42 .smallicon {
+      /* SWEETALERT */
+      cursor: pointer;
+      margin-right: 5px;
+    }
+
+    @media screen and (max-width: 1920px) {
+      .monthh1-2 .monthh1-3 {
+        font-size: 15px;
+        width: 70px;
+        height: 70px;
+
+      }
+
+
+    }
+
+    @media screen and (max-width: 1024px) {
+
+      .monthh1-2 .monthh1-3 {
+        font-size: 10px;
+        width: 50px;
+        height: 50px;
+
+
+      }
+
+    }
+
+    @media screen and (max-width: 768px) {
+
+      .monthh1-2 .monthh1-3 {
+        /* font-size: 2px; */
+        /* width: 40px; */
+        /* height: 40px; */
+
+
+      }
+
+    }
+
+    @media screen and (max-width: 540px) {
+
+      .monthh1 {
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .monthday {
+        margin-bottom: 5%;
+      }
+
+      .monthh1-41 {
+        display: block !important;
+      }
+
+      .monthh1-42 {
+        display: block !important;
+      }
+    }
+
+    /* --------------------------------- */
+    /* mainblog */
+    .blog {
+      width: 100%;
+      background: #EBE7DF;
+    }
+
+    .blog1 {
+      width: 80%;
+      height: 600px;
+      margin: 0 auto;
+      justify-content: space-between;
+      align-items: center;
+      background: inherit;
+    }
+
+    .blog1-1 {
+      background: #DFDBD4;
+    }
+
+    .blogr {
+      flex: 1;
+      /* width: 300px; */
+      height: 500px;
+      /* padding: 10px; */
+      margin-right: 10px;
+    }
+
+    .blogl {
+      flex: 2;
+      width: ;
+    }
+
+    .blog1 button {
+      display: none;
+      background: inherit;
+      border: 1px solid #e6c99a;
+      color: #e2a646;
+    }
+
+    .blogl1 {
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .blogm {
+      flex: 1;
+      /* width: 200px; */
+      max-height: 250px;
+      padding: 10px;
+      margin-right: 10px;
+      overflow: auto;
+    }
+
+    .blogb {
+      flex: 2;
+      /* width: 400px; */
+      height: 230px;
+      margin-right: 10px;
+      padding: 5%;
+      overflow: auto;
+    }
+
+    .apr {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 45px;
+      height: 45px;
+      background: #56BF99;
+      text-align: center;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .apr04 ul {
+      margin-bottom: 10px;
+      padding-left: 2px;
+      list-style: none;
+    }
+
+    .apr ul li {}
+
+    .apr04 {
+
+      align-items: center;
+      /* justify-content: center; */
+    }
+
+    .animate__animated .animate__flipInY {
+      /* --animate-duration: 5s; */
+    }
+
+    @media screen and (max-width: 540px) {
+      .blog {
+        padding: 3% 0 3% 0;
+      }
+
+      .blog1 {
+        width: 90%;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .blogl1 {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .blog1 button {
+        display: block;
+        background: inherit;
+        border: 1px solid #e6c99a;
+        color: #e2a646;
+      }
+
+      .blogmh.active {
+        display: none;
+      }
+    }
+
+    /* --------------------------- */
+    /* footer */
+    .footerr {
+      width: 100%;
+      background: #262626;
+      padding: 1% 0 1% 0;
+    }
+
+    .footerr1 {
+      width: 80%;
+      margin: 0 auto;
+      justify-content: space-evenly;
+      align-items: center;
+      background: inherit;
+    }
+
+    .footerr1 ul {
+      padding-left: 0;
+    }
+
+    .footerr1 li {
+      color: #d1cfcf;
+      list-style: none;
+    }
+
+    .footerr1 li a {
+      color: #d1cfcf;
+      text-decoration: none;
+    }
+
+    @media screen and (max-width: 540px) {
+      .footerr1 {
+        width: 80%;
+        flex-direction: column-reverse;
+        align-items: center;
+      }
+
+      .footerr1 ul {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="">
+    <div class="">
+      <div class="header1-1">
+        <div class="d-flex header1">
+          <div class="logo">
+            <img src="" alt="logo">
+          </div>
+          <!--  -->
+          <div class="d-flex">
+            <div class="d-flex align-items-center">
+              <div class="transformm">
+                <input class="tex" type="text" value="請在這裡輸入文字">
+              </div>
+              <div class="searchout">
+                <!-- <img class="search" src="" alt="search"> -->
+                <i class="search fas fa-search"></i>
+              </div>
+            </div>
+
+            <div>
+
+              <p><a href="">LOGIN or REGISTER</a></p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ---------------------------- -->
+      <div class="header1-2">
+        <div class="d-flex header2">
+          <ul class="d-flex home">
+            <li><a href="">Home</a>
+            </li>
+            <li><a href="">Products</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Pages</a></li>
+            <li><a href="">Blog</a></li>
+            <li class="Contact"><a href="">Contact</a></li>
+          </ul>
+
+          <ul class="d-flex starcar">
+            <li class="star d-flex align-items-center">
+              <!-- <img src="" alt="star"> -->
+              <i class="far fa-star"></i>
+              <p>30</p>
+            </li>
+            <li class=" cart d-flex align-items-center ">
+              <i class="fas fa-cart-arrow-down"></i>
+              <!-- <img src="" alt="cart"> -->
+              <p>3</p>
+
+            </li>
+          </ul>
+        </div>
+        <ul class="submenu">
+          <li><a
+              href="http://paletton.com/?fbclid=IwAR16KIhmhX698ub6AZX6EadqeiYX_VhlS9Tv1cG0BQ2r8uJLx_zgBQoFWYE#uid=53M1l0kmSm2d3vBixqlrkh-xwc7"
+              target="_blank">Pink Shoes</a></li>
+          <li><a href="https://responsive-jp.com/?fbclid=IwAR1sHfMdxCH55QRwqdWmJuXl3J4W5ybG_Nu2YWUtt8IQFRiWxUgoxHG61yg"
+              target="_blank">Parda</a></li>
+          <li><a href="https://mediaqueri.es/?fbclid=IwAR2m6SNfdVjqJIv90i3eMQAt328pwB7VgL1nS81ztzSJaE1b4jIvTQs_trA"
+              target="_blank">Casadei</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <!-- ------------------------------ -->
+  <article>
+    <div class="articlecarousel">
+      <div id="carouselExampleIndicators" class="divdivimg carousel slide" data-ride="carousel">
+
+        <div class="carousel-inner">
+          <div class="divimg carousel-item active">
+            <img src="https://cdn.pixabay.com/photo/2017/01/14/12/59/iceland-1979445__340.jpg" class="imgd d-block "
+              alt="...">
+            <p class="d-block">由六位愛花的聞腋青年們於西元1990年所成立的品牌。<br>當初在大學的時候六位聞腋青年分別都是讀不同的科</p>
+          </div>
+          <div class="divimg carousel-item">
+            <img src="https://cdn.pixabay.com/photo/2017/01/14/12/59/iceland-1979445__340.jpg" class="imgd d-block "
+              alt="Pink Shoes">
+            <p class="imgp ">由六位愛花的聞腋青年們於西元1990年所成立的品牌。<br>當初在大學的時候六位聞腋青年分別都是讀不同的科</p>
+          </div>
+          <div class="divimg carousel-item">
+            <img src="https://cdn.pixabay.com/photo/2017/01/14/12/59/iceland-1979445__340.jpg" class="imgd d-block "
+              alt="Anna Field">
+          </div>
+          <div class="divimg carousel-item">
+            <img src="https://cdn.pixabay.com/photo/2017/01/14/12/59/iceland-1979445__340.jpg" class="imgd d-block "
+              alt="Parda">
+          </div>
+          <div class="divimg carousel-item">
+            <img src="https://cdn.pixabay.com/photo/2017/01/14/12/59/iceland-1979445__340.jpg" class="imgd d-block "
+              alt="Casadei">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+        <ul class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class=" active">
+            <p>Pink Shoes <br> <small>Now af $145.99</small></p>
+          </li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1" class="">
+            <p> Anna Field<br> <small>Limited Edition </small></p>
+          </li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2" class="">
+            <p> Parda<br> <small>Summer is coming</small></p>
+          </li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3" class="">
+            <p>Casadei<br> <small>All Colors avaiable</small></p>
+          </li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="4" class="">
+            <p> Mellow Yellow<br> <small>Free delivery</small></p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </article>
+  <!-- --------------------------------- -->
+  <article>
+    <div class="onsell1">
+      <div class="onsell1-1 d-flex">
+        <div data-aos="fade-up" class="ontemout">
+          <div class="ontem">
+            <a href="">
+              <img class="" src="https://cdn.pixabay.com/photo/2017/01/14/12/59/iceland-1979445__340.jpg" alt="onsell">
+            </a>
+          </div>
+          <div class="ontem2"><a href="">ON SELL</a></div>
+        </div>
+        <div data-aos="fade-up" class="ontemout">
+          <div class="ontem">
+            <a href="">
+              <img class="" src="https://cdn.pixabay.com/photo/2017/01/14/12/59/iceland-1979445__340.jpg" alt="onsell">
+            </a>
+          </div>
+          <div class="ontem2"><a href="">SPECIAL OFFERS</a></div>
+        </div>
+        <div data-aos="fade-up" class="ontemout">
+          <div class="ontem">
+            <a href="">
+              <img class="" src="https://cdn.pixabay.com/photo/2017/01/14/12/59/iceland-1979445__340.jpg" alt="onsell">
+            </a>
+          </div>
+          <div class="ontem2"><a href="">MUST HAVE</a></div>
+        </div>
+      </div>
+    </div>
+  </article>
+  <!-- ----------------------------- -->
+  <main>
+    <div>
+      <div class="wordb">
+        <div class="wordb1 d-flex">
+          <p>Best sellers of the month</p><button>Show All</button>
+        </div>
+      </div>
+      <!--  -->
+      <div class="monthh">
+        <div class="monthh1 d-flex">
+          <div class="monthday">
+            <div class="monthh1-1"><img src="https://cdn.pixabay.com/photo/2017/01/14/12/59/iceland-1979445__340.jpg"
+                alt=""></div>
+            <div>
+              <div class="monthh1-2 d-flex">
+                <div>
+                  <div class="monthh1-3">
+                    <p>$145.99</p>
+                  </div>
+                </div>
+                <div class="monthh1-4">
+                  <div class="monthh1-41">
+                    <p>Product Name</p>
+                  </div>
+                  <div class="monthh1-42 monthh1-423">
+                    <i class="smallicon far fa-eye"></i>
+                    <!-- <img class="smallicon" src="" alt="icon"> -->
+                    <i class="smallicon far fa-star"></i>
+                    <!-- <img src="" alt="icon"> -->
+                    <i class="smallicon fas fa-sign-out-alt"></i>
+                    <!-- <img class="smallicon" src="" alt="icon"> -->
+                    <i class="smallicon fas fa-cart-arrow-down"></i>
+                    <!-- <img class="smallicon" src="" alt="icon"> -->
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="monthday">
+            <div class="monthh1-1"><img src="https://cdn.pixabay.com/photo/2017/01/14/12/59/iceland-1979445__340.jpg"
+                alt=""></div>
+            <div>
+              <div class="monthh1-2 d-flex">
+                <div>
+                  <div class="monthh1-3">
+                    <p>$145.99</p>
+                  </div>
+                </div>
+                <div class="monthh1-4">
+                  <div class="monthh1-41">
+                    <p>Product Name</p>
+                  </div>
+                  <div class="monthh1-42 monthh1-423">
+                    <!-- <i class="smallicon far fa-eye"></i> -->
+                    <img class="smallicon" src="" alt="icon">
+                    <!-- <i class="smallicon far fa-star"></i> -->
+                    <img class="smallicon" src="" alt="icon">
+                    <!-- <i class="smallicon fas fa-sign-out-alt"></i> -->
+                    <img class="smallicon" src="" alt="icon">
+                    <!-- <i class="smallicon fas fa-cart-arrow-down"></i> -->
+                    <img class="smallicon" src="" alt="icon">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="monthday">
+            <div class="monthh1-1 monthh1-out">
+              <div class="monthh1-5">
+                <P>OUT OF STOCK</P>
+              </div>
+              <img src="https://cdn.pixabay.com/photo/2017/01/14/12/59/iceland-1979445__340.jpg" alt="">
+            </div>
+            <div>
+              <div class="monthh1-2 d-flex">
+                <div>
+                  <div class="monthh1-3">
+                    <p>$145.99</p>
+                  </div>
+                </div>
+                <div class="monthh1-4">
+                  <div class="monthh1-41">
+                    <p>Product Name</p>
+                  </div>
+                  <div class="monthh1-42 monthh1-423">
+                    <i class="smallicon far fa-eye"></i>
+                    <!-- <img src="" alt="icon"> -->
+                    <i class="smallicon far fa-star"></i>
+                    <!-- <img src="" alt="icon"> -->
+                    <i class="smallicon fas fa-sign-out-alt"></i>
+                    <!-- <img src="" alt="icon"> -->
+                    <i class="smallicon fas fa-cart-arrow-down"></i>
+                    <!-- <img src="" alt="icon"> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <hr> -->
+      </div>
+    </div>
+  </main>
+  <!-- ----------------------------------- -->
+  <main>
+    <div class="blog">
+      <div class="blog1 d-flex">
+        <div onmouseover="card(this)" class="card1 blog1-1 blogr">
+          <div class="blogm">
+            <h6>1 FREE SHIPPING</h6>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla tempora est perspiciatis praesentium?
+              Consequuntur deleniti </p>
+          </div>
+          <div class="blogm blogmh">
+            <h6>FREE SHIPPING</h6>
+            <!--  Lorem-->
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit laborum odit officiis a. Quaerat atque
+              doloribus a asperiores, eos ratione</p>
+          </div>
+          <div class="d-flex  justify-content-end pr-3">
+            <button class="showw">Show All</button>
+          </div>
+        </div>
+        <div class="blogl">
+          <div class="blogl1 d-flex ">
+            <div onmouseover="card(this)" class="card1 blog1-1 blogm">
+              <h6>2 TESTMONAILS</h6>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla tempora est perspiciatis praesentium?
+                Consequuntur deleniti libero, inventore vero magni</p>
+            </div>
+            <div onmouseover="card(this)" class="card1 blog1-1 blogb ">
+              <h6>3 BLOG NEWS</h6>
+              <div class="apr04 d-flex">
+                <div class="apr">APR <br> 01</div>
+                <ul>
+                  <li class="blodd">Nice & clean.The best for your blog</li>
+                  <li>Lorem ipsum dolor sit amet consectetur </li>
+                </ul>
+              </div>
+              <div class="apr04 d-flex">
+                <div class="apr">APR<br>01</div>
+                <ul>
+                  <li class="blodd">What an Ecommerce theme!</li>
+                  <li>Lorem ipsum dolor sit amet consectetur </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="blogl1 d-flex">
+            <div onmouseover="card(this)" class="card1 blog1-1 blogb">
+              <h6>4 BLOG NEWS</h6>
+              <div class="apr04 d-flex">
+                <div class="apr">APR<br>01</div>
+                <ul>
+                  <li class="blodd">Nice & clean.The best for your blog</li>
+                  <li>Lorem ipsum dolor sit amet consectetur </li>
+                </ul>
+              </div>
+              <div class="apr04 d-flex">
+                <div class="apr">APR<br>01</div>
+                <ul>
+                  <li class="blodd">What an Ecommerce theme!</li>
+                  <li>Lorem ipsum dolor sit amet consectetur </li>
+                </ul>
+              </div>
+            </div>
+            <div onmouseover="card(this)" class="card1 blog1-1 blogm">
+              <h6>5 TESTMONAILS</h6>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla tempora est perspiciatis praesentium?
+                Consequuntur deleniti libero, inventore vero magni </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="footerr">
+      <div class="footerr1 d-flex">
+        <div>
+          <ul>
+            <li>Cpoyright @ Fooseshoes 2013.</li>
+            <li>Designed by EnzoLiVolti.</li>
+          </ul>
+        </div>
+        <div>
+          <ul class="d-flex">
+            <li><a href="">Home</a></li>
+            <li>/<a href="">Support</a> </li>
+            <li>/<a href="">Terms and Conditions</a></li>
+            <li>/<a href="">Faqs</a></li>
+            <li>/<a href="">Contact us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // header
+    $(".searchout").click(function () {
+      // search
+      // $(".tex").toggleClass("active")
+      // 耍白癡阿 toggle是要怎麼搜尋阿
+      $(".tex").addClass("active")
+    })
+    // ----------------------------
+    $(".cart").click(function () {
+      // submenu
+      $(".submenu").toggleClass("active")
+
+    })
+    // mainbestmomth
+    // d-flex不接受displaynone
+    var width = $(window).width();
+    $(window).on('resize', function () {
+      if ($(this).width() >= 540) {
+        //你的程式碼
+
+      } else {
+        //你的程式碼
+
+      }
+    });
+    $(".monthh1-4").hover(function () {
+      $(".monthh1-41").addClass("active");
+      $(".monthh1-42").addClass("active");
+
+    }, function () {
+      $(".monthh1-41").removeClass("active");
+      $(".monthh1-42").removeClass("active");
+    });
+    $(".smallicon").click(function () {
+      // sweetalert
+      swal({
+        text: "你好 有按到icon了!",
+      });
+    })
+    // ---------------
+    // mainblog
+    $(".blodd").hover(function () {
+      $(this).css("font-weight", "bold")
+
+    }, function () {
+      $(this).css("font-weight", "")
+    });
+
+    function card(x) {
+      // Animate.css
+      x.classList.add('animate__animated', 'animate__flipInY');
+      x.style.setProperty('--animate-duration', '3s');
+      x.addEventListener('animationend', () => {
+        // do something
+        x.classList.remove('animate__animated', 'animate__flipInY');
+      });
+      // const element = document.querySelectorAll('.card1');
+      // console.log(element)
+      // let i;
+      // for (i = 0; i < element.length; i++) {
+      //   element[i].classList.add('animate__animated', 'animate__flipInY');
+      //   console.log(element)
+      //   element[i].addEventListener('animationend', () => {
+      //     // do something
+      //     element[i].classList.remove('animate__animated', 'animate__flipInY');
+      //   });
+      // }
+
+
+    }
+    var width = $(window).width();
+    $(window).on('resize', function () {
+      if ($(this).width() <= 540) {
+        //你的程式碼
+        $(".blogmh").addClass("active");
+      } else {
+        //你的程式碼
+
+      }
+    });
+    $(".showw").click(function () {
+      $(".blogmh").toggleClass("active");
+    })
+    // aos.js
+    AOS.init();
+
+  </script>
+</body>
+
+</html>
