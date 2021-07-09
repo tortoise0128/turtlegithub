@@ -17,7 +17,7 @@
         }
 
         .container {
-            /* flex: 1; */
+            flex: 1;
             width: 30%;
             border: 0.1px solid skyblue;
             border-radius: 10%;
@@ -232,7 +232,7 @@
             </div>
         </div>
     </div>
-    <!-- ------------------------------------ -->
+    <!-- ------------------第二區------------------ -->
     <div class="d-flex">
         <!-- jQ問答 -->
         <div class="container">
@@ -325,6 +325,7 @@
             </div>
         </div>
     </div>
+    <!------------------------- 第三區----------------------->
     <div class="d-flex">
         <!-- 猜大小 -->
         <div class="container">
@@ -340,6 +341,63 @@
             <button class="numm1" onclick="smalll()">猜小-</button>
             <input class="numm" id="numm" type="number" value="2" placeholder="不能是負數" size="">
             <button class="numm1" onclick="bigg()">-猜大</button>
+        </div>
+        <!-- 面試題目- return boolean -true if the testNum is in between in limit1 and limit2,false otherwise. -->
+        <div class="container">
+            <p>testNum是否在兩個limit中間?</p>
+            <div>
+                <p class="pletter">testNum: <input class="testNum" type="number" placeholder="0" pattern=""></p>
+                <p class="pletter">limit1: <input class="limit1" type="number" placeholder="0" pattern=""></p>
+                <p class="pletter">limit2: <input class="limit2" type="number" placeholder="0" pattern=""></p>
+                <p class="pletter">數字的排序--[<strong class="testar">array</strong>]--</p>
+                <p class="pletter">testNum在limit1與limit2之間嗎?--<strong class="testbe">True or False</strong>--
+                    <button onclick="isBetween()">檢查</button>
+                </p>
+            </div>
+        </div>
+        <!-- 面試題目-字串翻轉 -->
+        <div class="container">
+            <p style="">將字串翻轉</p>
+            <div>
+                <p class="">請輸入隨意字串: <input class="lettereverse" type="text" placeholder="Madam,I'm Adom"
+                        pattern=""><button onclick="lettereverse()">翻轉</button></p>
+                <p class="">字串翻轉為--<strong class="lettereverse1">?</strong>--</p>
+            </div>
+        </div>
+    </div>
+    <!--------------------- 第四區 -------------------------->
+    <div class="d-flex">
+        <!-- 面試題目-參考java.lang.Math.Pi -->
+        <div class="container">
+            <p style="">寫出個函數算出半徑已知的圓面積(圓面積=半徑x半徑x圓周率)</p>
+            <div>
+                <p class="pletter">(無防呆)請輸入圓半徑: <input class="numpi" type="number" placeholder="半徑沒有負數，謝謝"
+                        pattern=""><button onclick="mathpi()">計算</button></p>
+                <!-- Math.Pi好聰明會修正負值耶 -->
+                <p class="pletter">圓面積為--<strong class="numpi1">?</strong>--</p>
+            </div>
+        </div>
+        <!-- 面試題目-return true if the given str starts with an upper-case letter A-Z  -->
+        <div class="container">
+            <p style="">判斷英文字串首字是否為大寫</p>
+            <div>
+                <p class="pletter">請輸入英文字串: <input class="letter" type="text" placeholder="a-z A-Z"
+                        pattern="/[^a-zA-Z]/" onkeyup="value=value.replace(/[^a-zA-Z]/g,'')"><button
+                        onclick="isStartsWith()">檢查</button></p>
+
+                <p class="pletter">英文字串字首是否為大寫--<strong class="letter1">True or False</strong>--</p>
+            </div>
+        </div>
+        <!-- 違約金 考保險證照用的 -->
+        <div class="container">
+            <div>
+                <p>解約金計算= <br>保價金<input class="Insured" id="Insured" type="number" placeholder="保單價值準備金" size=""
+                        style="width: 5rem;"> x
+                    年數<input class="year" id="year" type="number" placeholder="保單經過年數" style="width: 5rem;"> <br> -解約金
+                    <button onclick="money1()">計算</button>
+                </p>
+                <p>支付解約金後的金額-<strong class="Termination">0</strong>元</p>
+            </div>
         </div>
     </div>
 
@@ -686,6 +744,111 @@
                 }
             }
             jqtime()
+        }
+        // ------------------------------------------
+        // 數字區間
+        console.log(`最小值${Math.min(2, 3, 1)}`);
+        console.log(`最大值${Math.max(2, 3, 1)}`);
+        function isBetween() {
+            let testNum = document.querySelector(".testNum").value;
+            let limit1 = document.querySelector(".limit1").value;
+            let limit2 = document.querySelector(".limit2").value;
+            let testbe = document.querySelector(".testbe");
+            let testar = document.querySelector(".testar");
+            // 數字排序
+            let testarray = [testNum, limit1, limit2];
+            let testsort = testarray.sort(function (a, b) {
+                return a - b;
+                // 升冪
+                // return b - a;
+                // 降冪
+            });
+            console.log(`array:${testsort}`);
+            testar.innerHTML = `${testsort}`;
+            testar.style.color = "red";
+            // testNum是否在limit中間
+            let testmin = Math.min(testNum, limit1, limit2);
+            let testmax = Math.max(testNum, limit1, limit2);
+            console.log(`最小值${Math.min(testNum, limit1, limit2)}`);
+            console.log(`最大值${Math.max(testNum, limit1, limit2)}`);
+            let testbetween
+            if (testmin < testNum && testmax > testNum) {
+                testbetween = 'True';
+            } else {
+                testbetween = 'False';
+            }
+            console.log(`在中間?:${testbetween}`);
+            testbe.innerHTML = `${testbetween}`;
+            testbe.style.color = "red";
+        }
+        // ------------------------------------------
+        // 字串翻轉
+        function lettereverse() {
+            let lettereverse = document.querySelector(".lettereverse").value;
+            let lettereverse1 = document.querySelector(".lettereverse1");
+            console.log(`字串:${lettereverse}`);
+            let lettereverse3 = lettereverse.split("").reverse().join("");
+            // split將字串切斷
+            console.log(`翻轉字串:${lettereverse3}`);
+            lettereverse1.innerHTML = `${lettereverse3}`;
+            lettereverse1.style.color = "red";
+        }
+        // ---------------------------------------------------
+        // 圓周率
+        console.log(`圓周率${Math.PI}`)
+        function mathpi() {
+            let numpi = document.querySelector(".numpi").value;
+            let numpi1 = document.querySelector(".numpi1");
+            console.log(`半徑:${numpi}`);
+            let numpi2 = numpi * numpi * Math.PI;
+            console.log(`圓面積:${numpi2}`);
+            numpi1.innerHTML = `${numpi2}`;
+            numpi1.style.color = "red";
+        }
+        // -------------------------------------------------
+        // 英文大小寫
+        function isStartsWith() {
+            let letter = document.querySelector(".letter").value;
+            let letter1 = document.querySelector(".letter1");
+            console.log(`英文字串:${letter}`);
+            letterarray = [];
+            letterarray.push(letter);
+            console.log(`英文字串array:${letterarray}`);
+            let n = letterarray[0];
+            let reletter
+            if (n >= "A" && n <= "Z") {
+                reletter = 'True';
+            } else {
+                reletter = 'False';
+                // alert("請輸入英文，謝謝");
+            }
+            console.log(`大小寫:${reletter}`);
+            letter1.innerHTML = `${reletter}`;
+            letter1.style.color = "red";
+        }
+        // ------------------------------------------------
+        // 違約金
+        function money1() {
+            let Insured = document.querySelector(".Insured").value;
+            console.log("保價" + Insured);
+            let t = document.querySelector(".year").value;
+            console.log("年數" + t);
+            let k = 0.92 + 0.08 * t / 10;
+            console.log(`解約${k}%`);
+            let Term
+            if (k <= 1) {
+                Term = Insured * k;
+                console.log(`解約金${Term}`);
+            } else {
+                Term = Insured * 1;
+                console.log(`解約金${Term}`);
+            }
+            console.log(`解約金${Term}`);
+            let Termination = document.querySelector(".Termination");
+            console.log(`支付解約金${Termination}`);
+            Termination.innerHTML = `${Term}`;
+            Termination.style.color = "red";
+            console.log(`支付解約金${Termination}`);
         }
     </script>
 </body>
