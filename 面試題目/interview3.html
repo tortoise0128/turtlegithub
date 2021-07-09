@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>面試題目3</title>
+    <style>
+        body {
+            background: whitesmoke;
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        .Introduce {
+            background: rgb(240, 237, 237);
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header-ul {
+            width: 35%;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* -------------------------------------------- */
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            background: white;
+        }
+
+        strong {
+            margin: 10% 0 10% 0;
+            /* 不要直接在元素上下css */
+        }
+
+        .capybara {
+            margin-left: 2%;
+        }
+
+        /* 第一題 */
+        /* 第二題 */
+        .pletter {
+            font-size: 15px;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Alt + Shift + F 自動排版 -->
+    <header class="d-flex Introduce pt-3">
+        <p style="font-weight: bold;">您好，只是面試紀錄，無正確答案，請多多指教</p>
+        <ul class="header-ul d-flex">
+            <!-- <li>
+                <a href="#q1">第一題</a>
+            </li> -->
+            <li>
+                <a href="#q2">第二題</a>
+            </li>
+            <li>
+                <a href="#q3">第三題</a>
+            </li>
+            <li>
+                <a href="#q4">第四題</a>
+            </li>
+            <li>
+                <a href="#q5">第五題</a>
+            </li>
+            <li>
+                <a href="#q6">第六題</a>
+            </li>
+        </ul>
+    </header>
+    <main class="container">
+        <p>如果不熟悉JAVA可用其他語言</p>
+        <!-- 第一題 -->
+        <div class="capybara">
+            <strong id="q1">+ 第一題 +</strong>
+            <p style="font-weight: bold;">將這個字串以程式逆序: Madam,I'm Adom</p>
+            <div>
+                <p class="pletter">請輸入隨意字串: <input class="lettereverse" type="text" placeholder="Madam,I'm Adom"
+                        pattern=""><button onclick="lettereverse()">翻轉</button></p>
+
+                <p class="pletter">字串翻轉為--<strong class="lettereverse1">?</strong>--</p>
+            </div>
+            <pre>
+            >>> str="Madam,I'm Adom";
+            >>> for i in range(len(str)):
+            ...    print(str[len(str)-i+1],end='');
+            ...
+            modA m'I,madaM
+            >>>
+            </pre>
+        </div>
+        <!-- 第二題 -->
+        <div class="capybara">
+            <strong id="q2">+ 第二題 +</strong>
+            <p style="font-weight: bold;">請依照javadoc描述完成此method<br>/** @return true if the given <code>str</code> starts
+                with an upper-case letter A-Z */ <br>public boolean isStartsWith(String str){}</p>
+            <div>
+                <p class="pletter">請輸入英文字串: <input class="letter" type="text" placeholder="a-z A-Z"
+                        pattern="/[^a-zA-Z]/" onkeyup="value=value.replace(/[^a-zA-Z]/g,'')"><button
+                        onclick="isStartsWith()">檢查</button></p>
+
+                <p class="pletter">英文字串字首是否為大寫--<strong class="letter1">True or False</strong>--</p>
+            </div>
+            <pre>
+            >>> str=input('letter:')
+            letter:f
+            >>> print(str.isupper())
+            False
+            >>> str=input('letter:')
+            letter:F
+            >>> print(str.isupper())
+            True
+            </pre>
+        </div>
+        <!-- 第三題 -->
+        <div class="capybara">
+            <strong id="q3">+ 第三題 +</strong>
+            <p style="font-weight: bold;">參考java.lang.Math.Pi 寫出個函數算出半徑已知的圓面積(圓面積=半徑x半徑x圓周率)</p>
+            <div>
+                <p class="pletter">(無防呆)請輸入圓半徑: <input class="numpi" type="number" placeholder="半徑沒有負數，謝謝"
+                        pattern=""><button onclick="mathpi()">計算</button></p>
+                <!-- Math.Pi好聰明會修正負值耶 -->
+                <p class="pletter">圓面積為--<strong class="numpi1">?</strong>--</p>
+            </div>
+            <pre>
+            >>> import math
+            >>> str=input('number:')
+            number:4
+            >>> str=int(str)
+            >>> print(str*str*math.pi)
+            50.26548245743669
+            >>> 
+            </pre>
+        </div>
+        <!-- 第四題 -->
+        <div class="capybara">
+            <strong id="q4">+ 第四題 +</strong>
+            <p style="font-weight: bold;">將此陣列中所有數值累加起來，並指定給sum變數，並順利(不會出現exception)印出sum=6<br>int
+                sum=0;<br>Obiect[]data={new Integer(1),new Float(2),"Alpha",new Double(3)};</p>
+            <!-- 看不懂 再補 -->
+        </div>
+        <!-- 第五題 -->
+        <div class="capybara">
+            <strong id="q5">+ 第五題 +</strong>
+            <p style="font-weight: bold;">
+                請依照javadoc描述完成此method<br>判斷testNum是否介於limit1與limit2之間(limit1與limit2並無限定哪個值比較大)<br>/**@return boolean -
+                true if the testNum is in between in limit1 and limit2,false otherwise.*/<br>private static boolean
+                isBetween(float testNum,float limit1,float limit2){}<br>參考java.lang.Math.min(float a,float b) Return the
+                smaller of two float values.<br>java.lang.Math.max(float a,float b) Return the greater of two float
+                values.</p>
+            <div>
+                <p class="pletter">testNum: <input class="testNum" type="number" placeholder="" pattern=""></p>
+                <p class="pletter">limit1: <input class="limit1" type="number" placeholder="" pattern=""></p>
+                <p class="pletter">limit2: <input class="limit2" type="number" placeholder="" pattern=""></p>
+                <p class="pletter">數字的排序--[<strong class="testar">array</strong>]--</p>
+                <p class="pletter">testNum在limit1與limit2之間嗎?--<strong class="testbe">True or False</strong>--
+                    <button onclick="isBetween()">檢查</button>
+                </p>
+            </div>
+            <pre>
+            python loading...
+            </pre>
+        </div>
+        <!-- 第六題 -->
+        <div class="capybara">
+            <strong id="q6">+ 第六題 +</strong>
+            <p style="font-weight: bold;">不使用API java.util.Arrays.sort(Object[]a);<br>將getRowIntData()的回傳值，從小排到大印出
+            <pre>
+                題目
+                public static void main(String args[]){
+                   int[] raw=getRowIntData();
+                   output依序印出排序後的raw值
+                }
+                public int[] getRowIntData(){
+                    int[] raw = new int[10];
+                    java.util.Random random = new java.util.Random();
+                    for(int i=0 ; i < raw.length ; i++){
+                            raw[i] = radam.nextInt(99);
+                    }
+                    return raw;
+                }
+            </pre>
+            </p>
+            <!-- 看不懂 再補-->
+        </div>
+    </main>
+    <footer class="d-flex Introduce">
+        <ul class="header-ul d-flex">
+            <li>
+                <a href="#q1">第一題</a>
+            </li>
+            <li>
+                <a href="#q2">第二題</a>
+            </li>
+            <li>
+                <a href="#q3">第三題</a>
+            </li>
+            <li>
+                <a href="#q4">第四題</a>
+            </li>
+            <li>
+                <a href="#q5">第五題</a>
+            </li>
+            <!-- <li>
+                <a href="#q6">第六題</a>
+            </li> -->
+        </ul>
+        <p class="ml-2" style="font-weight: bold;">"您好，感謝閱卷完畢"</p>
+    </footer>
+    <script>
+        // 第一題
+        function lettereverse() {
+            let lettereverse = document.querySelector(".lettereverse").value;
+            let lettereverse1 = document.querySelector(".lettereverse1");
+            console.log(`字串:${lettereverse}`);
+            let lettereverse3 = lettereverse.split("").reverse().join("");
+            // split將字串切斷
+            console.log(`翻轉字串:${lettereverse3}`);
+            lettereverse1.innerHTML = `${lettereverse3}`;
+            lettereverse1.style.color = "red";
+        }
+        // 第二題
+        function isStartsWith() {
+            let letter = document.querySelector(".letter").value;
+            let letter1 = document.querySelector(".letter1");
+            console.log(`英文字串:${letter}`);
+            letterarray = [];
+            letterarray.push(letter);
+            console.log(`英文字串array:${letterarray}`);
+            let n = letterarray[0];
+            let reletter
+            if (n >= "A" && n <= "Z") {
+                reletter = 'True';
+            } else {
+                reletter = 'False';
+                // alert("請輸入英文，謝謝");
+            }
+            console.log(`大小寫:${reletter}`);
+            letter1.innerHTML = `${reletter}`;
+            letter1.style.color = "red";
+        }
+        // 第三題
+        console.log(`圓周率${Math.PI}`)
+        function mathpi() {
+            let numpi = document.querySelector(".numpi").value;
+            let numpi1 = document.querySelector(".numpi1");
+            console.log(`半徑:${numpi}`);
+            let numpi2 = numpi * numpi * Math.PI;
+            console.log(`圓面積:${numpi2}`);
+            numpi1.innerHTML = `${numpi2}`;
+            numpi1.style.color = "red";
+        }
+        // 第四題
+        // 第五題
+        console.log(`最小值${Math.min(2, 3, 1)}`);
+        console.log(`最大值${Math.max(2, 3, 1)}`);
+        function isBetween() {
+            let testNum = document.querySelector(".testNum").value;
+            let limit1 = document.querySelector(".limit1").value;
+            let limit2 = document.querySelector(".limit2").value;
+            let testbe = document.querySelector(".testbe");
+            let testar = document.querySelector(".testar");
+            // 數字排序
+            let testarray = [testNum, limit1, limit2];
+            let testsort = testarray.sort(function (a, b) {
+                return a - b;
+                // 升冪
+                // return b - a;
+                // 降冪
+            });
+            console.log(`array:${testsort}`);
+            testar.innerHTML = `${testsort}`;
+            testar.style.color = "red";
+            // testNum是否在limit中間
+            let testmin = Math.min(testNum, limit1, limit2);
+            let testmax = Math.max(testNum, limit1, limit2);
+            console.log(`最小值${Math.min(testNum, limit1, limit2)}`);
+            console.log(`最大值${Math.max(testNum, limit1, limit2)}`);
+            let testbetween
+            if (testmin < testNum && testmax > testNum) {
+                testbetween = 'True';
+            } else {
+                testbetween = 'False';
+            }
+            console.log(`在中間?:${testbetween}`);
+            testbe.innerHTML = `${testbetween}`;
+            testbe.style.color = "red";
+        }
+
+
+    </script>
+    <!-- 金嘆號!+tab是開html5 -->
+    <!-- 錢字號$+tab是開bootstrap -->
+</body>
+
+</html>
