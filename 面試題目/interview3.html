@@ -22,10 +22,30 @@
             align-items: center;
         }
 
+        .headp {
+            overflow: auto;
+        }
+
         .header-ul {
             width: 35%;
             justify-content: space-between;
             align-items: center;
+            overflow: auto;
+        }
+
+        @media screen and (max-width: 768px) {
+            .d-flex {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .header-ul {
+                width: 75%;
+            }
+
+            .header-ul li {
+                list-style: none;
+            }
         }
 
         /* -------------------------------------------- */
@@ -51,13 +71,18 @@
             font-size: 15px;
             margin-bottom: 0;
         }
+
+        .prere {
+            margin: 0 auto;
+            overflow: auto;
+        }
     </style>
 </head>
 
 <body>
     <!-- Alt + Shift + F 自動排版 -->
     <header class="d-flex Introduce pt-3">
-        <p style="font-weight: bold;">您好，只是面試紀錄，無正確答案，請多多指教</p>
+        <p class="headp" style="font-weight: bold;">您好，只是面試紀錄，無正確答案，請多多指教</p>
         <ul class="header-ul d-flex">
             <!-- <li>
                 <a href="#q1">第一題</a>
@@ -91,7 +116,7 @@
 
                 <p class="pletter">字串翻轉為--<strong class="lettereverse1">?</strong>--</p>
             </div>
-            <pre>
+            <pre class="prere">
             >>> str="Madam,I'm Adom";
             >>> for i in range(len(str)):
             ...    print(str[len(str)-i+1],end='');
@@ -112,7 +137,7 @@
 
                 <p class="pletter">英文字串字首是否為大寫--<strong class="letter1">True or False</strong>--</p>
             </div>
-            <pre>
+            <pre class="prere">
             >>> str=input('letter:')
             letter:f
             >>> print(str.isupper())
@@ -133,7 +158,7 @@
                 <!-- Math.Pi好聰明會修正負值耶 -->
                 <p class="pletter">圓面積為--<strong class="numpi1">?</strong>--</p>
             </div>
-            <pre>
+            <pre class="prere">
             >>> import math
             >>> str=input('number:')
             number:4
@@ -168,7 +193,7 @@
                     <button onclick="isBetween()">檢查</button>
                 </p>
             </div>
-            <pre>
+            <pre class="prere">
             >>> testNum=input('number:')
             number:2
             >>> limit1=input('number:')
@@ -198,7 +223,7 @@
         <div class="capybara">
             <strong id="q6">+ 第六題 +</strong>
             <p style="font-weight: bold;">不使用API java.util.Arrays.sort(Object[]a);<br>將getRowIntData()的回傳值，從小排到大印出
-            <pre>
+            <pre class="prere">
                 題目
                 public static void main(String args[]){
                    int[] raw=getRowIntData();
@@ -238,7 +263,7 @@
                 <a href="#q6">第六題</a>
             </li> -->
         </ul>
-        <p class="ml-2" style="font-weight: bold;">"您好，感謝閱卷完畢"</p>
+        <p class="headp ml-2" style="font-weight: bold;">"您好，感謝閱卷完畢"</p>
     </footer>
     <script>
         // 第一題
