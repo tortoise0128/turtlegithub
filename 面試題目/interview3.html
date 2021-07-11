@@ -76,6 +76,11 @@
             margin: 0 auto;
             overflow: auto;
         }
+
+        /* 第五題 */
+        .limitn {
+            border: 1px solid aliceblue;
+        }
     </style>
 </head>
 
@@ -184,10 +189,10 @@
                 isBetween(float testNum,float limit1,float limit2){}<br>參考java.lang.Math.min(float a,float b) Return the
                 smaller of two float values.<br>java.lang.Math.max(float a,float b) Return the greater of two float
                 values.</p>
-            <div>
-                <p class="pletter">testNum: <input class="testNum" type="number" placeholder="" pattern=""></p>
-                <p class="pletter">limit1: <input class="limit1" type="number" placeholder="" pattern=""></p>
-                <p class="pletter">limit2: <input class="limit2" type="number" placeholder="" pattern=""></p>
+            <div class="limitn">
+                <p class="pletter">testNum: <input class="testNum" type="number" placeholder="0" pattern=""></p>
+                <p class="pletter">limit1: <input class="limit1" type="number" placeholder="0" pattern=""></p>
+                <p class="pletter">limit2: <input class="limit2" type="number" placeholder="0" pattern=""></p>
                 <p class="pletter">數字的排序--[<strong class="testar">array</strong>]--</p>
                 <p class="pletter">testNum在limit1與limit2之間嗎?--<strong class="testbe">True or False</strong>--
                     <button onclick="isBetween()">檢查</button>
