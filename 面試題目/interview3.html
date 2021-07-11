@@ -169,7 +169,29 @@
                 </p>
             </div>
             <pre>
-            python loading...
+            >>> testNum=input('number:')
+            number:2
+            >>> limit1=input('number:')
+            number:3
+            >>> limit2=input('number:')
+            number:1
+            >>> testNum=int(testNum)
+            >>> limit1=int(limit1)
+            >>> limit2=int(limit2)
+            >>> testmin=min(testNum,limit1,limit2)
+            >>> print(testmin)
+            1
+            >>> testmax=max(testNum,limit1,limit2)
+            >>> print(testmax)
+            3
+            >>> if testmin < testNum and testNum < testmax:
+            ...     print('True')
+            ... else:
+            ...     print('False')
+            ... 
+            True
+            >>> 
+
             </pre>
         </div>
         <!-- 第六題 -->
@@ -262,6 +284,7 @@
             numpi1.style.color = "red";
         }
         // 第四題
+
         // 第五題
         console.log(`最小值${Math.min(2, 3, 1)}`);
         console.log(`最大值${Math.max(2, 3, 1)}`);
@@ -297,6 +320,7 @@
             testbe.innerHTML = `${testbetween}`;
             testbe.style.color = "red";
         }
+        // 第六題
 
 
     </script>
