@@ -69,7 +69,7 @@
         /* 第二題 */
         .pletter {
             font-size: 15px;
-            margin-bottom: 0;
+            /* margin-bottom: 0; */
         }
 
         .prere {
@@ -115,11 +115,14 @@
         <div class="capybara">
             <strong id="q1">+ 第一題 +</strong>
             <p style="font-weight: bold;">將這個字串以程式逆序: Madam,I'm Adom</p>
-            <div class="limitn">
+            <div class="limitn vuetest">
                 <p class="pletter">請輸入隨意字串: <input class="lettereverse" type="text" placeholder="Madam,I'm Adom"
-                        pattern=""><button onclick="lettereverse()">翻轉</button></p>
+                        v-model="message" pattern=""><button onclick="lettereverse()">翻轉</button></p>
 
                 <p class="pletter">字串翻轉為--<strong class="lettereverse1">?</strong>--</p>
+
+                <p class="pletter">Vue.js 反轉 Message is: {{ message.split('').reverse().join('') }}
+                </p>
             </div>
             <pre class="prere">
             >>> str="Madam,I'm Adom";
@@ -135,12 +138,13 @@
             <strong id="q2">+ 第二題 +</strong>
             <p style="font-weight: bold;">請依照javadoc描述完成此method<br>/** @return true if the given <code>str</code> starts
                 with an upper-case letter A-Z */ <br>public boolean isStartsWith(String str){}</p>
-            <div class="limitn">
+            <div class="limitn vuetest2">
                 <p class="pletter">請輸入英文字串: <input class="letter" type="text" placeholder="a-z A-Z"
-                        pattern="/[^a-zA-Z]/" onkeyup="value=value.replace(/[^a-zA-Z]/g,'')"><button
+                        pattern="/[^a-zA-Z]/" onkeyup="value=value.replace(/[^a-zA-Z]/g,'')" v-model="message2"><button
                         onclick="isStartsWith()">檢查</button></p>
-
                 <p class="pletter">英文字串字首是否為大寫--<strong class="letter1">True or False</strong>--</p>
+                <!-- Lambda 二元運算子 -->
+                <p class="pletter">Vue.js 只能判斷一個英文字母: {{ message2 == message2.toUpperCase() ? 'True' : 'False' }} ?</p>
             </div>
             <pre class="prere">
             >>> str=input('letter:')
@@ -157,11 +161,13 @@
         <div class="capybara">
             <strong id="q3">+ 第三題 +</strong>
             <p style="font-weight: bold;">參考java.lang.Math.Pi 寫出個函數算出半徑已知的圓面積(圓面積=半徑x半徑x圓周率)</p>
-            <div class="limitn">
-                <p class="pletter">(無防呆)請輸入圓半徑: <input class="numpi" type="number" placeholder="半徑沒有負數，謝謝"
-                        pattern=""><button onclick="mathpi()">計算</button></p>
+            <div class="limitn vuetest3">
+                <p class="pletter">(無防呆)請輸入圓半徑: <input class="numpi" type="number" placeholder="半徑沒有負數，謝謝" v-model="message3"
+                        pattern=""><button onclick=" mathpi()">計算</button></p>
                 <!-- Math.Pi好聰明會修正負值耶 -->
                 <p class="pletter">圓面積為--<strong class="numpi1">?</strong>--</p>
+
+                <p class="pletter">Vue.js 圓面積為: {{ message3*message3*Math.PI }} </p>
             </div>
             <pre class="prere">
             >>> import math
@@ -289,6 +295,8 @@
         </ul>
         <p class="headp ml-2" style="font-weight: bold;">"您好，感謝閱卷完畢"</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
     <script>
         // 第一題
         function lettereverse() {
@@ -301,6 +309,13 @@
             lettereverse1.innerHTML = `${lettereverse3}`;
             lettereverse1.style.color = "red";
         }
+        // Vue.js
+        var vuetest = new Vue({
+            el: '.vuetest',
+            data: {
+                message: '',
+            },
+        })
         // 第二題
         function isStartsWith() {
             let letter = document.querySelector(".letter").value;
@@ -321,6 +336,13 @@
             letter1.innerHTML = `${reletter}`;
             letter1.style.color = "red";
         }
+        // Vue.js
+        var vuetest2 = new Vue({
+            el: '.vuetest2',
+            data: {
+                message2: '',
+            },
+        })
         // 第三題
         console.log(`圓周率${Math.PI}`)
         function mathpi() {
@@ -332,6 +354,13 @@
             numpi1.innerHTML = `${numpi2}`;
             numpi1.style.color = "red";
         }
+        // Vue.js
+        var vuetest3 = new Vue({
+            el: '.vuetest3',
+            data: {
+                message3: '',
+            },
+        })
         // 第四題
 
         // 第五題
