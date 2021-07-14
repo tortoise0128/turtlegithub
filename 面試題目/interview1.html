@@ -12,8 +12,29 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
         body {
+            height: 100%;
             background: whitesmoke;
         }
+
+        /* 血條? */
+
+        .progressbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 0, 0.500);
+            height: 1px;
+        }
+
+        .progressin {
+            height: 1px;
+            background: rgba(255, 0, 255, 0.500);
+            width: 1%;
+            /* 血條起始值 */
+        }
+
+        /* 血條 */
 
         .Introduce {
             background: rgb(240, 237, 237);
@@ -191,6 +212,10 @@
         }
     </style>
 </head>
+<div class="progressbar">
+    <div class="progressin"></div>
+    <!-- 血條 -->
+</div>
 <header class="d-flex Introduce pt-3">
     <p style="font-weight: bold;">您好，只是面試紀錄，無正確答案，請多多指教</p>
     <ul class="header-ul d-flex">
@@ -272,7 +297,7 @@
             <li>box2跟box1的左邊border切齊 <br>錯誤理由: 如果box2要和box1左邊border切齊，可能要調整成left: 49px;
                 right: 49px;?</li>
             <li>box2是在box內，正確</li>
-            <li>box2的寬度為200px <br>錯誤理由: 因為本體還是在box1內，box2的寬是198px。</li>
+            <li>box2的寬度為200px <br>錯誤理由: 因為box2本體還是在box1內，box2的寬是扣掉border後198px。</li>
         </ol>
         <div class="box4">
             box
@@ -337,7 +362,28 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script>
+        // 手機的血條 怎麼寫阿?好像沒看過
+        let pageHeight = $("body").height();
+        let windowHeight = $(window).height();
+        console.log("windowHeight: " + windowHeight)
+        // console.log("page height: "+pageHeight)
 
+        $(window).scroll(function () {
+            let scrollTop = $(this).scrollTop();
+            // console.log("scroll top: "+scrollTop)
+
+            // let scrollPercent = (scrollTop / (pageHeight - windowHeight)) * 100 + "%";
+            // console.log("scrollPercent: " + scrollPercent)
+
+            // let scrollPercent=Math.round(scrollTop/(pageHeight-windowHeight)*100)+"%"
+
+            let scrollPercent = (scrollTop / (pageHeight - windowHeight)) * 100;
+            scrollPercent = Math.round(scrollPercent) + "%";
+
+            console.log("scrollPercent: " + scrollPercent)
+
+            $(".progressin").css("width", scrollPercent)
+        })
     </script>
 </body>
 
