@@ -21,6 +21,7 @@ $stmt3 = $pdo->query($sql);
 // 加總?
 $stmt4 = null;
 // $sql = sprintf("SELECT `name`,`class name` FROM `class`,`student` WHERE `class`.`id`=`student`.`class_id`");
+// SELECT sum(加總欄位) FROM `資料表名稱` WHERE 符合條件才列入加總 GROUP BY 根據此欄位相同才加總 
 $sql = sprintf("SELECT `name`,`class name`,SUM(`score`) FROM `class`,`student`,`score` WHERE `class`.`id`=`student`.`class_id` AND `student`.`id`=`score`.`id` GROUP by `score`.`id`");
 $stmt4 = $pdo->query($sql);
 ?>
