@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>面試題目5</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            height: 100%;
+            background: whitesmoke;
+        }
+
+        .Introduce {
+            background: rgb(240, 237, 237);
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            background: white;
+        }
+
+        strong {
+            margin: 10% 0 10% 0;
+            /* 不要直接在元素上下css */
+        }
+    </style>
+</head>
+
+<body>
+    <header class="d-flex Introduce pt-3">
+        <p style="font-weight: bold;">您好，只是面試紀錄，無正確答案，請多多指教</p>
+    </header>
+    <main class="container">
+        <div class="blackr ">
+            <div class="black1">
+                <p style="font-weight: bold;">1.下列何為CPU執行時存取資料的組件?</p>
+                <!-- RAM -->
+            </div>
+            <form id="answer" class="answer black1">
+                <div class="tip">
+                    <input class="tip1 yes" type="radio" id="huey" name="drone" value="1">
+                    <!-- checked -->
+                    <label for="huey">RAM</label>
+                </div>
+
+                <div class="tip">
+                    <input class="tip1 no" type="radio" id="dewey" name="drone" value="0">
+                    <label for="dewey">Keyboard</label>
+                </div>
+
+                <div class="tip">
+                    <input class="tip1 no" type="radio" id="louie" name="drone" value="0">
+                    <label for="louie">Hard Disk</label>
+                </div>
+                <!-- lable用for或直接包input增加選取範圍 -->
+            </form>
+        </div>
+        <div class="blackr ">
+            <div class="black1">
+                <p style="font-weight: bold;">2.下列何者不是物件導向設計的特性?</p>
+                <!-- 封裝、繼承、多型、抽象 -->
+            </div>
+            <form id="answer2" class="answer black1">
+                <div class="tip">
+                    <input class="tip1 no" type="radio" id="huey2" name="drone2" value="0">
+                    <!-- checked -->
+                    <label for="huey2">繼承</label>
+                </div>
+
+                <div class="tip">
+                    <input class="tip1 no" type="radio" id="dewey2" name="drone2" value="0">
+                    <label for="dewey2">多形</label>
+                </div>
+
+                <div class="tip">
+                    <input class="tip1 yes" type="radio" id="louie2" name="drone2" value="1">
+                    <label for="louie2">多執行緒</label>
+                </div>
+                <!-- lable用for或直接包input增加選取範圍 -->
+            </form>
+        </div>
+        <div class="blackr ">
+            <div class="black1">
+                <p style="font-weight: bold;">3.下列哪個HTML語法會畫出一條水平線?</p>
+                <!-- <hr> -->
+            </div>
+            <form id="answer3" class="answer black1">
+                <div class="tip">
+                    <input class="tip1 no" type="radio" id="huey3" name="drone3" value="0">
+                    <!-- checked -->
+                    <label for="hue3y">&lt;td&gt;</label>
+                    <!-- &lt;<左 &gt;>右 -->
+                    <!-- 格子 -->
+                </div>
+
+                <div class="tip">
+                    <input class="tip1 no" type="radio" id="dewey3" name="drone3" value="0">
+                    <label for="dewey3">&lt;br&gt;</label>
+                    <!-- 換行 -->
+                </div>
+
+                <div class="tip">
+                    <input class="tip1 yes" type="radio" id="louie3" name="drone3" value="1">
+                    <label for="louie3">&lt;hr&gt;</label>
+                    <!-- 一條挺莫名的線 -->
+                </div>
+                <!-- lable用for或直接包input增加選取範圍 -->
+            </form>
+        </div>
+
+        <div class="blackr ">
+            <div class="black1">
+                <p style="font-weight: bold;">4.下列哪個C#語法為if i不等於5 ?</p>
+                <!-- 不確定答案，上網查C#不等於是<> -->
+            </div>
+            <form id="answer4" class="answer black1">
+                <div class="tip">
+                    <input class="tip1 no" type="radio" id="huey4" name="drone4" value="0">
+                    <!-- checked -->
+                    <label for="huey4">if(i != 5)</label>
+                </div>
+
+                <div class="tip">
+                    <input class="tip1 no" type="radio" id="dewey4" name="drone4" value="0">
+                    <label for="dewey4">if i<> 5 then</label>
+                </div>
+
+                <div class="tip">
+                    <input class="tip1 yes" type="radio" id="louie4" name="drone4" value="1">
+                    <label for="louie4">if (i<> 5)</label>
+                    <!-- 不確定答案，上網查C#不等於是<> -->
+                </div>
+                <!-- lable用for或直接包input增加選取範圍 -->
+            </form>
+        </div>
+        <div class="blackr ">
+            <div class="black1">
+                <p style="font-weight: bold;">5.下列哪個C#指令裡面的程式區塊為發生錯誤時所執行的程式碼?</p>
+                <!-- try{
+                 // 欲執行的程式碼
+                }catch(e){
+                // 當錯誤發生時，欲執行的程式碼
+                } -->
+                <!-- https://medium.com/unalai/%E8%AA%8D%E8%AD%98-try-catch-%E8%99%95%E7%90%86%E9%8C%AF%E8%AA%A4-f262d5690820 -->
+            </div>
+            <form id="answer5" class="answer black1">
+                <div class="tip">
+                    <input class="tip1 yes" type="radio" id="huey5" name="drone5" value="0">
+                    <!-- checked -->
+                    <label for="huey5">try</label>
+                    <!-- 我猜是這個，python的異常處理是try -->
+                </div>
+
+                <div class="tip">
+                    <input class="tip1 no" type="radio" id="dewey5" name="drone5" value="1">
+                    <label for="dewey5">catch</label>
+                    <!-- 網路查C#會給try-catch -->
+                </div>
+
+                <div class="tip">
+                    <input class="tip1 no" type="radio" id="louie5" name="drone5" value="0">
+                    <label for="louie5">finally</label>
+                    <!-- finally是python例外處理結束後，無論如何都會執行的部分 -->
+                </div>
+                <!-- lable用for或直接包input增加選取範圍 -->
+            </form>
+        </div>
+        <div class="blackr ">
+            <div class="black1">
+                <p style="font-weight: bold;">6. jQuery用哪個符號表示jQuery?</p>
+                    <!-- 老師說串錯API會賠爆，所以php等等都會是$字號 -->
+            </div>
+            <form id="answer6" class="answer black1">
+                <div class="tip">
+                    <input class="tip1 yes" type="radio" id="huey6" name="drone6" value="1">
+                    <!-- checked -->
+                    <label for="huey6">$</label>
+                    <!-- 老師說串錯API會賠爆，所以php等等都會是$字號 -->
+                </div>
+
+                <div class="tip">
+                    <input class="tip1 no" type="radio" id="dewey6" name="drone6" value="0">
+                    <label for="dewey6">#</label>
+                </div>
+
+                <div class="tip">
+                    <input class="tip1 no" type="radio" id="louie6" name="drone6" value="0">
+                    <label for="louie6">?</label>
+                </div>
+                <!-- lable用for或直接包input增加選取範圍 -->
+            </form>
+        </div>
+        <div class="blackr ">
+            <div class="black1">
+                <p style="font-weight: bold;">7. jQuery語法$(“div p”)會選取那些元素?</p>
+                    <!-- 會全選，但我不知道是不是bootstrap才會 -->
+            </div>
+            <form id="answer7" class="answer black1">
+                <div class="tip">
+                    <input class="tip1 yes" type="radio" id="huey7" name="drone7" value="1">
+                    <!-- checked -->
+                    <label for="huey7">所有div元素裡面包含有p的元素</label>
+                    <!-- 會全選，但我不知道是不是bootstrap才會 -->
+                </div>
+
+                <div class="tip">
+                    <input class="tip1 no" type="radio" id="dewey7" name="drone7" value="0">
+                    <label for="dewey7">所有p元素被包含在div裡的元素</label>
+                </div>
+
+                <div class="tip">
+                    <input class="tip1 no" type="radio" id="louie7" name="drone7" value="0">
+                    <label for="louie7">div裡面的第一個p元素</label>
+                </div>
+                <!-- lable用for或直接包input增加選取範圍 -->
+            </form>
+        </div>
+        <div class="blackr ">
+            <div class="black1">
+                <p style="font-weight: bold;">8.下列哪個jQuery語法會把所有p元素背景色設為紅色?</p>
+            </div>
+            <form id="answer8" class="answer black1">
+                <div class="tip">
+                    <input class="tip1 no" type="radio" id="huey8" name="drone8" value="0">
+                    <!-- checked -->
+                    <label for="huey8">$(“p”).layout(“background-color”, “red”);</label>
+                </div>
+
+                <div class="tip">
+                    <input class="tip1 yes" type="radio" id="dewey8" name="drone8" value="1">
+                    <label for="dewey8">$(“p”).css(“background-color”, “red”);</label>
+                    <!-- 這個等於是在style裡下css -->
+                </div>
+
+                <div class="tip">
+                    <input class="tip1 no" type="radio" id="louie8" name="drone8" value="0">
+                    <label for="louie8">$(“p”).manipulate(“background-color”, “red”);</label>
+                </div>
+                <!-- lable用for或直接包input增加選取範圍 -->
+            </form>
+        </div>
+
+        <div class="blackr ">
+            <div class="black1">
+                <p style="font-weight: bold;">9.下面哪個Javascript語法為if i不等於5 ?</p>
+                    <!-- 不確定答案，只確定不等於是!= -->
+            </div>
+            <form id="answer9" class="answer black1">
+                <div class="tip">
+                    <input class="tip1 no" type="radio" id="huey9" name="drone9" value="0">
+                    <!-- checked -->
+                    <label for="huey9">if (i<>5)</label>
+                </div>
+
+                <div class="tip">
+                    <input class="tip1 no" type="radio" id="dewey9" name="drone9" value="0">
+                    <label for="dewey9">if i != 5 then</label>
+                </div>
+
+                <div class="tip">
+                    <input class="tip1 yes" type="radio" id="louie9" name="drone9" value="1">
+                    <label for="louie9">if ( i != 5)</label>
+                    <!-- 不確定答案，只確定不等於是!= -->
+                </div>
+                <!-- lable用for或直接包input增加選取範圍 -->
+            </form>
+        </div>
+        <div class="blackr ">
+            <div class="black1">
+                <p style="font-weight: bold;">10.&lt;p id=”test”&gt;這是測驗&lt;/p&gt;下面哪個語法會將”這是測驗”置換成”很簡單”?</p>
+            </div>
+            <form id="answer10" class="answer black1">
+                <div class="tip">
+                    <input class="tip1 no" type="radio" id="huey10" name="drone10" value="0">
+                    <!-- checked -->
+                    <label for="huey10">#test.innerHTML = “很簡單”</label>
+                    <!-- $("#test").html("很簡單"); -->
+                </div>
+
+                <div class="tip">
+                    <input class="tip1 no" type="radio" id="dewey10" name="drone10" value="0">
+                    <label for="dewey10">document.getElementByName(“p”).innerHTML = “很簡單”</label>
+                    <!-- 沒給name值 -->
+                </div>
+
+                <div class="tip">
+                    <input class="tip1 yes" type="radio" id="louie10" name="drone10" value="1">
+                    <label for="louie10">document.getElementById(“test”).innerHTML = “很簡單”</label>
+                </div>
+                <!-- lable用for或直接包input增加選取範圍 -->
+                <!-- <p id="test">這是測驗</p> -->
+            </form>
+        </div>
+        <h3>總計<span class="total">0</span>分</h3> <button onclick="tota()">結算</button>
+
+    </main>
+    <footer class="d-flex Introduce">
+        <p class="ml-2" style="font-weight: bold;">"您好，感謝閱卷完畢"</p>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        // 第10題
+        // $("#test").html("很簡單");
+        // document.getElementById("test").innerHTML = "很簡單";
+        // 第8題
+        // $("p").css("background-color", "red");
+        // 第7題
+        // $("div p").css("background-color", "red");
+        // 計分
+        let total = document.querySelector(".total");
+        console.log(total);
+        function tota() {
+            var form = document.getElementById("answer");
+            for (var i = 0; i < form.drone.length; i++) {
+                if (form.drone[i].checked) {
+                    var drone = form.drone[i].value;
+                    // alert(language);
+                    console.log(drone);
+
+                }
+            }
+            var form2 = document.getElementById("answer2");
+            for (var i = 0; i < form2.drone2.length; i++) {
+                if (form2.drone2[i].checked) {
+                    var drone2 = form2.drone2[i].value;
+                    // alert(language);
+                    console.log(drone2);
+
+                }
+            }
+            var form3 = document.getElementById("answer3");
+            for (var i = 0; i < form3.drone3.length; i++) {
+                if (form3.drone3[i].checked) {
+                    var drone3 = form3.drone3[i].value;
+                    // alert(language);
+                    console.log(drone3);
+
+                }
+            }
+            var form4 = document.getElementById("answer4");
+            for (var i = 0; i < form4.drone4.length; i++) {
+                if (form4.drone4[i].checked) {
+                    var drone4 = form4.drone4[i].value;
+                    // alert(language);
+                    console.log(drone4);
+
+                }
+            }
+            var form5 = document.getElementById("answer5");
+            for (var i = 0; i < form5.drone5.length; i++) {
+                if (form5.drone5[i].checked) {
+                    var drone5 = form5.drone5[i].value;
+                    // alert(language);
+                    console.log(drone5);
+
+                }
+            }
+            var form6 = document.getElementById("answer6");
+            for (var i = 0; i < form6.drone6.length; i++) {
+                if (form6.drone6[i].checked) {
+                    var drone6 = form6.drone6[i].value;
+                    // alert(language);
+                    console.log(drone6);
+
+                }
+            }
+            var form7 = document.getElementById("answer7");
+            for (var i = 0; i < form7.drone7.length; i++) {
+                if (form7.drone7[i].checked) {
+                    var drone7 = form7.drone7[i].value;
+                    // alert(language);
+                    console.log(drone7);
+
+                }
+            }
+            var form8 = document.getElementById("answer8");
+            for (var i = 0; i < form8.drone8.length; i++) {
+                if (form8.drone8[i].checked) {
+                    var drone8 = form8.drone8[i].value;
+                    // alert(language);
+                    console.log(drone8);
+
+                }
+            }
+            var form9 = document.getElementById("answer9");
+            for (var i = 0; i < form9.drone9.length; i++) {
+                if (form9.drone9[i].checked) {
+                    var drone9 = form9.drone9[i].value;
+                    // alert(language);
+                    console.log(drone9);
+
+                }
+            }
+            var form10 = document.getElementById("answer10");
+            for (var i = 0; i < form10.drone10.length; i++) {
+                if (form10.drone10[i].checked) {
+                    var drone10 = form10.drone10[i].value;
+                    // alert(language);
+                    console.log(drone10);
+
+                }
+            }
+            console.log(drone10);
+            // let特性會讓值無法取出，卻是趨勢?var要淘汰，但對只會土法煉鋼的我蠻好用的
+            toto = drone * 10 + drone2 * 10 + drone3 * 10 + drone4 * 10 + drone5 * 10 + drone6 * 10 + drone7 * 10 + drone8 * 10 + drone9 * 10 + drone10 * 10;
+            console.log(toto);
+            total.innerHTML = `${toto}`;
+        }
+    </script>
+</body>
+
+</html>
