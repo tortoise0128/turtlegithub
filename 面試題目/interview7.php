@@ -7,6 +7,10 @@ $t_sql = "SELECT COUNT(sid) FROM `student 3.11`";
 $totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
 $stmt = null;
 $sql = sprintf("SELECT * FROM `student 3.11` WHERE `sid`");
+// 要怎麼輸出1999/01/02不要SQL的1999-01-02 ?
+// $sql = sprintf("SELECT `id`,`name`,DATE_FORMAT(`birthdate`, "%Y/%m/%d") AS formatbirth FROM `student 3.11` WHERE  `sid`");
+// $date="SELECT DATE_FORMAT(`birthdate`, %Y/%m/%d) FROM `student 3.11`";
+// echo date_format($date,"Y/m/d H:i:s");
 $stmt = $pdo->query($sql);
 // 叫Exam資料表
 $t_sql = "SELECT COUNT(sid) FROM `exam 3.11`";
@@ -136,11 +140,11 @@ $stmt8 = $pdo->query($sql);
                     <?php if (!empty($stmt)) : ?>
                         <!-- Student -->
                         <!-- var json = 
-        `[{"ID":"A0001","Name":"Andy","BirthDate":"1999-01-02"},
-       {"ID":"A0002","Name":"Rose","BirthDate":"1999-03-15"},
-       {"ID":"A0003","Name":"Stark","BirthDate":"1999-09-23"},
-       {"ID":"A0004","Name":"Rogers","BirthDate":"1998-12-02"},
-       {"ID":"A0005","Name":"Alice","BirthDate":"1999-07-17"}]`; -->
+        `[{"ID":"A0001","Name":"Andy","BirthDate":"1999/01/02"},
+       {"ID":"A0002","Name":"Rose","BirthDate":"1999/03/15"},
+       {"ID":"A0003","Name":"Stark","BirthDate":"1999/09/23"},
+       {"ID":"A0004","Name":"Rogers","BirthDate":"1998/12/02"},
+       {"ID":"A0005","Name":"Alice","BirthDate":"1999/07/17"}]`; -->
                         <table class="table-striped table-bordered">
                             <caption>Student 資料表</caption>
                             <thead>
@@ -157,7 +161,7 @@ $stmt8 = $pdo->query($sql);
                                         <!-- <td><?= $r['sid'] ?></td> -->
                                         <td><?= $r['id'] ?></td>
                                         <td><?= $r['name'] ?></td>
-                                        <td><?= $r['birthdate'] ?></td>
+                                        <td class="bird"><?= $r['birthdate'] ?></td>
                                     </tr>
                                 <?php endwhile; ?>
                             </tbody>
@@ -232,7 +236,7 @@ $stmt8 = $pdo->query($sql);
                                     <tr>
                                         <!-- <td><?= $r['sid'] ?></td> -->
                                         <td><?= $r['id'] ?></td>
-                                        <td><?= $r['birthdate'] ?></td>
+                                        <td class="bird"><?= $r['birthdate'] ?></td>
                                     </tr>
                                 <?php endwhile; ?>
                             </tbody>
@@ -300,7 +304,7 @@ $stmt8 = $pdo->query($sql);
                                 <?php while ($r = $stmt5->fetch()) : ?>
                                     <tr>
                                         <!-- <td><?= $r['sid'] ?></td> -->
-                                        <td><?= $r['birthdate'] ?></td>
+                                        <td class="bird"><?= $r['birthdate'] ?></td>
                                         <td><?= $r['name'] ?></td>
                                         <td><?= $r['score'] ?></td>
                                     </tr>
@@ -439,6 +443,21 @@ $stmt8 = $pdo->query($sql);
                 // x = 20
             }
         }
+        // ----題目的日期要1999/01/02不要SQL的1999-01-02----
+        // 目前只想出jQuery的解決辦法
+        var texts = [];
+        $(function() {
+            $('.bird').each(function() {
+                texts.push($(this).text());
+                // 抓所有的日期
+                var text = $(this).text();
+                // $(this).text(text.replace('-', '/'))
+                $(this).text(text.replace(/-/g, '/'))
+                // 正規表達式
+            });
+            console.log(texts)
+            // 習慣性做array沒用到耶
+        });
     </Script>
 </body>
 
