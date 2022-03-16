@@ -40,7 +40,10 @@ $stmt7 = $pdo->query($sql);
 $stmt8 = null;
 $sql = sprintf("SELECT `name`, SUM(`score`) FROM `student 3.11`,`exam 3.11` WHERE `student 3.11`.`id`=`exam 3.11`.`id` GROUP by `student 3.11`.`id` ORDER BY `SUM(``score``)` DESC");
 $stmt8 = $pdo->query($sql);
-
+// 年齡
+// SELECT `birthdate`, YEAR(FROM_DAYS(DATEDIFF(NOW(),`birthdate`))) AS age FROM `student 3.11`
+// 被介紹一個寫php的免費編譯器Sublime Text
+// 也被說其實都答錯了，自學的缺點就是答案出得來，但都不是面試官要的，面試官也沒時間解釋他要的是什麼
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -452,10 +455,14 @@ $stmt8 = $pdo->query($sql);
                 // 抓所有的日期
                 var text = $(this).text();
                 // $(this).text(text.replace('-', '/'))
-                $(this).text(text.replace(/-/g, '/'))
+                $(this).text(text.replace(/-/g, '/'));
                 // 正規表達式
+                var date = new Date($(this).text());
+                console.log(`生日: ${date}`);
+                var age = new Date().getFullYear() - date.getFullYear();
+                console.log(`年齡${age}歲`);
             });
-            console.log(texts)
+            console.log(texts);
             // 習慣性做array沒用到耶
         });
     </Script>
